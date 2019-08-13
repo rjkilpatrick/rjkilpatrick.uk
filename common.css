@@ -1,30 +1,126 @@
+/*region font*/
 @font-face {
   font-family: 'Open Sans';
-  src:url("fonts/Open-Sans/OpenSans-Regular.ttf");
+  src: url("fonts/Open-Sans/OpenSans-Regular.ttf");
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src:url("fonts/Open-Sans/OpenSans-SemiBold.ttf");
+  src: url("fonts/Open-Sans/OpenSans-SemiBold.ttf");
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src:url("fonts/Open-Sans/OpenSans-RegularItalic.ttf");
+  src: url("fonts/Open-Sans/OpenSans-RegularItalic.ttf");
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src:url("fonts/Open-Sans/OpenSans-SemiBoldItalic.ttf");
+  src: url("fonts/Open-Sans/OpenSans-SemiBoldItalic.ttf");
   font-weight: bold;
   font-style: italic;
 }
 
+/* Roboto Slab */
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url("fonts/Roboto-Slab/RobotoSlab-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url("fonts/Roboto-Slab/RobotoSlab-Regular.ttf");
+  font-style: italic;
+}
+
+/* Main body */
 body {
   font-family: 'Open Sans', 'Serif';
   background-color: #f5f6f6;
+  color: #404040;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0;
+}
+
+/* Hero content */
+html {
+  /* Needed to make it work */
+  height: 100%;
+}
+
+body {
+  /* Needed to make it work */
+  height: 100%;
+}
+
+.hero-container {
+  height: 30%;
+}
+
+.hero-image {
+  background: rgb(67, 0, 101);
+  background: linear-gradient(90deg, rgb(67, 0, 101) 0%,
+      rgb(179, 0, 0) 100%);
+  background-image: url("img/hero.jpg");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: block;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: Roboto Slab, serif;
+  margin: 0;
+}
+
+.hero-text h1 {
+  margin: 10px 0;
+}
+
+hr {
+  margin: 0;
+}
+
+.hero-text button {
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  border-width: 1px;
+  border-radius: 2px;
+  border-style: solid;
+  background-color: #fff0;
+  background: inherit;
+  overflow: hidden;
+}
+
+.hero-text button:hover::before {
+  content: "";
+  background: inherit;
+  filter: blur(5px);
+}
+
+.hero-text button:hover {
+  background-color: #fff4;
+}
+
+/* Sticky nav section */
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 nav ul {
@@ -35,19 +131,30 @@ nav ul {
   overflow: hidden;
 }
 
-li a {
+nav ul li a {
   display: block;
-  color: #000000;
+  color: #000;
   padding: 8px 16px;
   text-decoration: none;
   float: left;
 }
 
-li a:hover {
+nav ul li a:hover {
   background-color: #555;
-  color: #ffffff;
+  color: #fff;
 }
 
 .active {
+  border-bottom: 4px solid #fff;
+}
 
+.active:hover {
+  border-bottom: 4px solid #ddd;
+}
+
+main a {
+  border-bottom: 1px solid #dcdcdc;
+  color: #222;
+  font-weight: bold;
+  text-decoration: none;
 }
