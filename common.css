@@ -1,3 +1,10 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 /*region font*/
 @font-face {
   font-family: 'Open Sans';
@@ -45,15 +52,14 @@ body {
   padding: 0;
 }
 
-/* Hero content */
-html {
-  /* Needed to make it work */
-  height: 100%;
+h1, h2, h3, h4, h5, h6 {
+  font-family: Roboto Slab, serif;
 }
 
-body {
-  /* Needed to make it work */
+/* Hero content */
+html, body {
   height: 100%;
+  /* Needed to make it work */
 }
 
 .hero-container {
@@ -79,7 +85,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-  font-family: Roboto Slab, serif;
   margin: 0;
 }
 
@@ -157,4 +162,26 @@ main a {
   color: #222;
   font-weight: bold;
   text-decoration: none;
+}
+
+main a:hover {
+  color: #000;
+  border-bottom: 1px solid #acacac;
+}
+
+footer {
+  background-color: cornflowerblue;
+  color:#fff!important;
+  font-size: 35px;
+}
+
+.social {
+  color: #fff;
+  opacity: 1;
+  cursor: pointer;
+  margin: 0 20px;
+}
+
+.social:hover {
+  opacity: 0.3;
 }
