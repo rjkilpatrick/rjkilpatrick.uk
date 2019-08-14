@@ -70,7 +70,7 @@ html, body {
   background: rgb(67, 0, 101);
   background: linear-gradient(90deg, rgb(67, 0, 101) 0%,
       rgb(179, 0, 0) 100%);
-  background-image: url("img/hero.jpg");
+  background-image: url("../img/hero.jpg");
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
