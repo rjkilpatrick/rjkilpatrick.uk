@@ -18,9 +18,15 @@ let links = (function() {
 
       let anchor = document.createElement("a");
       anchor.setAttribute("href", "#" + header.textContent);
-      let linkSymbol = document.createElement("i");
-      linkSymbol.setAttribute("class", "fa fa-link");
-      anchor.appendChild(linkSymbol);  
+      /* Use Chain symbol */
+      // let linkSymbol = document.createElement("i");
+      // linkSymbol.setAttribute("class", "fa fa-link");
+      // anchor.appendChild(linkSymbol);
+      /* Use Hash symbol */
+      anchor.innerHTML = "&#35;";
+      anchor.setAttribute("href", "#" + header.textContent);
+
+      anchor.setAttribute("class", "anchor");
       header.appendChild(anchor);
     }
     console.log(window.location.href);

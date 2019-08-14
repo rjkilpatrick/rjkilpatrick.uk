@@ -169,7 +169,7 @@ main a:hover {
   border-bottom: 1px solid #acacac;
 }
 
-footer {
+#main-footer {
   background-color: cornflowerblue;
   color:#fff!important;
   font-size: 35px;
