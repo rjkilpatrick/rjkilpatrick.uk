@@ -7,8 +7,10 @@ This project hosts the personal webpage for John Kilpatrick
 - [ ] Add social media tie ins
   - [ ] Twitter
   - [ ] Facebook?
-  - [ ] GitHub
+  - [x] GitHub
+  - [x] LinkedIn
 - [ ] Nicer bullet points
+- [ ] Switch from GitHub pages to Digital Ocean for PHP support
 
 ## Acknowledgements
 - [Temporary hero cover](https://www.pexels.com/photo/yellow-bokeh-photo-949587/)

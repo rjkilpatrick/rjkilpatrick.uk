@@ -8,24 +8,24 @@ html {
 /*region font*/
 @font-face {
   font-family: 'Open Sans';
-  src: url("fonts/Open-Sans/OpenSans-Regular.ttf");
+  src: url("../fonts/Open-Sans/OpenSans-Regular.ttf");
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src: url("fonts/Open-Sans/OpenSans-SemiBold.ttf");
+  src: url("../fonts/Open-Sans/OpenSans-SemiBold.ttf");
   font-weight: bold;
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src: url("fonts/Open-Sans/OpenSans-RegularItalic.ttf");
+  src: url("../fonts/Open-Sans/OpenSans-RegularItalic.ttf");
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src: url("fonts/Open-Sans/OpenSans-SemiBoldItalic.ttf");
+  src: url("../fonts/Open-Sans/OpenSans-SemiBoldItalic.ttf");
   font-weight: bold;
   font-style: italic;
 }
@@ -33,12 +33,12 @@ html {
 /* Roboto Slab */
 @font-face {
   font-family: 'Roboto Slab';
-  src: url("fonts/Roboto-Slab/RobotoSlab-Regular.ttf");
+  src: url("../fonts/Roboto-Slab/RobotoSlab-Regular.ttf");
 }
 
 @font-face {
   font-family: 'Roboto Slab';
-  src: url("fonts/Roboto-Slab/RobotoSlab-Regular.ttf");
+  src: url("../fonts/Roboto-Slab/RobotoSlab-Regular.ttf");
   font-style: italic;
 }
 
@@ -173,6 +173,7 @@ footer {
   background-color: cornflowerblue;
   color:#fff!important;
   font-size: 35px;
+  text-align: center;
 }
 
 .social {
