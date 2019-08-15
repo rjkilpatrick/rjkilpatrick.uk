@@ -9,5 +9,11 @@ article footer {
 }
 
 .anchor {
-  color: red;
+  color: grey;
+  border: none;
+}
+
+.anchor:hover {
+  color: cornflowerblue;
+  border: inherit;
 }

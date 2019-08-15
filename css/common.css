@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -171,7 +172,7 @@ main a:hover {
 
 #main-footer {
   background-color: cornflowerblue;
-  color:#fff!important;
+  color: #fff !important;
   font-size: 35px;
   text-align: center;
 }
