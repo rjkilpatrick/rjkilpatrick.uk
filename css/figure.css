@@ -1,0 +1,22 @@
+/* Adds label as image overlay */
+.figure {
+  position: relative;
+  margin: 0 auto;
+}
+
+.figure .label, .bottom {
+  position: absolute;
+  background: #000;
+  background: rgba(#000, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+.figure .label, .top {
+  top: 0;
+}
+
+.figure .label, .bottom {
+  bottom: 0;
+}
