@@ -5,12 +5,14 @@ article h2:not(:first-of-type) {
 }
 
 article footer {
-
+  color: #686868;
+  font-size: 0.9rem
 }
 
 .anchor {
-  color: grey;
+  color: #7b7b7b;
   border: none;
+  margin: 0 0 0 4px;
 }
 
 .anchor:hover {

@@ -22,9 +22,10 @@ let links = (function() {
   };
 
   function addLink(header) {
-    header.setAttribute("id", header.textContent); // Creates linkable id
+    let formattedText = header.textContent.replace(/\s+/g, '-').toLowerCase();
+    header.setAttribute("id", formattedText); // Creates linkable id
     let anchor = document.createElement("a");
-    anchor.setAttribute("href", "#" + header.textContent);
+    anchor.setAttribute("href", "#" + formattedText);
     let linkSymbol = document.createElement("i");
     linkSymbol.setAttribute("class", "fa fa-link");
     anchor.appendChild(linkSymbol);
