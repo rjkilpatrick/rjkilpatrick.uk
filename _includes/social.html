@@ -1,7 +1,7 @@
 {%- assign social = site.social_links -%}
 
 {%- if site.email -%}
-<a href="mailto:{{ site.email }}">
+<a href="mailto:{{ site.email }}" target="_blank">
   <i class="fa fa-envelope-o social" aria-hidden="true"></i>
 </a>
 {%- endif -%}
@@ -50,6 +50,6 @@
 
 {%- if social.rss -%}
 <a href="{{ 'feed.xml' | relative_url }}"  title="{{ site.title }}">
-  <i class="fa fa-rss" aria-hidden="true"></i>
+  <i class="fa fa-rss social" aria-hidden="true"></i>
 </a>
 {%- endif -%}
