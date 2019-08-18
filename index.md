@@ -1,6 +1,12 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+title: home
+layout: hero
 ---
+## Year Abroad
+As part of my physics degree, I spent a year at the [University of Otago](https://otago.ac.nz).
+
+## Hobbyist
+I am building a Tellytubby T-Shirt. A Pi Zero is the brain, with an 8&quot; LCD stitched on to the front of a T-Shirt
+
+## Programmer
+I have many <s>unfinished</s> active projects. Have a look at these on my [GitHub](https://www.github.com/rjkilpatrick) account.

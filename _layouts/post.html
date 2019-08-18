@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h2>{{ page.title | escape }}</h2>
+  </header>
+  <p>
+    {{ content }}
+  </p>
+  <footer>
+    <p><i class="fa fa-clock"></i>
+      Posted
+      <time datetime="{{ page.date | date_to_xmlschema }}"
+        itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      </time>
+      by <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-author h-card" itemprop="name">
+            {{ page.author | escape }}
+          </span>
+        </span>
+    </p>
+  </footer>
+</article>
