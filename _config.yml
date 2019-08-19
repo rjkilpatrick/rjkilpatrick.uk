@@ -22,11 +22,15 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rjkilpatrick.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
-# Removes page extensions from website
-permalink: /:title
-
 # Delimits end of snippet of start of post
-excerpt_seperator: <!--more-->
+excerpt_separator: "<!--more-->"
+
+# Sets blog (i.e. not main page content) address to year month day title format
+permalink: /:year/:month/:day/:title/
+
+# Paginator settings
+paginate: 5
+paginate_path: blog/:num
 
 # Socials
 social_links:
@@ -48,9 +52,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
+# Custom list to exclude from processing.
 # exclude:
 #   - Gemfile
 #   - Gemfile.lock
@@ -59,3 +61,20 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+#   - run_server.bat
+
+# Default settings for pages
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "John Kilpatrick"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"

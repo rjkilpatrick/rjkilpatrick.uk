@@ -21,7 +21,8 @@ eventually. It makes no attempt to be succinct, but should be readable
   Personally, I forget these
   steps and then how to solve problems. It also aims to digitise many paper notes that are occupying too much space at the moment.
 - ### App
-  Make an app with <a href="flutter.io">flutter</a>
-
+  Make an app with <a href="flutter.io">flutter</a>. It has a wonderful hot reload feature
+- ### Godot
+  I'm making a game with Godot, because it's beautiful.
 ## Misc
 - French on Duolingo

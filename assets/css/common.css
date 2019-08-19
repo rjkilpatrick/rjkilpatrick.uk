@@ -184,6 +184,13 @@ main a:hover {
   border-bottom: 1px solid #acacac;
 }
 
+/* Optional content */
+blockquote {
+  border-left: 8px solid #555;
+  padding: 9.5px 9.5px;
+  margin: 0;
+}
+
 /* Footer content */
 main {
   flex: 1 0 auto;

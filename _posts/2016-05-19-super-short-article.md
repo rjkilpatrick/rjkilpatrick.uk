@@ -4,7 +4,6 @@ title: "Some articles are just so short that we have to make the footer stick"
 categories: [misc]
 tags: [hot, summer]
 author: John Kilpatrick
-excerpt_seperator: <!--more-->
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
