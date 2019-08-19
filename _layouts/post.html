@@ -9,17 +9,14 @@ layout: default
     {{ content }}
   </p>
   <footer>
-    <p><i class="fa fa-clock"></i>
-      Posted
-      <time datetime="{{ page.date | date_to_xmlschema }}"
-        itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      </time>
-      by <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <span class="p-author h-card" itemprop="name">
-            {{ page.author | escape }}
-          </span>
+    <p><i class="fa fa-clock-o"></i>
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date_to_string }}</time>
+      &#9679;
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-author h-card" itemprop="name">
+          {{ page.author | escape }}
         </span>
+      </span>
     </p>
   </footer>
 </article>

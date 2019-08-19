@@ -13,10 +13,11 @@
   <main aria-label="Content">
     {{ content }}
   </main>
-
+  {% if page.footer %}
   <footer id="main-footer">
     {%- include social.html -%}
   </footer>
+  {% endif %}
 </body>
 
 </html>
