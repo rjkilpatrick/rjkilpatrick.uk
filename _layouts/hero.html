@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  {%- include head.html -%}
+</head>
+
+<body>
+  <div class="hero-container">
+    <div class="hero-image">
+      <div class="hero-text">
+        <h1>Hi, I'm John.</h1>
+        <hr>
+        <p>
+          I'm a Physics Masters student at the University of
+          Exeter.
+        </p>
+        <button type="button" href="research.html">
+          See what I'm up to
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="nav-bar">
+    {%- include nav.html -%}
+  </div>
+
+  <main aria-label="Content">
+    {{ content }}
+  </main>
+
+  <footer id="main-footer">
+    {%- include social.html -%}
+  </footer>
+</body>
+
+</html>

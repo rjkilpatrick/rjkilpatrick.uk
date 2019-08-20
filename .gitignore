@@ -3,3 +3,5 @@ _site
 .jekyll-cache
 .jekyll-metadata
 Gemfile.lock
+run_server.bat
+run_server.sh

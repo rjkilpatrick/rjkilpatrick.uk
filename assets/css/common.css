@@ -172,7 +172,6 @@ nav ul li a:hover {
 }
 
 /* Page body */
-
 main a {
   border-bottom: 1px solid #dcdcdc;
   color: #222;
@@ -183,6 +182,13 @@ main a {
 main a:hover {
   color: #000;
   border-bottom: 1px solid #acacac;
+}
+
+/* Optional content */
+blockquote {
+  border-left: 8px solid #555;
+  padding: 9.5px 9.5px;
+  margin: 0;
 }
 
 /* Footer content */
@@ -198,6 +204,10 @@ main {
   text-align: center;
   flex-shrink: 0;
   padding: 2vh 0;
+}
+
+#main-footer a {
+  text-decoration: none;
 }
 
 .social {

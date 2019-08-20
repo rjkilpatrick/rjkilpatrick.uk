@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  {%- include head.html -%}
+</head>
+
+<body>
+  <div id="nav-bar">
+    {%- include nav.html -%}
+  </div>
+
+  <main aria-label="Content">
+    {{ content }}
+  </main>
+  {% if page.footer %}
+  <footer id="main-footer">
+    {%- include social.html -%}
+  </footer>
+  {% endif %}
+</body>
+
+</html>

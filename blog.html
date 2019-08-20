@@ -1,63 +1,17 @@
-<!DOCTYPE html>
-<html lang="en-gb">
-
-<head>
-  <meta charset="utf-8" />
-  <title>John Kilpatrick</title>
-  <link rel="stylesheet" type="text/css" href="css/common.css">
-  <link rel="stylesheet" type="text/css" href="css/blog.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script type="text/javascript" src="js/links.js" defer></script>
-</head>
-
-<body>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="blog.html" class="active">Blog</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <article class="post">
-      <header>
-        <h2>Test post 2</h2>
-      </header>
-      <p>
-        You might notice that this blog is quite sparse. It will be updated
-        once the main content</p>
-      <footer>
-        <p><i class="fa fa-clock"></i>
-          Posted
-          <time datetime="2019-08-14 19:34">14th August 2019</time>
-          by John Kilpatrick
-        </p>
-      </footer>
-    </article>
-    <article class="post">
-      <header>
-        <h2>Jurassic Park</h2>
-      </header>
-      <p>This is the bit where I write nonsense</p>
-      <footer>
-        <p><i class="fa fa-clock"></i>
-          Posted
-          <time datetime="2019-08-14 19:34">14th August 2019</time>
-          by John Kilpatrick
-        </p>
-      </footer>
-    </article>
-  </main>
-
-  <footer id="main-footer">
-    <a><i class="fa fa-envelope-o social" aria-hidden="true"></i></a>
-    <a href="https://linkedin.com/in/rjkilpatrick"><i class="fa fa-linkedin-square social" aria-hidden="true"></i></a>
-    <a href="https://github.com/rjkilpatrick"><i class="fa fa-github social" aria-hidden="true"></i></a>
-  </footer>
-</body>
-
-</html>
+---
+layout: default
+title: "Blog"
+excerpt_separator: "<!--more-->"
+---
+{%- if site.posts.size > 0 -%}
+{%- for post in site.posts -%}
+<article class="post">
+  <header>
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  </header>
+  <p>
+    {{ post.excerpt | strip_html }}
+  </p>
+</article>
+{%- endfor -%}
+{%- endif -%}
