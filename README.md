@@ -4,11 +4,7 @@ This project hosts the personal webpage for John Kilpatrick
 ## Todo:
 - [ ] Write content
 - [ ] Decide on aesthetic
-- [ ] Add social media tie ins
-  - [ ] Twitter
-  - [ ] Facebook?
-  - [x] GitHub
-  - [x] LinkedIn
+- [x] Add social media tie ins
 - [ ] Nicer bullet points
 - [ ] Switch from GitHub pages to Digital Ocean for PHP support
 
