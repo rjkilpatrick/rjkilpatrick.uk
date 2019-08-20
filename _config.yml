@@ -25,8 +25,7 @@ url: "https://rjkilpatrick.github.io/" # the base hostname & protocol for your s
 # Delimits end of snippet of start of post
 excerpt_separator: "<!--more-->"
 
-# Sets blog (i.e. not main page content) address to year month day title format
-permalink: /:year/:month/:day/:title/
+permalink: pretty # /:category/:year/:month/:day/:title/
 
 # Paginator settings
 paginate: 5
