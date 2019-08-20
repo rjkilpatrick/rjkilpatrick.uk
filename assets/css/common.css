@@ -65,6 +65,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -123,6 +124,7 @@ hr {
   background-color: #fff0;
   background: inherit;
   overflow: hidden;
+  transition: background-color 0.1s ease-out;
 }
 
 .hero-text button:hover::before {
@@ -132,7 +134,7 @@ hr {
 }
 
 .hero-text button:hover {
-  background-color: #fff4;
+  background-color: #fff6;
 }
 
 /* Sticky nav section */
