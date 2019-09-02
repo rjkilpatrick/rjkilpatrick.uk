@@ -2,29 +2,12 @@
 layout: default
 title: "Blog"
 excerpt_separator: "<!--more-->"
+css: "blog.css"
 footer: true
 ---
-<!-- {%- if site.posts.size > 0 -%}
-{%- for post in site.posts -%}
-<article class="post">
-  <header>
-    <h2>
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h2>
-  </header>
-  <p>
-    {{ post.excerpt | strip_html }}
-  </p>
-</article>
-{%- endfor -%}
-{%- else-%}
-<p>
-  There aren't any posts here at the moment for some reason, please check back
-  another day.
-</p>
-{%- endif -%} -->
+<h1>
+  Blog posts
+</h1>
 {%- if paginator.posts.size > 0 -%}
 {%- for post in paginator.posts -%}
 <article class="post">
@@ -34,10 +17,16 @@ footer: true
         {{ post.title }}
       </a>
     </h2>
+    <p>
+      {% include read_time.html content=post.content %}
+    </p>
   </header>
   <p>
     {{ post.excerpt | strip_html }}
   </p>
+  <footer>
+    By {{ post.author }}
+  </footer>
 </article>
 {%- endfor -%}
 {%- else-%}

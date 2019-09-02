@@ -3,7 +3,10 @@ layout: default
 ---
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
-    <h2>{{ page.title | escape }}</h2>
+    <h1>
+      {{ page.title | escape }}
+    </h1>
+    <i class="fa fa-clock-o"></i> Read time {% include read_time.html content=content %}
   </header>
   {{ content }}
   <footer>
@@ -19,7 +22,7 @@ layout: default
       <ul>
         {% for tag in page.tags %}
         <li>
-          {{ tag }}
+          <a href="/tags/{{ tag }}">{{ tag }}</a>
         </li>
         {% endfor %}
       </ul>
