@@ -28,7 +28,7 @@ excerpt_separator: "<!--more-->"
 permalink: pretty # /:category/:year/:month/:day/:title/
 
 # Paginator settings
-paginate: 5
+paginate: 10
 paginate_path: blog/:num
 
 # Socials
