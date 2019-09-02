@@ -1,13 +1,16 @@
 <meta charset="utf-8" />
-<title>{%- if page.title -%}{{ page.title }}&nbsp;&ndash;&nbsp;{%- endif -%}{{ site.title }}</title>
+<title>{% if page.title %}{{ page.title }}&nbsp;&ndash;&nbsp;{% endif %}{{ site.title }}</title>
 <link rel="stylesheet" type="text/css" href="/assets/css/common.css">
-<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+<!-- <link rel="stylesheet" type="text/css" href="/assets/css/main.css"> -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script async type="text/javascript" defer src="/assets/js/nav.js"></script>
-{%- if page.mathjax -%}
-{% include mathJax.html %}
-{%- endif -%}
 {% for sheet in page.css %}
 <link rel="stylesheet" href="/assets/css/{{ sheet }}">
 {% endfor %}
+{% for script in page.js %}
+<script async defer type="text/javascript" src="/assets/js/{{ script }}"></script>
+{% endfor %}
+{%- if page.mathjax -%}
+{% include mathJax.html %}
+{%- endif -%}

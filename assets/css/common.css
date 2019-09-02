@@ -1,10 +1,20 @@
 /* Global colours */
 :root {
-  --main-bg-colour: #f5f6f6;
+  /* --main-bg-colour: #f5f6f6;
   --main-text-colour: #404040;
   --nav-bg-colour: #f1f1f1;
   --main-footer-bg-colour: cornflowerblue;
-  --main-footer-text-colour: #fff;
+  --main-footer-text-colour: #fff; */
+  --primary-accent: hsl(359.6, 59%, 54%);
+  --primary-variant: hsl(359.6, 59%, 54%);
+  --secondary-accent: hsl(234.3, 27%, 31%);
+  --secondary-variant: hsl(244, 27%, 70%);
+  --heading-text: hsl(0, 0%, 0%);
+  --highlight: hsl(0, 0%, 100%);
+  --background: hsl(0, 0%, 100%);
+  --main-text-colour: hsl(0, 0%, 20%);
+  --light-text-colour: hsl(0, 0%, 58%);
+  --nav-hover: hsl(359.6, 59%, 37%);
 }
 
 /* Box sizing */
@@ -57,8 +67,8 @@ html {
 body {
   font-family: 'Open Sans', 'Serif';
   font-size: 1rem;
-  background-color: var(--main-bg-colour);
-  color: #404040;
+  background-color: var(--background);
+  color: var(--main-text-colour);
   margin: 0 auto;
   max-width: 960px;
   padding: 0;
@@ -70,6 +80,25 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Roboto Slab, serif;
+  color: var(--heading-text)
+  font-weight: bold;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.17em;
+}
+
+h4 {
+  font-size: 1em;
 }
 
 /* Hero content */
@@ -99,12 +128,13 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: var(--highlight);
   margin: 0;
 }
 
 .hero-text h1 {
   margin: 10px 0;
+  color: var(--highlight)
 }
 
 hr {
@@ -115,7 +145,7 @@ hr {
   outline: 0;
   display: inline-block;
   padding: 10px 25px;
-  color: #fff;
+  color: var(--highlight);
   cursor: pointer;
   text-align: center;
   border-width: 1px;
@@ -224,11 +254,11 @@ blockquote {
 /* Footer content */
 main {
   flex: 1 0 auto;
-  padding: 20px;
+  padding: 0px 20px;
 }
 
 #main-footer {
-  background-color: cornflowerblue;
+  background-color: var(--secondary-accent);
   color: #fff;
   font-size: 35px;
   text-align: center;

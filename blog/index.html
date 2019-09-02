@@ -12,21 +12,21 @@ footer: true
 {%- for post in paginator.posts -%}
 <article class="post">
   <header>
-    <h2>
+    <h2 class="post-title">
       <a href="{{ post.url }}">
         {{ post.title }}
       </a>
     </h2>
-    <p>
+    <p class="post-meta">
       {% include read_time.html content=post.content %}
     </p>
   </header>
-  <p>
+  <p class="excerpt">
     {{ post.excerpt | strip_html }}
   </p>
-  <footer>
+  <!-- <footer>
     By {{ post.author }}
-  </footer>
+  </footer> -->
 </article>
 {%- endfor -%}
 {%- else-%}

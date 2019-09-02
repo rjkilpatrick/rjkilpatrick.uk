@@ -25,7 +25,8 @@ url: "https://rjkilpatrick.github.io/" # the base hostname & protocol for your s
 # Delimits end of snippet of start of post
 excerpt_separator: "<!--more-->"
 
-permalink: pretty # /:category/:year/:month/:day/:title/
+# permalink: pretty # /:category/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
 
 # Paginator settings
 paginate: 10
@@ -50,6 +51,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-paginate
 
 # Custom list to exclude from processing.
 # exclude:
@@ -62,6 +64,9 @@ plugins:
 #   - vendor/ruby/
 #   - run_server.bat
 
+sass:
+  style: compressed
+
 # Default settings for pages
 defaults:
   -
@@ -71,6 +76,9 @@ defaults:
     values:
       layout: "post"
       author: "John Kilpatrick"
+      category: "blog"
+      js: links.js
+      css: post.css
   -
     scope:
       path: ""

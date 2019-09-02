@@ -6,26 +6,37 @@ layout: default
     <h1>
       {{ page.title | escape }}
     </h1>
-    <i class="fa fa-clock-o"></i> Read time {% include read_time.html content=content %}
+    <p class="post-meta">
+      <i class="fa fa-clock-o"></i> Read time {% include read_time.html content=content %}
+    </p>
   </header>
   {{ content }}
   <footer>
-    <p>
-      <i class="fa fa-clock-o"></i>
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date_to_string }}</time>
-      &#9679;
-      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <div class="post-meta">
+      <div>
+        <div class="fa-container">
+          <i class="fa fa-calendar-o"></i>
+        </div>
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date_to_long_string: "ordinal" }}</time>
+      </div>
+      <div itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span class="p-author h-card" itemprop="name">
+          <div class="fa-container">
+            <i class="fa fa-user"></i>
+          </div>
           {{ page.author | escape }}
         </span>
-      </span>
-      <ul>
+      </div>
+      <div class="fa-container">
+        <i class="fa fa-folder-open"></i>
+      </div>
+      <ul class="tags">
         {% for tag in page.tags %}
         <li>
           <a href="/tags/{{ tag }}">{{ tag }}</a>
         </li>
         {% endfor %}
       </ul>
-    </p>
+    </div>
   </footer>
 </article>
