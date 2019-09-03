@@ -1,0 +1,11 @@
+# To-Do list
+- [ ] Responsive top-nav <https://www.w3schools.com/howto/howto_js_topnav_responsive.asp>
+- [ ] Add a huge amount more content
+- [ ] Paginator change pages <https://jekyllrb.com/docs/pagination/>
+- [ ] Change Hero front page
+- [x] Convert CSS to SCSS
+  - [ ] Colours in separate file
+- [ ] Default font first
+- [ ] Search button
+- [ ] Tags pages
+- [ ] Aria labels for all areas
