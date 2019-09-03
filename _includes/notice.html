@@ -1,0 +1,18 @@
+{% case include.tye %}
+  {% when 'info' %}
+    <div markdown="span" class="alert info" role="alert">
+      <i class="fa fa-info-circle"></i>
+      <b>Info: </b>
+      {{ include.content }}
+    </div>
+  {% when 'danger' %}
+    <div markdown="span" class="alert danger" role="alert">
+      <i class="fa fa-exclamation-circle"></i>
+      <b>Warning: </b>
+      {{ include.content }}
+    </div>
+  {% else %}
+  <div markdown="span" class="alert" role="alert">
+    {{ include.content }}
+  </div>
+{% endcase %}
