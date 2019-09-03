@@ -5,33 +5,33 @@ excerpt_separator: "<!--more-->"
 css: "blog.css"
 footer: true
 ---
-<h1>
+<h1 class="page-heading">
   Blog posts
 </h1>
 {%- if paginator.posts.size > 0 -%}
-{%- for post in paginator.posts -%}
-<article class="post">
-  <header>
-    <h2 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h2>
-    <p class="post-meta">
-      {% include read_time.html content=post.content %}
-    </p>
-  </header>
-  <p class="excerpt">
-    {{ post.excerpt | strip_html }}
-  </p>
-  <!-- <footer>
-    By {{ post.author }}
-  </footer> -->
-</article>
-{%- endfor -%}
+  {%- for post in paginator.posts -%}
+    <article class="post">
+      <header>
+        <h2 class="post-title">
+          <a href="{{ post.url }}">
+            {{ post.title }}
+          </a>
+        </h2>
+        <p class="post-meta">
+          <i class="fa fa-clock-o"></i>{% include read_time.html content=post.content %}
+        </p>
+      </header>
+      <p class="excerpt">
+        {{ post.excerpt | strip_html }}
+      </p>
+      <!-- <footer>
+        By {{ post.author }}
+      </footer> -->
+    </article>
+  {%- endfor -%}
 {%- else-%}
-<p>
-  There aren't any posts here at the moment for some reason, please check back
-  another day.
-</p>
+  <p>
+    There aren't any posts here at the moment for some reason, please check back
+    another day.
+  </p>
 {%- endif -%}
