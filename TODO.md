@@ -9,3 +9,4 @@
 - [ ] Search button
 - [ ] Tags pages
 - [ ] Aria labels for all areas
+- [ ] Travis-CI Integration
