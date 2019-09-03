@@ -1,18 +1,20 @@
-{% case include.tye %}
+<!-- Have a look at -->
+<!-- https://sass-lang.com/documentation/at-rules/mixin -->
+<!-- For an example of how asides are used -->
+{% case include.type %}
   {% when 'info' %}
-    <div markdown="span" class="alert info" role="alert">
-      <i class="fa fa-info-circle"></i>
-      <b>Info: </b>
+    <aside markdown="span" class="alert info" role="alert">
+      <h3><i class="fa fa-info-circle"></i>Info: </h3>
       {{ include.content }}
-    </div>
+    </aside>
   {% when 'danger' %}
-    <div markdown="span" class="alert danger" role="alert">
-      <i class="fa fa-exclamation-circle"></i>
-      <b>Warning: </b>
+    <aside markdown="span" class="alert danger" role="alert">
+      <h3><i class="fa fa-exclamation-circle"></i>Warning: </h3>
       {{ include.content }}
-    </div>
+    </aside>
   {% else %}
-  <div markdown="span" class="alert" role="alert">
-    {{ include.content }}
-  </div>
+    <aside markdown="span" class="alert" role="alert">
+      {{ include.content }}
+
+    </aside>
 {% endcase %}
