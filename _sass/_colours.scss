@@ -1,0 +1,29 @@
+:root {
+	--primary-accent: hsl(359.6, 59%, 54%);
+	--primary-variant: hsl(359.6, 59%, 54%);
+	--secondary-accent: hsl(234.3, 27%, 31%);
+	--secondary-variant: hsl(244, 27%, 70%);
+	--heading-text: hsl(0, 0%, 0%);
+	--highlight: hsl(0, 0%, 100%);
+	--background: hsl(0, 0%, 100%);
+	--main-text-colour: hsl(0, 0%, 20%);
+	--light-text-colour: hsl(0, 0%, 58%);
+	--nav-hover: hsl(359.6, 59%, 37%);
+}
+$color-primary-accent: var(--primary-accent);
+
+$color_1: hsl(0, 0%, 20%);
+$color-heading: hsl(0, 0%, 0%);
+$color_3: var(--highlight);
+$color_4: var(--secondary-variant);
+$color_5: #fff;
+$color_6: #222;
+$color_7: #000;
+
+$background_color_1: var(--background);
+$background_color_2: #fff0;
+$background_color_3: #fff6;
+$background_color_4: var(--highlight);
+$background_color_5: var(--secondary-accent);
+$background_color_6: var(--primary-accent);
+$background_color_7: var(--nav-hover);

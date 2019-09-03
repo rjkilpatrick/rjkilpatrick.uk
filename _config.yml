@@ -45,7 +45,7 @@ social_links:
 # Build settings
 markdown: kramdown
 
-theme: minima
+# theme: minima
 
 plugins:
   - jekyll-feed
@@ -63,9 +63,11 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 #   - run_server.bat
+exclude:
+  - TODO.md
 
-sass:
-  style: compressed
+# sass:
+#   style: compressed
 
 # Default settings for pages
 defaults:

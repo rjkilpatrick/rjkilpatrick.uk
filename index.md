@@ -1,6 +1,7 @@
 ---
 title: Home
 layout: hero
+footer: true
 ---
 ## Year Abroad
 As part of my Physics degree, I spent a year at the [University of Otago](https://otago.ac.nz).

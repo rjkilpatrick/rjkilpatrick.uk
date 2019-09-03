@@ -1,40 +1,24 @@
 ---
 ---
-$color_1: hsl(0, 0%, 20%);
-$color_2: hsl(0, 0%, 0%);
-$color_3: var(--highlight);
-$color_4: var(--secondary-variant);
-$color_5: #fff;
-$color_6: #222;
-$color_7: #000;
-$font_family_1: 'Open Sans', 'Serif';
-$font_family_2: Roboto Slab, serif;
-$background_color_1: var(--background);
-$background_color_2: #fff0;
-$background_color_3: #fff6;
-$background_color_4: var(--highlight);
-$background_color_5: var(--secondary-accent);
-$background_color_6: var(--primary-accent);
-$background_color_7: var(--nav-hover);
+// Colours
+@import 'colours';
 
+// Fonts
 @import 'fonts';
+$font-main: 'Open Sans', 'sans-serif';
+$font-heading: 'Roboto Slab', 'serif';
 
-:root {
-	--primary-accent: hsl(359.6, 59%, 54%);
-	--primary-variant: hsl(359.6, 59%, 54%);
-	--secondary-accent: hsl(234.3, 27%, 31%);
-	--secondary-variant: hsl(244, 27%, 70%);
-	--heading-text: hsl(0, 0%, 0%);
-	--highlight: hsl(0, 0%, 100%);
-	--background: hsl(0, 0%, 100%);
-	--main-text-colour: hsl(0, 0%, 20%);
-	--light-text-colour: hsl(0, 0%, 58%);
-	--nav-hover: hsl(359.6, 59%, 37%);
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
 }
+
 html {
 	box-sizing: border-box;
 	height: 100%;
 }
+
 * {
 	box-sizing: inherit;
 	&:before {
@@ -46,7 +30,7 @@ html {
 }
 
 body {
-	font-family: $font_family_1;
+	font-family: $font-main;
 	font-size: 1rem;
 	background-color: $background_color_1;
 	color: $color_1;
@@ -60,47 +44,39 @@ body {
 	height: 100%;
 }
 
-h1 {
-	font-family: $font_family_2;
-	color: $color_2;
+::-moz-selection {
+  background: var(--primary-accent);
+  color: var(--highlight);
+}
+::selection {
+  background: var(--primary-accent);
+  color: var(--highlight);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-heading;
 	font-weight: 700;
+	color: $color-heading;
+}
+
+h1 {
 	font-size: 2em;
 	border-bottom: 1px solid #dcdcdc;
 	margin: 3vh 0 0 0;
 }
 
 h2 {
-	font-family: $font_family_2;
-	color: $color_2;
-	font-weight: 700;
 	font-size: 1.5em;
 }
 
 h3 {
-	font-family: $font_family_2;
-	color: $color_2;
-	font-weight: 700;
 	font-size: 1.17em;
 }
 
 h4 {
-	font-family: $font_family_2;
-	color: $color_2;
-	font-weight: 700;
 	font-size: 1em;
 }
 
-h5 {
-	font-family: $font_family_2;
-	color: $color_2;
-	font-weight: 700;
-}
-
-h6 {
-	font-family: $font_family_2;
-	color: $color_2;
-	font-weight: 700;
-}
 
 .hero-container {
 	height: 30%;
@@ -109,6 +85,7 @@ h6 {
 .hero-image {
 	background: rgb(67, 0, 101);
 	background: linear-gradient(90deg, rgb(67, 0, 101) 0%, rgb(179, 0, 0) 100%);
+	background-image: url("../img/hero.webp");
 	background-image: url("../img/hero.jpg");
 	height: 100%;
 	background-repeat: no-repeat;
@@ -211,14 +188,14 @@ hr {
 	left: 0;
 	background-color: $background_color_5;
 	overflow-y: hidden;
-	transition: 0.5s;
+	transition: opacity 0.5s;
 	a {
 		padding: 8px;
 		text-decoration: none;
 		font-size: 36px;
 		color: $color_4;
 		display: block;
-		transition: 0.3s;
+		transition: opacity 0.3s;
 		&:hover {
 			color: $color_3;
 		}
@@ -361,9 +338,6 @@ blockquote {
 		display: block;
 	}
 	.active {
-		border-bottom: 4px solid #fff;
-		&:hover {
-			border-bottom: 4px solid #ddd;
-		}
+		border-bottom: 4px solid var(--nav-hover);
 	}
 }

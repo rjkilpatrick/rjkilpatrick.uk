@@ -23,8 +23,8 @@
 @font-face {
 	font-family: 'Open Sans';
 	src: url("../fonts/Open-Sans/OpenSans-SemiBoldItalic.ttf");
-	font-weight: 400;
-	font-style: 700;
+	font-weight: 700;
+	font-style: italic;
 	font-display: fallback;
 }
 /* Roboto Slab */
@@ -38,10 +38,10 @@
 @font-face {
 	font-family: 'Roboto Slab';
 	src: url("../fonts/Roboto-Slab/RobotoSlab-Bold.ttf");
-	font-weight: 400;
+	font-weight: 700;
 	font-style: normal;
 	font-display: fallback;
 }
 
-$font-main: 'Open Sans', 'Serif';
-$font-heading: Roboto Slab, serif;
+$font-main: 'Open Sans', 'sans-serif';
+$font-heading: 'Roboto Slab', 'serif';

@@ -27,16 +27,18 @@ layout: default
           {{ page.author | escape }}
         </span>
       </div>
-      <div class="fa-container">
-        <i class="fa fa-folder-open"></i>
-      </div>
-      <ul class="tags">
-        {% for tag in page.tags %}
-        <li>
-          <a href="/tags/{{ tag }}">{{ tag }}</a>
-        </li>
-        {% endfor %}
-      </ul>
+      {% if page.tags %}
+        <div class="fa-container">
+          <i class="fa fa-folder-open"></i>
+        </div>
+        <ul class="tags">
+          {% for tag in page.tags %}
+          <li>
+            <a href="/tags/{{ tag }}">{{ tag }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     </div>
   </footer>
 </article>

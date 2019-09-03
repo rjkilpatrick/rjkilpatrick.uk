@@ -4,9 +4,13 @@
 - [ ] Paginator change pages <https://jekyllrb.com/docs/pagination/>
 - [ ] Change Hero front page
 - [x] Convert CSS to SCSS
-  - [ ] Colours in separate file
+  - [x] Colours in separate file
 - [ ] Default font first
 - [ ] Search button
 - [ ] Tags pages
 - [ ] Aria labels for all areas
 - [ ] Travis-CI Integration
+- [ ] Cool lines either side of the image on the <about.md> page
+- [ ] Scroll to top?
+- [ ] Add gulp integration
+- [ ] Follow <https://wiredcraft.com/blog/make-jekyll-fast/>
