@@ -1,0 +1,45 @@
+---
+---
+.anchor {
+  color: var(--light-text-colour);
+  border: none;
+  margin: 0 0 0 5px;
+  &:hover {
+    color: var(--primary-accent);
+    border: inherit;
+  }
+}
+
+.tags {
+  padding: 0;
+  display: inline;
+  li {
+    display: inline;
+    a {
+      display: inline-block;
+      margin-right: 5px;
+      margin-bottom: 8px;
+      padding: 5px 10px;
+      text-decoration: none;
+      border: 1px solid hsl(0, 0%, 71%);
+      border-radius: 4px;
+      font-weight: normal;
+      color: hsl(210, 0%, 55%);
+      &:hover {
+        color: hsl(210, 50%, 0%);
+      }
+    }
+  }
+}
+
+.post-meta {
+  margin-top: 1em;
+  color: hsl(210, 0%, 55%);
+  font-size: 0.75em;
+}
+
+.fa-container {
+  display: inline-block;
+  width: 15px;
+  font-size: 1.25em;
+}

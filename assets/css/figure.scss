@@ -1,0 +1,31 @@
+---
+---
+$color_label: #f1f1f1;
+
+/* Adds label as image overlay */
+.figure {
+	position: relative;
+	margin: 0 auto;
+	.label {
+		position: absolute;
+		background: #000;
+		background: rgba(#000, 0.5);
+		color: $color_label;
+		width: 100%;
+		padding: 20px;
+		top: 0;
+		bottom: 0;
+	}
+}
+.bottom {
+	position: absolute;
+	background: #000;
+	background: rgba(#000, 0.5);
+	color: $color_label;
+	width: 100%;
+	padding: 20px;
+	bottom: 0;
+}
+.top {
+	top: 0;
+}
