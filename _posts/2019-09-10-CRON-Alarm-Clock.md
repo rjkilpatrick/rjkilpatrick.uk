@@ -3,7 +3,8 @@ title: CORN Alarm clock
 layout: post
 js: links.js
 ---
-
+I decided to create my own alarm clock using Unix system utilities as an exercise. Previously I have used Windows' event scheduler, and wanted to learnt the Unix way.
+<!--more-->
 ## Intro to CRON
 
 CRON is a Unix based task scheduler.

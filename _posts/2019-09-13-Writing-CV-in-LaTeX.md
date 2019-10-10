@@ -10,7 +10,7 @@ processing. LaTeX also comes with [microtype](khirevich.com/latex/font/) which
 is an incredible package.
 
 ### Version control
-LateX also works seamlessly with Git. It's whitespace intolerant so placing each sentence on a new line means that you can keep track of any changes to your CV across time with relative ease
+LateX also works seamlessly with Git. It's whitespace intolerant so placing each sentence on a new line means <!--more--> that you can keep track of any changes to your CV across time with relative ease
 
 ### It's free
 As in speech.
