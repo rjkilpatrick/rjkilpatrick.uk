@@ -1,4 +1,5 @@
 # John Kilpatrick
+# John Kilpatrick ![Travis CI](https://travis-ci.org/rjkilpatrick/rjkilpatrick.github.io.svg?branch=master)
 This project hosts the personal webpage for John Kilpatrick
 
 ## Todo:
