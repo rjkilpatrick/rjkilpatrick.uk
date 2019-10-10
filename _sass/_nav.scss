@@ -1,5 +1,5 @@
-nav {
-  background: #222;
+.nav-wrapper {
+  background: $color-primary-accent;
   padding: 5px 20px;
 }
 
@@ -10,16 +10,89 @@ nav {
   padding: 0;
 }
 
-.nav-item a {
-  display: block;
-  text-decoration: none;
+.nav-item {
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: lightgray;
+    }
+  }
+}
+
+.hamburger-container {
   color: white;
-  background-color: red;
+
   &:hover {
     color: lightgray;
   }
 }
+/* Mobile menu */
+.nav-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.nav {
+  font-size: 1.25em;
+}
+
+.logo {
+  order: 0;
+  font-size: 1em;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.hamburger-container {
+  order: 1;
+}
+
+.nav-item {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: none;
+  padding: 15px 5px;
+}
+
+.nav-item.active {
+  display: block;
+}
+
+/* Desktop / Tablet Menu */
+// @media all and (min-width: 960px) {
+@media all and (min-width: 600px) {
+  .nav-item {
+    display: block;
+    width: auto;
+    order: 0;
+    font-size: 1.17rem;
+    a {
+      display: block;
+    }
+    padding: 0;
+  }
+  .hamburger-container {
+    display: none;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+
+
+
+
+
+/* Legacy code */
 // .hamburger-container {
 // 	display: inline-block;
 // 	cursor: pointer;
