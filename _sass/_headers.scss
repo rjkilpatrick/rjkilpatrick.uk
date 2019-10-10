@@ -1,0 +1,23 @@
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-heading;
+	font-weight: 700;
+	color: $color-heading;
+}
+
+h1 {
+	font-size: 2em;
+	border-bottom: 1px solid #dcdcdc;
+	margin: 3vh 0 0 0;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.17em;
+}
+
+h4 {
+	font-size: 1em;
+}

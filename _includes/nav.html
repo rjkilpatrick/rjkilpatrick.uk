@@ -1,16 +1,10 @@
-<nav>
-  <ul>
-    {% for item in site.data.navigation.pages %}
-      <li><a href="{{ item.link }}" {% if item.link == page.url %} class="active"{% endif %}>{{item.name}}</a></li>
-    {% endfor %}
-    <li>
-      <a style="padding: 0" href="#">
-        <div class="hamburger-container">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
-        </div>
+<ul class="nav nav-items">
+  {% for item in site.data.navigation.pages %}
+    <li class="nav nav-item"><a href="{{ item.link }}" {% if item.link == page.url %} class="active"{% endif %}>{{item.name}}</a></li>
+  {% endfor %}
+  <li class="nav toggle">
+      <a class="nav hamburger-container">
+        <i class="fa fa-bars"></i>
       </a>
-    </li>
-  </ul>
-</nav>
+  </li>
+</ul>
