@@ -71,8 +71,7 @@ exclude:
 
 # Default settings for pages
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
@@ -81,8 +80,7 @@ defaults:
       category: "blog"
       js: links.js
       css: post.css
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
