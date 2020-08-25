@@ -1,7 +1,9 @@
-_site
-.sass-cache
-.jekyll-cache
+# Jekyll metadata
+_site/
+.sass-cache/
+.jekyll-cache/
 .jekyll-metadata
-Gemfile.lock
-run_server.bat
-run_server.sh
+
+# Bundler generated
+.bundle/
+vendor/
