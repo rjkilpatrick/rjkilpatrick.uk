@@ -1,0 +1,87 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: John Kilpatrick
+author: John Kilpatrick
+description: >- # this means to ignore newlines until "baseurl:"
+  The home of John Kilpatrick; A physics PhD. candidate with a passion for
+  learning, normally involving something computers, electronics. Based in the
+  UK.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://rjkilpatrick.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Delimits end of snippet of start of post
+excerpt_separator: "<!--more-->"
+
+# permalink: pretty # /:category/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
+
+# Paginator settings
+# paginate: 10
+# paginate_path: blog/:num
+
+# Socials
+social_links:
+  # facebook: jekyll
+  github: rjkilpatrick
+  # instagram: jekyll
+  linkedin: rjkilpatrick
+  # twitter: rjkilpatrick1
+  # youtube: jekyll
+  docker: itsrig
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  parse_block_html: true
+  input: GFM
+  syntax_highlighter: rouge
+
+highlighter: rouge
+
+plugins:
+  - jekyll-feed # RSS feed for posts
+  - jekyll-sitemap # Sitemap creation for SEO
+  # - jekyll-paginate
+
+sass:
+  style: compressed
+
+# Default settings for pages
+defaults:
+  # Set all posts as post type
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "John Kilpatrick"
+      category: "blog"
+      styles: ["post.css"]
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+# Custom list to exclude from processing.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
