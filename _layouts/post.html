@@ -34,7 +34,9 @@ layout: default
         <ul class="tags">
           {% for tag in page.tags %}
           <li>
-            <a href="/tags/{{ tag }}">{{ tag }}</a>
+            <a href="/tags/{{ tag }}">
+              {{ tag }}
+            </a>
           </li>
           {% endfor %}
         </ul>
