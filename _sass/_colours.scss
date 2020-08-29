@@ -1,29 +1,56 @@
+$red: hsl(345, 46%, 44%);
+$orange: hsl(28, 75%, 42%);
+$yellow: hsl(43, 83%, 40%);
+$green: hsl(155, 48%, 44%);
+$cyan: hsl(188, 56%, 42%);
+$blue: hsl(204, 58%, 44%);
+$violet: hsl(228, 37%, 54%);
+$magenta: hsl(340, 26%, 52%);
+$white: hsl(320, 0%, 81%);
+
+$primary1: $red;
+$primary2: $violet;
+$primary3: $blue;
+$secondary1: $cyan;
+$secondary2: $magenta;
+$tertiary1: $yellow;
+$tertiary2: $green;
+$tertiary3: $orange;
+
+// Tutorial code //TODO: Change to own colours
 :root {
-	--primary-accent: hsl(359.6, 59%, 54%);
-	--primary-variant: hsl(359.6, 59%, 54%);
-	--secondary-accent: hsl(234.3, 27%, 31%);
-	--secondary-variant: hsl(244, 27%, 70%);
-	--heading-text: hsl(0, 0%, 0%);
-	--highlight: hsl(0, 0%, 100%);
-	--background: hsl(0, 0%, 100%);
-	--main-text-colour: hsl(0, 0%, 20%);
-	--light-text-colour: hsl(0, 0%, 58%);
-	--nav-hover: hsl(359.6, 59%, 37%);
+  --dark-background-primary: hsl(320, 4%, 16%);
+  --dark-background-secondary: hsl(320, 4%, 22%);
+  --dark-text-primary: hsl(320, 4%, 87%);
+  --dark-text-secondary: hsl(320, 4%, 70%);
+  --dark-text-hyperlink: hsl(188, 49.8%, 60%);//hsl(188, 49.8%, 50%);//hsl(320, 50%, 50%);
+
+  --light-background-primary: hsl(320, 0%, 99%);
+  --light-background-secondary: hsl(320, 0%, 87%);
+  --light-text-primary: hsl(320, 4%, 16%);
+  --light-text-secondary: hsl(320, 0%, 49%);
+  --light-text-hyperlink: hsl(233, 57%, 47%);//hsl(320, 50%, 50%);
+
+  /* Light mode: */
+  --color-mode: 'light'; // Not currently needed, JS export
+
+  --background-primary: var(--light-background-primary);
+  --background-secondary: var(--light-background-secondary);
+
+  --text-primary: var(--light-text-primary);
+  --text-secondary: var(--light-text-secondary);
+  --text-hyperlink: var(--light-text-hyperlink);
 }
-$color-primary-accent: var(--primary-accent);
 
-$color_1: hsl(0, 0%, 20%);
-$color-heading: hsl(0, 0%, 0%);
-$color_3: var(--highlight);
-$color_4: var(--secondary-variant);
-$color_5: #fff;
-$color_6: #222;
-$color_7: #000;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: 'dark'; // Not currently needed, JS export
+    
+    --background-primary: var(--dark-background-primary);
+    --background-secondary: var(--dark-background-secondary);
 
-$background_color_1: var(--background);
-$background_color_2: #fff0;
-$background_color_3: #fff6;
-$background_color_4: var(--highlight);
-$background_color_5: var(--secondary-accent);
-$background_color_6: var(--primary-accent);
-$background_color_7: var(--nav-hover);
+    --text-primary: var(--dark-text-primary);
+    --text-secondary: var(--dark-text-secondary);
+    --text-hyperlink: var(--dark-text-hyperlink);
+  }
+}
