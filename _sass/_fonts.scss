@@ -1,47 +1,13 @@
-/*region font*/
-@font-face {
-	font-family: 'Open Sans';
-	src: url("../fonts/Open-Sans/OpenSans-Regular.ttf");
-	font-weight: 400;
-	font-style: normal;
-	font-display: fallback;
-}
-@font-face {
-	font-family: 'Open Sans';
-	src: url("../fonts/Open-Sans/OpenSans-SemiBold.ttf");
-	font-weight: 700;
-	font-style: normal;
-	font-display: fallback;
-}
-@font-face {
-	font-family: 'Open Sans';
-	src: url("../fonts/Open-Sans/OpenSans-RegularItalic.ttf");
-	font-weight: 400;
-	font-style: italic;
-	font-display: fallback;
-}
-@font-face {
-	font-family: 'Open Sans';
-	src: url("../fonts/Open-Sans/OpenSans-SemiBoldItalic.ttf");
-	font-weight: 700;
-	font-style: italic;
-	font-display: fallback;
-}
-/* Roboto Slab */
-@font-face {
-	font-family: 'Roboto Slab';
-	src: url("../fonts/Roboto-Slab/RobotoSlab-Regular.ttf");
-	font-weight: 400;
-	font-style: normal;
-	font-display: fallback;
-}
-@font-face {
-	font-family: 'Roboto Slab';
-	src: url("../fonts/Roboto-Slab/RobotoSlab-Bold.ttf");
-	font-weight: 700;
-	font-style: normal;
-	font-display: fallback;
-}
+//TODO: Consider moving to only system fonts
+//TODO: Consider moving to 2 fonts only
 
-$font-main: 'Open Sans', 'sans-serif';
-$font-heading: 'Roboto Slab', 'serif';
+// Main font
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+$font-main: Ubuntu, serif;
+
+// Headings
+$font-heading: $font-main; //-apple-system, Noto Sans, Helvetica, Calibri, Arial, serif; //'Roboto Slab', 'serif';
+
+// Code
+@import url("https://fonts.googleapis.com/css2?family=Recursive:CRSV,MONO@1,1&display=swap");
+$font-mono: Recursive, Liberation Mono, Menlo, Consolas, Monospace;

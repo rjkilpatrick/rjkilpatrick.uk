@@ -1,110 +1,57 @@
 ---
 ---
+
+
 // Colours
-@import 'colours';
+@import "colours";
 
 // Fonts
-@import 'fonts';
-$font-main: 'Open Sans', 'sans-serif';
-$font-heading: 'Roboto Slab', 'serif';
+@import "fonts";
 
-@mixin transform($property) {
-  -webkit-transform: $property;
-  -ms-transform: $property;
-  transform: $property;
-}
-
+// Border boxing
 html {
-	box-sizing: border-box;
-	height: 100%;
+  box-sizing: border-box;
 }
 
-* {
-	box-sizing: inherit;
-  padding: 0;
-  margin: 0;
-	&:before {
-		box-sizing: inherit;
-	}
-	&:after {
-		box-sizing: inherit;
-	}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 body {
-	font-family: $font-main;
-	font-size: 1rem;
-	background-color: $background_color_1;
-	color: $color_1;
-	line-height: 1.6;
-
+  font-family: $font-main;
+  line-height: 1.6;
+  text-align: left;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern";
+  font-kerning: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
 }
 
-#body-wrapper {
-  margin: 0 auto;
-  // Allows for footer to be fixed at bottom regardless of content
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  max-width: 960px;
+h1 {
+  margin: 1em 0 0.5em 0;
+  line-height: 1.2;
 }
 
-.page-wrapper {
-  flex: 1;
+h1,
+h2,
+h3,
+h4,
+.date,
+.page-footer {
+  font-family: $font-heading;
+  font-weight: 700;
 }
 
-::-moz-selection {
-  background: var(--primary-accent);
-  color: var(--highlight);
-}
-::selection {
-  background: var(--primary-accent);
-  color: var(--highlight);
-}
-
-@import 'headers';
-
-@import 'nav';
-
-.main-wrapper {
-  padding: 10px 0 0 20px; // TODO: Change to better units 
-  margin-bottom: 3vh;
-	a {
-		border-bottom: 1px solid #dcdcdc;
-		color: $color_6;
-		font-weight: bold;
-		text-decoration: none;
-		&:hover {
-			color: $color_7;
-			border-bottom: 1px solid #acacac;
-		}
-	}
-}
-
-blockquote {
-	border-left: 8px solid #555;
-	padding: 9.5px 9.5px;
-	margin: 0;
-}
-
-#common-footer {
-	background-color: $background_color_5;
-	color: $color_5;
-	font-size: 35px;
-	text-align: center;
-	flex-shrink: 0;
-	padding: 2vh 0;
-	a {
-		text-decoration: none;
-	}
-}
-
-.social {
-	color: $color_5;
-	opacity: 1;
-	cursor: pointer;
-	margin: 0 2vw;
-	&:hover {
-		opacity: 0.3;
-	}
+/* Code */
+tt,
+pre,
+code {
+  font-family: $font-mono;
+  font-size: 0.95em;
 }
