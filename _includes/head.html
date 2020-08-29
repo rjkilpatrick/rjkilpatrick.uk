@@ -1,23 +1,41 @@
 <meta charset="utf-8" />
-<title>{% if page.title %}{{ page.title }}&nbsp;&ndash;&nbsp;{% endif %}{{
-site.title }}</title>
-<link rel="stylesheet" type="text/css" href="/assets/css/common.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script async type="text/javascript" defer src="/assets/js/nav.js"></script>
-{% for sheet in page.css %}
-<link rel="stylesheet" href="/assets/css/{{ sheet }}">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+
+<link rel="stylesheet" type="text/css" href="/assets/css/common.css" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<meta name="theme-color" content="hsl(359.6, 59%, 54%)" />
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+{% for style in page.styles %}
+  <link rel="stylesheet" href="/assets/css/{{ style }}" />
 {% endfor %}
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-{% for script in page.js %}
-<script async defer type="text/javascript" src="/assets/js/{{ script }}">
-</script>
-{% endfor %}
-{%- if page.mathjax -%}
-{% include mathJax.html %}
-{%- endif -%}
-<meta name="theme-color" content="hsl(359.6, 59%, 54%)">
-<meta name="description" content="John Kilpatrick: Physicist with a knack for
-  programming"/>
-<meta name="author" content="{{ site.author }}"/>
-<meta name="keywords" content="Physics,Raman,HTML,CSS,JavaScript"/>
+
+<!-- Search engines -->
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta name="author" content="{{ site.author }}" />
+<meta
+  name="keywords"
+  content="john, kilpatrick, optics, computer, graphics, learning, transmission, matrix, raytracing"
+/>
+<meta name="description" content="John and his website" />
+
+<!-- Appease our social media overlords -->
+<meta property="og:locale" content="en_GB" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Index | John Kilpatrick" />
+<meta property="og:description" content="John and his website" />
+<meta property="og:site_name" content="John Kilpatrick" />
+
+<meta name="twitter:creator" content="@rjkilpatrick1" />
+<meta name="twitter:site" content="@rjkilpatrick1" />
+<meta name="twitter:title" content="John and his website." />
+<meta
+  name="twitter:description"
+  content="John is a Physics PhD. candidate at the Univesity of Exeter."
+/>

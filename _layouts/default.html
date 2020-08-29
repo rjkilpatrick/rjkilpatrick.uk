@@ -1,3 +1,7 @@
+<!--
+  Hi there!
+  Checkout the source @ https://github.com/rjkilpatrick/rjkilpatrick.github.io
+-->
 <!DOCTYPE html>
 <html lang="en-gb">
 
@@ -6,23 +10,25 @@
 </head>
 
 <body>
-  <div id="body-wrapper">
-    <div class="page-wrapper">
-      <nav class="nav-wrapper">
-        {% include nav.html %}
-      </nav>
+  <header>
+    {% include nav.html %}
+  </header>
 
-      <main class="main-wrapper" aria-label="Content">
-        {{ content }}
-      </main>
-    </div>
+  <main class="content-wrapper" aria-label="Content">
+    {{ content }}
+  </main>
 
-    {% if page.footer %}
-    <footer id="common-footer">
-      {% include social.html %}
-    </footer>
-    {% endif %}
-  </div>
+  <footer class="page-footer">
+    <ul>
+      <li>Tweet: <a href="https://twitter.com/rjkilpatrick1" />@rjkilpatrick1</a>
+      <li>Github: <a href="https://github.com/rjkilpatrick" />rjkilpatrick</a>
+      <li><a href="index.html">Home</a>
+    </ul>
+  </footer>
+  <!-- TODO: Consider liquid removing? -->
+  {% if page.latex %}
+    <script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML"></script>
+  {% endif %}
 </body>
 
 </html>
