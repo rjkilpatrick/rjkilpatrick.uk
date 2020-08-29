@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="/assets/css/highlight.css" />
 
 {% for style in page.styles %}
-  <link rel="stylesheet" href="/assets/css/{{ style }}" />
+<link rel="stylesheet" href="/assets/css/{{ style }}" />
 {% endfor %}
 
 <!-- Search engines -->
@@ -40,3 +40,6 @@
   name="twitter:description"
   content="John is a Physics PhD. candidate at the Univesity of Exeter."
 />
+
+{% comment %} Make rss etc. auto-discoverable {% endcomment %} {% feed_meta %}
+{% feed_meta %}
