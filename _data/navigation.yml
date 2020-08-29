@@ -1,0 +1,18 @@
+# This is where the navigation page finds the page list
+# The nav bar will show them in this order
+pages:
+
+- name: Home
+  link: /
+
+- name: About
+  link: /about/
+
+- name: Research
+  link: /research/
+
+- name: Projects
+  link: /projects/
+
+- name: Blog
+  link: /blog/
