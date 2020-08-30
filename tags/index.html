@@ -6,10 +6,13 @@ styles: "blog.css"
 ---
 
 {%- if site.tags.size > 0 -%}
-  {%- for tag in site.tags -%}
-    <h2 id="{{ tag[0] | strip_html }}">{{ tag[0] }}</h2>
+  {%- assign sorted_tags = site.tags | sort -%}
+  {%- for tag in sorted_tags -%}
+    <h2 id="{{ tag[0] | strip_html }}">
+      {{ tag[0] }}
+    </h2>
     <ul>
-      {% for post in tag[1] %}
+      {%- for post in tag[1] -%}
         <li>
           <article class="post">
             <header>
@@ -30,7 +33,7 @@ styles: "blog.css"
             </footer>
           </article>
         </li>
-      {% endfor %}
+      {%- endfor -%}
     </ul>
   {%- endfor -%}
 {%- else-%}
