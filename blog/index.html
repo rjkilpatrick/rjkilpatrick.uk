@@ -1,13 +1,13 @@
 ---
 layout: default
 title: "Blog"
-excerpt_separator: "<!--more-->"
-css: "blog.css"
-footer: true
+styles: "blog.css"
 ---
+
 <h1 class="page-heading">
   Blog posts
 </h1>
+
 {%- if paginator.posts.size > 0 -%}
   {%- for post in paginator.posts -%}
     <article class="post">
@@ -17,21 +17,41 @@ footer: true
             {{ post.title }}
           </a>
         </h2>
+
         <p class="post-meta">
-          <i class="fa fa-clock-o"></i>{% include read_time.html content=post.content %}
+          {% include read_time.html content=post.content %}
         </p>
       </header>
+
       <p class="excerpt">
-        {{ post.excerpt | strip_html }}
+        {{ post.excerpt | strip_html | truncatewords: 50 | replace: "...", "…" }}
       </p>
-      <!-- <footer>
+
+      <footer>
         By {{ post.author }}
-      </footer> -->
+      </footer>
     </article>
   {%- endfor -%}
+
 {%- else-%}
   <p>
     There aren't any posts here at the moment for some reason, please check back
     another day.
   </p>
 {%- endif -%}
+
+{% if paginator.previous_page %}
+  <a class="blog-previous" href="{{ paginator.previous_page_path }}">
+    Previous page
+  </a>
+{% else %}
+  Can't find a prev page
+{% endif %}
+
+{% if paginator.next_page %}
+  <a class="blog-next" href="{{ paginator.next_page_path }}">
+    Next page
+  </a>
+{% else %}
+  Can't find a next page
+{% endif %}

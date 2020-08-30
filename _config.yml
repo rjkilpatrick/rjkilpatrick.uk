@@ -29,8 +29,8 @@ excerpt_separator: "<!--more-->"
 permalink: /:year/:month/:day/:title/
 
 # Paginator settings
-# paginate: 10
-# paginate_path: blog/:num
+paginate: 10
+paginate_path: "/blog/:num"
 
 # Socials
 social_links:

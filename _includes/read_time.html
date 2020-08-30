@@ -1,3 +1,4 @@
+<i class="fa fa-clock-o"></i> Read time: ~
 {% assign words = include.content | strip_html | number_of_words %}
-{% assign reading_time = words | divided_by: 265 %}
-{% if reading_time < 1 %}&lt;{% endif %}{{ reading_time | plus: 1 }} minute{% if reading_time != 0 %}s{% endif %} read
+{% assign reading_time = words | divided_by: 250 %}
+{% if reading_time < 1 %}&lt;{% endif %}{{ reading_time | plus: 1 }} minute{% if reading_time != 0 %}s{% endif %}
