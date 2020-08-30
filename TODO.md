@@ -2,7 +2,7 @@
 
 - [ ] Responsive top-nav <https://www.w3schools.com/howto/howto_js_topnav_responsive.asp>
 - [ ] Add a huge amount more content
-- [ ] Tags pages
+- [x] Tags pages
 - [ ] Aria labels for all areas
 - [ ] Fix Travis-CI Integration
 - [ ] Rework common footer

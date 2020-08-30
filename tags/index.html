@@ -1,0 +1,41 @@
+---
+layout: default
+title: "Tags"
+excerpt_separator: "<!--more-->"
+styles: "blog.css"
+---
+
+{%- if site.tags.size > 0 -%}
+  {%- for tag in site.tags -%}
+    <h2 id="{{ tag[0] | strip_html }}">{{ tag[0] }}</h2>
+    <ul>
+      {% for post in tag[1] %}
+        <li>
+          <article class="post">
+            <header>
+              <h3 class="post-title">
+                <a href="{{ post.url }}">
+                  {{ post.title }}
+                </a>
+              </h3>
+              <p class="post-meta">
+                {% include read_time.html content=post.content %}
+              </p>
+            </header>
+            <p class="excerpt">
+              {{ post.excerpt | strip_html | truncatewords: 50 }}
+            </p>
+            <footer>
+              By {{ post.author }}
+            </footer>
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+  {%- endfor -%}
+{%- else-%}
+  <p>
+    There aren't any tags here at the moment for some reason, please check back
+    another day.
+  </p>
+{%- endif -%}
