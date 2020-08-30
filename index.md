@@ -1,13 +1,9 @@
 ---
-title: Home
-layout: hero
-footer: true
+layout: default
 ---
-## Year Abroad
-As part of my Physics degree, I spent a year at the [University of Otago](https://otago.ac.nz).
 
-## Hobbyist
-I am building a Tellytubby T-Shirt. A Pi Zero is the brain, with an 8&quot; LCD stitched on to the front of a T-Shirt
+# Hi
 
-## Programmer
-I have many ~~unfinished~~ active projects. Have a look at these on my [GitHub](https://www.github.com/rjkilpatrick) account.
+## I'm John, a Ph.D. candidate @ Exeter
+
+I haven't really decided what to write here yet, but I'm sure if you have a look on my [github](https://github.com/rjkilpatrick), you'll find I update this soon enough.
