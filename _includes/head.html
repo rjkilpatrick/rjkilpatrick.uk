@@ -17,29 +17,23 @@
 <link rel="stylesheet" href="/assets/css/{{ style }}" />
 {% endfor %}
 
+{% comment %} Make rss etc. auto-discoverable {% endcomment %}
+{% feed_meta %}
+
+{% comment %} Adds SEO properly {% endcomment %}
+{% seo title=false %}
+
 <!-- Search engines -->
-<meta name="generator" content="Jekyll v3.9.0" />
-<meta name="author" content="{{ site.author }}" />
 <meta
   name="keywords"
   content="john, kilpatrick, optics, computer, graphics, learning, transmission, matrix, raytracing"
 />
-<meta name="description" content="John and his website" />
 
 <!-- Appease our social media overlords -->
-<meta property="og:locale" content="en_GB" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Index | John Kilpatrick" />
-<meta property="og:description" content="John and his website" />
-<meta property="og:site_name" content="John Kilpatrick" />
 
 <meta name="twitter:creator" content="@rjkilpatrick1" />
-<meta name="twitter:site" content="@rjkilpatrick1" />
-<meta name="twitter:title" content="John and his website." />
 <meta
   name="twitter:description"
   content="John is a Physics PhD. candidate at the Univesity of Exeter."
 />
-
-{% comment %} Make rss etc. auto-discoverable {% endcomment %} {% feed_meta %}
-{% feed_meta %}
