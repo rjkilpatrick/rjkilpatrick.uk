@@ -3,19 +3,23 @@
 
 <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
 <link rel="stylesheet" type="text/css" href="/assets/css/common.css" />
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 <meta name="theme-color" content="hsl(359.6, 59%, 54%)" />
 
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-/>
 <link rel="stylesheet" href="/assets/css/highlight.css" />
 
 {% for style in page.styles %}
 <link rel="stylesheet" href="/assets/css/{{ style }}" />
 {% endfor %}
+
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
 
 {% comment %} Make rss etc. auto-discoverable {% endcomment %}
 {% feed_meta %}
@@ -29,11 +33,6 @@
   content="john, kilpatrick, optics, computer, graphics, learning, transmission, matrix, raytracing"
 />
 
-<!-- Appease our social media overlords -->
-<meta property="og:type" content="article" />
-
 <meta name="twitter:creator" content="@rjkilpatrick1" />
-<meta
-  name="twitter:description"
-  content="John is a Physics PhD. candidate at the Univesity of Exeter."
-/>
+<meta name="twitter:description" content="{{ site.desciption }}" />
+<meta name="yandex-verification" content="ab1e6cab6e467868" />
