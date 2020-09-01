@@ -57,7 +57,7 @@ timezone: Europe/London
 plugins:
   - jekyll-feed # RSS feed for posts
   - jekyll-sitemap # Sitemap creation for SEO
-  # - jekyll-paginate
+  - jekyll-sitemap
 
 sass:
   style: compressed

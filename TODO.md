@@ -1,3 +1,7 @@
+---
+sitemap: false
+---
+
 # To-Do list
 
 - [ ] Responsive top-nav <https://www.w3schools.com/howto/howto_js_topnav_responsive.asp>
