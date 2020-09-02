@@ -1,16 +1,26 @@
+// #markdown-toc {
+//   // display: flex;
+//   // flex-direction: column;
+//   margin-top: 0;
+//   margin-bottom: 1rem;
+//   padding-left: 1.5em;
+//   &:before {
+//     content: "Table of Contents";
+//     text-align: center;
+//   }
+//   // background: #f9f9f9 none repeat scroll 0 0;
+//   // border: 1px solid #aaa;
+//   // font-size: 1rem;
+// }
 #markdown-toc {
-  display: flex;
-  flex-direction: column;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  padding-left: 1.5em;
   &:before {
-    content: "Table of Contents";
-    font-weight: 700;
-    text-align: center;
+    content: "<i class="tocIcon fa fa-book"></i>Table of Contents";
   }
-  background: #f9f9f9 none repeat scroll 0 0;
-  border: 1px solid #aaa;
-  font-size: 1rem;
-  list-style: none;
+
+  ol {
+    list-style-type: lower-latin;
+    ol {
+      list-style-type: lower-roman;
+    }
+  }
 }

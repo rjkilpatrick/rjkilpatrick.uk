@@ -1,24 +1,30 @@
 ---
 layout: default
 ---
+
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
-    <h1>
-      {{ page.title | escape }}
-    </h1>
-    <p class="post-meta">
-      <i class="fa fa-clock-o"></i> Read time {% include read_time.html content=content %}
-    </p>
-  </header>
-  {{ content }}
-  <footer>
+    <h1>{{ page.title | escape }}</h1>
+
     <div class="post-meta">
+      <div>
+        {% include read_time.html content=content %}
+      </div>
+
       <div>
         <div class="fa-container">
           <i class="fa fa-calendar-o"></i>
         </div>
-        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date_to_long_string: "ordinal" }}</time>
+        
+        {% if post.last_modified_at %}
+          Last modified:
+          {{ post.last_modified_at }}
+          Originally published:
+        {% endif %}
+
+        {% include date.html date=page.date %}
       </div>
+      
       <div itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span class="p-author h-card" itemprop="name">
           <div class="fa-container">
@@ -29,19 +35,23 @@ layout: default
       </div>
 
       {% if page.tags.size > 0 %}
-        <div class="fa-container">
-          <i class="fa fa-tag"></i>
+        <div>
+          <div class="fa-container">
+            <i class="fa fa-tag"></i>
+          </div>
+
+          <ul class="tags">
+            {% for tag in page.tags %}
+              <li>
+                <a href="/tags/#{{ tag }}"> {{ tag }} </a>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
-
-        <ul class="tags">
-          {% for tag in page.tags %}
-          <li>
-              <a href="/tags/#{{ tag }}"> {{ tag }} </a>
-          </li>
-          {% endfor %}
-        </ul>
       {% endif %}
-
     </div>
-  </footer>
+  </header>
+
+  {{ content }}
+  
 </article>
