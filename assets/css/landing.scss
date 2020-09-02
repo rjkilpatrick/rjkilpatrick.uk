@@ -1,0 +1,105 @@
+---
+---
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100vw; /* 100% */
+  z-index: 1;
+}
+
+#big-splash {
+  background-image: url("https://www.w3schools.com/w3images/parallax1.jpg");
+
+  height: 100vh;
+
+  background-attachment: fixed; /* Whether the picture "scrolls" too */
+  background-position: center; /* Uses centre of the piccy */
+  background-repeat: no-repeat;
+  /* Resize the background image to cover the entire container, even if
+    it has to stretch the image or cut a little bit off one of the edges */
+  background-size: cover;
+}
+
+h1 {
+  margin: auto;
+}
+
+#arrow-pointing-down a {
+  color: white;
+  font-size: 4em;
+  animation: bounce-arrow 5s cubic-bezier(0.41, 0.19, 0, 1.05) infinite forwards;
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  bottom: 40px;
+  left: calc(50% - 32px);
+}
+
+#splash-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 2px;
+  backdrop-filter: blur(8px); /* Only on webkit */
+  padding: 32px 16px;
+  max-width: 700px;
+}
+
+#splash-overlay h1 {
+  text-align: center;
+  /* text-shadow: 2px 2px #101010; */
+  font-size: 4em;
+}
+
+#splash-overlay h2 {
+  text-align: center;
+}
+
+@keyframes bounce-arrow {
+  0%,
+  90%,
+  100% {
+    transform: none;
+  }
+  95% {
+    transform: translateY(-0.2em);
+  }
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.social-icons a:link,
+.social-icons a:visited {
+  color: white;
+}
+
+#splash-overlay li {
+  padding: 6px;
+  background-color: black;
+  border-radius: 6px;
+  margin: 4px;
+  text-align: center;
+}
