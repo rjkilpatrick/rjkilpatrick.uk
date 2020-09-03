@@ -83,15 +83,6 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-# Custom list to exclude from processing.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
 
 # SEO settings
 twitter:
@@ -111,3 +102,15 @@ lang: en_GB
 
 webmaster_verifications:
   google: 23eKlaNLgI1l1zM1Sr24GQF5puRHGr7e0T5YC6Q4Yjo
+
+# Custom list to exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - TODO.md
+  - README.md
