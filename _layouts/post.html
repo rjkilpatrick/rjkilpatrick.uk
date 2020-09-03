@@ -16,9 +16,10 @@ layout: default
           <i class="fa fa-calendar-o"></i>
         </div>
         
-        {% if post.last_modified_at %}
+        {% if page.last_modified_at %}
           Last modified:
-          {{ post.last_modified_at }}
+          {{ page.last_modified_at | date_to_long_string: "ordinal" }}
+          <br/>
           Originally published:
         {% endif %}
 
