@@ -1,7 +1,6 @@
 # This is where the navigation page finds the page list
 # The nav bar will show them in this order
 pages:
-
 - name: Home
   link: /
 
@@ -16,3 +15,6 @@ pages:
 
 - name: Blog
   link: /blog/
+
+- name: Tags
+  link: /tags/
