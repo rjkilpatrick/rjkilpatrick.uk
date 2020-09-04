@@ -7,6 +7,14 @@
 
 <head>
   {%- include head.html -%}
+
+  {% comment %} Inline criticial (S)CSS {% endcomment %}
+  <style type="text/css">
+    {%- capture critical_scss -%}
+      {%- include critical.scss -%}
+    {%- endcapture -%}
+    {{- critical_scss | scssify -}}
+  </style>
 </head>
 
 <body>

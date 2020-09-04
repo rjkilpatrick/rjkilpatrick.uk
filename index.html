@@ -7,6 +7,14 @@ styles: "landing.css"
 <html>
   <head>
     {% include head.html %}
+
+    {% comment %} Inline criticial (S)CSS {% endcomment %}
+    <style type="text/css">
+      {%- capture critical_scss -%}
+        {%- include critical.scss -%}
+      {%- endcapture -%}
+      {{- critical_scss | scssify -}}
+    </style>
   </head>
 
   <body>
@@ -76,6 +84,13 @@ styles: "landing.css"
           <li><a href="/tags/#html">HTML 5</a>, <a href="/tags/#css">CSS 3</a>, <a href="/tags/#js">JS</a></li>
         </ul>
       </p>
+
+      <h2>
+        Here's what I've been up to recently:
+      </h2>
+      {%- for post in site.posts | sort: "date", "last" | limit: 2 %}
+        {{ post.excerpt }}
+      {%- endfor -%}
     </main>
   </body>
 </html>
