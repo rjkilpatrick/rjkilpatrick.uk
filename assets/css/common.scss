@@ -1,17 +1,11 @@
 ---
 ---
 
+@charset "UTF-8";
 
-// Colours
 @import "colours";
-
-// Fonts
 @import "fonts";
-
-// Border boxing
-html {
-  box-sizing: border-box;
-}
+@import "nav";
 
 *,
 *:before,
@@ -31,6 +25,8 @@ body {
   overflow-wrap: break-word;
   background-color: var(--background-primary);
   color: var(--text-primary);
+  padding: 0;
+  margin: 0;
 }
 
 h1 {
