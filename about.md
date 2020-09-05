@@ -1,12 +1,48 @@
 ---
 layout: default
 title: About
-css: about.css
-footer: true
+styles: about.css
 ---
 
-<div class="avatar">
-  <!-- Placeholder for styling -->
-  <img id="mugshot" src="https://www.w3schools.com/howto/img_avatar.png"/>
-</div>
-Hi, I'm John. I study a masters in  Physics at the [University of Exeter](https://ex.ac.uk).  I spent my third year on exchange at the [University of Otago](https://otago.ac.nz).
+# About me!
+
+![Picture of John Kilpatrick](https://www.w3schools.com/howto/img_avatar.png){:.avatar}
+
+I'm John Kilpatrick, a Ph.D. student at the [University of Exeter](https://exeter.ac.uk).
+My research focuses are **Optics** and **Biomedical physics**.
+My supervisors are [Dr. Dave Phillips](https://emps.exeter.ac.uk/physics-astronomy/staff/dp413) and [Prof. Nick Stone](https://emps.exeter.ac.uk/physics-astronomy/staff/ns329).
+I recieved a first class MPhys. Physics with Study in New Zealand from Exeter.
+
+### Who's this blog for?
+
+Me!
+This is a progress tracker of where I am, and hopefully will help remind my future self of silly mistakes so I don't make them anymore.
+Hopefully, the content will vary from physics to GPU-compute.
+
+## Experience
+
+- University of Exeter
+  Master's degree in Physics
+  July 2020
+  First class
+  Thesis: "Deep Raman Spectroscopy with Fluorescence Suppression for Non-invasive Detection of Breast Cancer _In Vivo_"
+  - Raman spectroscopy
+  - Python data analysis
+- University of Otago
+  Exchange
+  June 2018 -- June 2019
+
+## Find me
+
+- <https://github.com/rjkilpatrick>
+- <https://gitlab.com/rjkilpatrick>
+- <https://linkedin.com/in/rjkilpatrick>
+- <https://medium.com/@rjkilpatrick>
+- <https://twitter.com/rjkilpatrick1>
+- <https://dev.to/rjkilpatrick>
+
+## Things I'm buzzed about
+
+- Augmented reality, especially in communicating science
+- S4TF as a numeric (read scientific) programming language
+- Real-time raytracing with Vulkan
