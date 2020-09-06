@@ -3,11 +3,16 @@
 
 // Main font
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
-$font-main: Ubuntu, serif;
-
-// Headings
-$font-heading: $font-main; //-apple-system, Noto Sans, Helvetica, Calibri, Arial, serif; //'Roboto Slab', 'serif';
 
 // Code
 @import url("https://fonts.googleapis.com/css2?family=Recursive:CRSV,MONO@1,1&display=swap");
+
+$font-main: Ubuntu, -apple-system, Noto Sans, Helvetica, serif;
+$font-heading: $font-main; //-apple-system, Noto Sans, Helvetica, Calibri, Arial, serif; //'Roboto Slab', 'serif';
 $font-mono: Recursive, Liberation Mono, Menlo, Consolas, Monospace;
+
+:root {
+  --font-main: #{$font-main};
+  --font-heading: #{$font-heading};
+  --font-mono: #{$font-mono};
+}

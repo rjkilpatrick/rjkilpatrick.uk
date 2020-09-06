@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: $font-main;
+  font-family: var(--font-main);
   line-height: 1.6;
   text-align: left;
   text-rendering: optimizeLegibility;
@@ -40,7 +40,7 @@ h3,
 h4,
 .date,
 .page-footer {
-  font-family: $font-heading;
+  font-family: var(--font-heading);
   font-weight: 700;
 }
 
@@ -48,6 +48,6 @@ h4,
 tt,
 pre,
 code {
-  font-family: $font-mono;
+  font-family: var(--font-mono);
   font-size: 0.95em;
 }
