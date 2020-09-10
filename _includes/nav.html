@@ -3,15 +3,15 @@
   <div class="modal">
     <ul class="modal-content">
       {% for item in site.data.navigation.pages %}
-      <li class="nav-item">
-        <a href="{{ item.link }}"> {{- item.name -}} </a>
-      </li>
+        <li class="nav-item">
+          <a href="{{ item.link }}"> {{- item.name -}} </a>
+        </li>
       {% endfor %}
     </ul>
   </div>
-  <a href="#" class="toggle-container">
-    <i class="fa fa-bars"></i>
-  </a>
+  <button class="toggle-container" aria-expanded="false" aria-controls="menu">
+    <span class="hamburger"></span>
+  </button>
 </nav>
 
 <script type="text/javascript" src="/assets/js/nav.js" defer></script>

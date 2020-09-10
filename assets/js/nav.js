@@ -5,11 +5,14 @@ function toggleNav(event) {
   event.preventDefault();
 
   modal.classList.toggle("active");
+  modal.style.display = modal.style.display === "flex" ? "none" : "flex";
 
-  // Handle changing hamburger to close button
-  let hamburger = this.querySelector("i");
-  hamburger.classList.toggle("fa-bars"); // Remove / Add Open menu symbol
-  hamburger.classList.toggle("fa-times"); // Remove / Add Close menu symbol
+  // Expand
+  let current = String(!Boolean());
+  toggle.setAttribute(
+    "aria-expanded",
+    toggle.getAttribute("aria-expanded") == "true" ? "false" : "true"
+  );
 }
 
 toggle.addEventListener("touchstart", toggleNav);

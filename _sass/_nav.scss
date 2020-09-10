@@ -71,6 +71,42 @@
   }
 }
 
+.toggle-container {
+  border: none;
+  cursor: pointer;
+  background-color: inherit;
+}
+
+.hamburger {
+  background-color: var(--text-primary);
+  transition: background 0s 0.2s;
+  border-radius: 50px;
+  display: block;
+  height: 8px;
+  position: absolute;
+  width: inherit;
+
+  &::before,
+  &::after {
+    content: "";
+    background-color: var(--text-primary);
+    border-radius: 50px;
+    display: block;
+    height: 8px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.hamburger::before {
+  top: -20px;
+}
+
+.hamburger::after {
+  bottom: -20px;
+}
+
 .nav-item > a:visited,
 .nav-item > a:link {
   color: white;
