@@ -24,15 +24,7 @@
     {{ content }}
   </main>
 
-  <footer class="page-footer">
-    <ul>
-      <li>Email: <a href="mailto:john.kilpatrick@outlook.com">john.kilpatrick@outlook.com</a>
-      <li>Tweet: <a href="https://twitter.com/rjkilpatrick1" />@rjkilpatrick1</a>
-      <li>Github: <a href="https://github.com/rjkilpatrick" />rjkilpatrick</a>
-      <li><a href="/">Home</a></li>
-      <li>Content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY-4.0</a>.</li>
-    </ul>
-  </footer>
+  {% include footer.html %}
 
   {% if page.latex %}
     <script type="text/javascript" defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML"></script>
