@@ -65,6 +65,12 @@ plugins:
 sass:
   style: compressed
 
+# Collections
+collections:
+  tagpages: # Cannot be 'tags'!
+    output: true
+    permalink: /tags/:path/
+
 # Default settings for pages
 defaults:
   # Set all posts as post type
@@ -78,11 +84,18 @@ defaults:
       styles: ["post.css"]
       seo:
         type: BlogPosting
+  
   - scope:
       path: ""
       type: "pages"
     values:
       layout: "page"
+  
+  - scope:
+      path: ""
+      type: "tagpages"
+    values:
+      layout: "tag"
 
 # SEO settings
 twitter:

@@ -9,8 +9,9 @@ styles: "blog.css"
   {%- assign sorted_tags = site.tags | sort -%}
   {%- for tag in sorted_tags -%}
     <h2 id="{{ tag[0] | strip_html }}">
-      {{ tag[0] }}
+      <a href="/tags/{{ tag[0] }}">&#35; {{ tag[0] }}</a>
     </h2>
+    
     <ul>
       {%- assign sorted_posts = tag[1] | sort: "date", "last" -%}
       {%- for post in sorted_posts -%}
