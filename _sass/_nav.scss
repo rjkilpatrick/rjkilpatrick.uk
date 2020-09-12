@@ -123,5 +123,8 @@
 
 .nav-item > a:visited,
 .nav-item > a:link {
-  color: white;
+  color: var(--text-primary);
+  &:hover {
+    color: var(--text-emph);
+  }
 }
