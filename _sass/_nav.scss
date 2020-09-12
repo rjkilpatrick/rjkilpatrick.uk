@@ -3,7 +3,6 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
-  z-index: 1;
 
   a {
     color: white;
@@ -12,23 +11,13 @@
 }
 
 .toggle-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
   position: fixed;
   top: 16px;
   right: 16px;
   width: 64px;
   height: 64px;
 
-  z-index: 5;
-  &:link,
-  &:visited {
-    color: white;
-    font-size: 2.5em;
-  }
+  z-index: 100;
 }
 
 .modal {
@@ -37,7 +26,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 99;
 
   text-align: center;
   font-size: 3em;
@@ -75,16 +64,20 @@
   border: none;
   cursor: pointer;
   background-color: inherit;
+  padding: 0; // Fix button depress moving the icon
 }
 
 .hamburger {
   background-color: var(--text-primary);
-  transition: background 0s 0.2s;
+  transition: all 0.2s ease;
   border-radius: 50px;
   display: block;
   height: 8px;
   position: absolute;
   width: inherit;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 
   &::before,
   &::after {
@@ -96,15 +89,36 @@
     left: 0;
     position: absolute;
     width: 100%;
+    transition: all 0.2s ease;
+  }
+
+  &.active {
+    background-color: #00000000;
+
+    &::before {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      bottom: 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  &::before {
+    top: -20px;
+  }
+
+  &::after {
+    bottom: -20px;
   }
 }
 
-.hamburger::before {
-  top: -20px;
-}
-
-.hamburger::after {
-  bottom: -20px;
+.hamburger.active,
+.hamburger::before.active,
+.hamburger::after.active {
+  background-color: var(--background-primary);
 }
 
 .nav-item > a:visited,
