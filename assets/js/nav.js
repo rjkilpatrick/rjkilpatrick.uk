@@ -1,5 +1,6 @@
 const toggle = document.querySelector(".toggle-container");
 const modal = document.querySelector(".modal");
+const icon = document.querySelector(".hamburger");
 
 function toggleNav(event) {
   event.preventDefault();
@@ -8,11 +9,12 @@ function toggleNav(event) {
   modal.style.display = modal.style.display === "flex" ? "none" : "flex";
 
   // Expand
-  let current = String(!Boolean());
   toggle.setAttribute(
     "aria-expanded",
     toggle.getAttribute("aria-expanded") == "true" ? "false" : "true"
   );
+
+  icon.classList.toggle("active")
 }
 
 toggle.addEventListener("touchstart", toggleNav);
