@@ -6,10 +6,11 @@ styles: about.css
 
 # About me!
 
-![Picture of John Kilpatrick](https://www.w3schools.com/howto/img_avatar.png){:.avatar}
+![Picture of John Kilpatrick](/assets/img/john.svg){:.avatar}
 
-I'm John Kilpatrick, a Ph.D. student at the [University of Exeter](https://exeter.ac.uk).
-My research focuses are **Optics** and **Biomedical physics**.
+Hi! I'm John Kilpatrick, a Ph.D. student in structured light group at the [University of Exeter](https://exeter.ac.uk).
+I'm bringing bleeding-edge optics to the NHS. 
+
 My supervisors are [Dr. Dave Phillips](https://emps.exeter.ac.uk/physics-astronomy/staff/dp413) and [Prof. Nick Stone](https://emps.exeter.ac.uk/physics-astronomy/staff/ns329).
 I recieved a first class MPhys. Physics with Study in New Zealand from Exeter.
 
