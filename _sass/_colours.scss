@@ -12,19 +12,19 @@ $white: hsl(320, 0%, 81%);
 // Page colours
 $dark-background-primary: hsl(320, 4%, 16%);
 $dark-background-secondary: hsl(320, 4%, 22%);
-$dark-text-primary: hsl(320, 4%, 87%);
-$dark-text-secondary: hsl(320, 4%, 70%);
+$dark-text-primary: hsl(320, 4%, 92%);
+$dark-text-secondary: hsl(320, 4%, 84%);
 $dark-text-emph: hsl(320, 4%, 99%);
 
-$dark-text-hyperlink: hsl(188, 49.8%, 60%);
+$dark-text-hyperlink: $magenta;//hsl(188, 49.8%, 60%);
 
 $light-background-primary: hsl(320, 0%, 99%);
 $light-background-secondary: hsl(320, 0%, 87%);
-$light-text-primary: hsl(320, 4%, 16%);
-$light-text-secondary: hsl(320, 0%, 49%);
+$light-text-primary: hsl(320, 0%, 26%);//hsl(320, 4%, 16%);
+$light-text-secondary: hsl(320, 0%, 30%);
 $light-text-emph: hsl(320, 0%, 4%);
 
-$light-text-hyperlink: hsl(233, 57%, 47%);
+$light-text-hyperlink: $blue;//hsl(233, 57%, 47%);
 
 // Organise themings
 $primary1: $red;
@@ -37,12 +37,22 @@ $tertiary2: $green;
 $tertiary3: $orange;
 
 :root {
-  /* Light mode: */
+  // Universal colours
+  --accent-1: #{$primary1};
+  --accent-2: #{$primary2};
+  --accent-3: #{$primary3};
+  --accent-4: #{$secondary1};
+  --accent-5: #{$secondary2};
+  --accent-6: #{$tertiary1};
+  --accent-7: #{$tertiary2};
+  --accent-8: #{$tertiary3};
+
+  // Light mode:
   --color-mode: "light"; // Not currently needed, JS export
 
   --background-primary: #{$light-background-primary};
   --background-secondary: #{$light-background-secondary};
-
+  
   --text-primary: #{$light-text-primary};
   --text-secondary: #{$light-text-secondary};
   --text-emph: #{$light-text-emph};

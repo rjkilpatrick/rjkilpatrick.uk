@@ -83,6 +83,24 @@ code {
   font-size: 0.95em;
 }
 
+
+a {
+  &:link,
+  &:visited {
+    color: var(--text-hyperlink);
+  }
+}
+
+strong {
+  color: var(--text-primary);
+  font-weight: bolder;
+}
+
+p,
+ul {
+  color: var(--text-secondary);
+}
+
 /* Don't show animations if they've asked for that */
 @media (prefers-reduced-motion: reduce) {
   body {
