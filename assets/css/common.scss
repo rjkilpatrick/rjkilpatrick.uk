@@ -93,6 +93,27 @@ a {
   &:visited {
     color: var(--text-hyperlink);
   }
+
+  &:not(:hover) {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  [href^="mailto"]::before {
+    content: "📧";
+  }
+
+  [href^="tel"]::before {
+    content: "📞";
+  }
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
 }
 
 strong {
