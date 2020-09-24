@@ -1,21 +1,23 @@
----
-# Usage: {% include figure.html url="http://jekyllrb.com" max-width="200px"
-# file="logo.png" alt="Jekyll logo" caption="This is the Jekyll logo." %}
----
-<figure>
-  {% if include.url %}<a href="{{ include.url }}">{% endif %}
-    <img src="{{ include.file }}"
-    {% if include.max-width %}
-      style="max-width: {{include.max-width }};"
-    {% endif %}
+{% comment %}
 
-    {% if include.alt %}
-      alt="{{ include.alt }}"
-    {% endif %}/>
+Example usage:
+```
+{% include figure.html src="logo.png" alt="rjkilpatrick logo" caption="cap" %}
+```
 
-    {% if include.url %}</a>{% endif %}
-    {% if include.caption %}
+{% endcomment %}
+<figure markdown="0">
+  <img src="{{ include.src }}"
 
+  {% if include.max-width %}
+    style="max-width: {{ include.max-width }};"
+  {% endif %}
+
+  {% if include.alt %}
+    alt="{{ include.alt }}"
+  {% endif %}/>
+
+  {% if include.caption %}
     <figcaption>
       {{ include.caption }}
     </figcaption>

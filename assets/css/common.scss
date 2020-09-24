@@ -71,6 +71,15 @@ code {
 }
 
 
+// Figures
+// e.g. Image figures, listing figures etc.
+figure {
+  border-radius: 5px;
+  padding: 10px;
+  margin: 1em 0;
+  background-color: var(--background-secondary);
+}
+
 figure img,
 img:not([class]) {
   width: 100%;
