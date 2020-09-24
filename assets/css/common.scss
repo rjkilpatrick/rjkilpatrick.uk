@@ -80,6 +80,24 @@ figure {
   background-color: var(--background-secondary);
 }
 
+figcaption {
+  margin-top: 3px;
+}
+
+// Fig. counter
+body {
+  counter-reset: figNumber;
+}
+
+figure.figure {
+  counter-increment: figNumber;
+  
+  figcaption::before {
+    content: 'Fig. ' counter(figNumber) ': ';
+  }
+}
+
+// Set unspecifed images to be 100% wide
 figure img,
 img:not([class]) {
   width: 100%;
