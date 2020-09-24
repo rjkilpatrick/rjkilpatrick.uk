@@ -5,11 +5,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 
 // Code
-@import url("https://fonts.googleapis.com/css2?family=Recursive:CRSV,MONO@1,1&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Recursive:CRSV,MONO@1,1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
 
 $font-main: Ubuntu, -apple-system, Noto Sans, Helvetica, serif;
 $font-heading: $font-main; //-apple-system, Noto Sans, Helvetica, Calibri, Arial, serif; //'Roboto Slab', 'serif';
-$font-mono: Recursive, Liberation Mono, Menlo, Consolas, Monospace;
+$font-mono: "PT Mono", Liberation Mono, Menlo, Consolas, Monospace;
 
 :root {
   --font-main: #{$font-main};
