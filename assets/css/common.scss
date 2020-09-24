@@ -5,6 +5,7 @@
 
 @import "colours";
 @import "fonts";
+@import "headers";
 @import "nav";
 
 *,
@@ -33,20 +34,6 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   min-height: 100vh;
-}
-
-h1 {
-  margin: 1em 0 0.5em 0;
-  line-height: 1.2;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  margin-top: 1em;
-  font-family: var(--font-heading);
-  font-weight: 700;
 }
 
 .page-footer {

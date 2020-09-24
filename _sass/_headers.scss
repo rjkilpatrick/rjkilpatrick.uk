@@ -1,23 +1,47 @@
-h1, h2, h3, h4, h5, h6 {
-	font-family: $font-heading;
-	font-weight: 700;
-	color: $color-heading;
+// Font sizes
+// Based off of this: https://www.modularscale.com/?1&em&1.41421356237
+// Fonts
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+h1.super {
+  font-size: 5.657em;
+}
+
+h1.big {
+  font-size: 4em;
 }
 
 h1 {
-	font-size: 2em;
-	border-bottom: 1px solid #dcdcdc;
-	margin: 3vh 0 0 0;
+  font-size: 2.828em;
 }
 
 h2 {
-	font-size: 1.5em;
+  font-size: 2em;
 }
 
 h3 {
-	font-size: 1.17em;
+  font-size: 1.414em;
 }
 
 h4 {
-	font-size: 1em;
+  font-size: 1em;
+}
+
+// Margins
+h1 {
+  margin: 1em 0 0.5em 0;
+}
+
+h2,
+h3,
+h4 {
+  margin: 1em 0 0.2em 0;
 }

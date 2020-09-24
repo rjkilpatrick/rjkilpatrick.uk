@@ -16,3 +16,7 @@ $font-mono: Recursive, Liberation Mono, Menlo, Consolas, Monospace;
   --font-heading: #{$font-heading};
   --font-mono: #{$font-mono};
 }
+
+html {
+  font-size: 16px;
+}
