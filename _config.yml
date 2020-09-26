@@ -73,6 +73,11 @@ collections:
 
 # Default settings for pages
 defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/default-graph-image.webp # Cannot be relative or svg
+
   # Set all posts as post type
   - scope:
       path: ""
