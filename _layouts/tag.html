@@ -12,6 +12,9 @@ styles: "blog.css"
     {{ page.name }}
   {% endif %}
 </h1>
+<p class="tagline">
+  {{ content }}
+</p>
 <ul>
   {% for post in site.tags[page.name] %}
     <li>
