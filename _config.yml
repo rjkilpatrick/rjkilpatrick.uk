@@ -86,6 +86,7 @@ defaults:
       layout: "post"
       author: John Kilpatrick
       category: "blog"
+      links: true
       styles: ["post.css"]
       seo:
         type: BlogPosting
@@ -117,7 +118,6 @@ social:
     - https://gitlab.com/rjkilpatrick
 
 lang: en_GB
-
 
 # Custom list to exclude from processing.
 exclude:

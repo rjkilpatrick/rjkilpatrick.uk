@@ -4,7 +4,7 @@
  * @require Font-Awesome
  * @author John Kilpatrick
  */
-let links = (function() {
+const links = (function() {
   "use strict";
   let pub = {};
 
@@ -12,7 +12,7 @@ let links = (function() {
    * Finds all h2 tags in .post and attaches clickable permalinks to them
    */
   pub.attach = function() {
-    let posts = document.getElementsByClassName("post");
+    let posts = document.getElementsByTagName("article");
     for (let post of posts) {
       let headers = post.getElementsByTagName("h2");
       for (let header of headers) {
@@ -22,14 +22,17 @@ let links = (function() {
   };
 
   function addLink(header) {
-    let formattedText = header.textContent.replace(/\s+/g, '-').toLowerCase();
-    header.setAttribute("id", formattedText); // Creates linkable id
+    // Create anchor
     let anchor = document.createElement("a");
-    anchor.setAttribute("href", "#" + formattedText);
+    anchor.setAttribute("href", "#" + header.id);
+    anchor.setAttribute("class", "anchor");
+
+    // Create link as anchor child
     let linkSymbol = document.createElement("i");
     linkSymbol.setAttribute("class", "fa fa-link");
+
+    // Add to DOM
     anchor.appendChild(linkSymbol);
-    anchor.setAttribute("class", "anchor");
     header.appendChild(anchor);
   }
 
