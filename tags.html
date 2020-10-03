@@ -14,7 +14,7 @@ styles: "blog.css"
     
     <ul>
       {%- assign sorted_posts = tag[1] | sort: "date", "last" -%}
-      {%- for post in sorted_posts -%}
+      {%- for post in sorted_posts limit: 2 -%}
         <li>
           <article class="post">
             <header>
