@@ -1,4 +1,8 @@
-<i class="tocIcon fa fa-book"></i> Table of contents
+<details markdown="1">
 
-1. TOC
+<summary markdown="0">Table of contents</summary>
+
+1. placeholder
 {:toc}
+
+</details>
