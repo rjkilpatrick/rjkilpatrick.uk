@@ -16,14 +16,17 @@ layout: default
           <i class="fa fa-calendar-o"></i>
         </div>
         
-        {% if page.last_modified_at %}
-          Last modified:
-          {{ page.last_modified_at | date_to_long_string: "ordinal" }}
-          <br/>
-          Originally published:
-        {% endif %}
-
-        {% include date.html date=page.date %}
+        <div style="display: inline-block;" title="
+          {%- if page.last_modified_at -%}
+            Last modified:&nbsp;
+            {{- page.last_modified_at | date_to_long_string: "ordinal" -}}
+            ,
+Originally published:&nbsp;
+          {%- endif -%}
+          {{- page.date | date_to_long_string: "ordinal" -}}.">
+          
+          {{- page.date | date_to_long_string: "ordinal" -}}
+        </div>
       </div>
       
       <div itemprop="author" itemscope itemtype="http://schema.org/Person">
