@@ -1,17 +1,19 @@
-# John Kilpatrick ![Travis CI](https://travis-ci.org/rjkilpatrick/rjkilpatrick.github.io.svg?branch=master)
+# John Kilpatrick
 
 [rjkilpatrick.github.io](https://rjkilpatrick.github.io) is a Jekyll website for [John Kilpatrick](https://github.com/rjkilpatrick).
 
 ## Installation
 
-<https://jekyllrb.com/docs/installation/>
+Install guide for Jekyll [here](https://jekyllrb.com/docs/installation/).
 
-- [ ] Write content
-- [ ] Decide on aesthetic
-- [x] Add social media tie ins
-- [ ] Nicer bullet points
-- [ ] Switch from GitHub pages to Digital Ocean for PHP support
-- [ ] Add <http://webhint.io> integration
+With ruby and gems installed:
+
+```
+git clone https://github.com/rjkilpatrick/rjkilpatrick.github.io
+gem install jekyll bundler
+bundle install
+bundle exec jekyll serve
+```
 
 ## Licensing
 
