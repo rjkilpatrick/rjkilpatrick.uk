@@ -7,11 +7,11 @@ pages:
 - name: About
   link: /about/
 
-- name: Research
-  link: /research/
+# - name: Research
+  # link: /research/
 
 - name: Blog
   link: /blog/
 
-- name: Tags
-  link: /tags/
+# - name: Tags
+  # link: /tags/

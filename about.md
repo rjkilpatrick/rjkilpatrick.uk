@@ -18,5 +18,4 @@ If you want to talk about my research, or think I can help with yours, get in to
 
 - <https://twitter.com/rjkilpatrick1>
 - <https://github.com/rjkilpatrick>
-- <https://gitlab.com/rjkilpatrick>
 - <https://linkedin.com/in/rjkilpatrick>
