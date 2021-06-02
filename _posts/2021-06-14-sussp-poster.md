@@ -1,9 +1,11 @@
 ---
 title: Towards real-time imaging through multimode optical fibres
 layout: post
-tags: ["optical fibre", "transmission matrix"]
-last_modified_at: 2021-06-01
+tags: ["mmf", "transmission matrix"]
+last_modified_at: 2021-06-02
 ---
+
+{% include toc.md %}
 
 ## Abstract
 
@@ -22,9 +24,11 @@ We believe with a combination of multiple guide-stars, and improved optimization
 Our approach will enable applications with promising real-time performance on future-generation flexible micro-endoscopes.
 
 {% comment %} Definitions {% endcomment %}
-*[MMF]: Multi-mode optical Fibre
+*[MMF]: Multi-Mode optical Fibre
 *[TM]: Transmission Matrix
 *[WFS]: Wavefront Shaping
+
+## References
 
 {% comment %} References {% endcomment %}
 [^1]: Li, S., Horsley, S. A. R., Tyc, T., Cizmar, T. & Phillips, D. B. Guide-star assisted imaging through multimode optical fibres. [arXiv:2005.06445](https://arxiv.org/abs/2005.06445) (2020).
