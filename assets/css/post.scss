@@ -79,3 +79,7 @@ aside {
     border-left: 8px solid $green;
   }
 }
+
+*[mathvariant="bold"] {
+  font-weight: bold;
+}
