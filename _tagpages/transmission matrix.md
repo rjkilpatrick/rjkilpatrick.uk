@@ -1,4 +1,4 @@
 ---
 name: "transmission matrix"
-display_name: Transmission matrix
+display_name: Transmission Matrix
 ---
