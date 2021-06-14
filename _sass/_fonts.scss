@@ -4,8 +4,8 @@
 // Main font
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=Roboto+Slab&family=Ubuntu&display=swap');
 
-$font-main: Ubuntu, -apple-system, Noto Sans, Helvetica, serif;
-$font-heading: 'Roboto Slab', Ubuntu, -apple-system, Noto Sans, Helvetica, serif;
+$font-main: 'Roboto Slab', Ubuntu, -apple-system, Noto Sans, Helvetica, serif;
+$font-heading: Ubuntu, -apple-system, Noto Sans, Helvetica, serif;
 $font-mono: "PT Mono", Liberation Mono, Menlo, Consolas, Monospace;
 
 :root {
