@@ -101,6 +101,6 @@ If we instead take our signal in a dense measurements and transform it into a sp
 *[FISTA]: Fast Iterative Shrinkage-Thresholding Algorithm
 
 {% comment %} References {% endcomment %}
-[^atm]: Li, S., Horsley, S. A. R., Tyc, T., Cizmar, T. & Phillips, D. B. Guide-star assisted imaging through multimode optical fibres. [arXiv:2005.06445](https://arxiv.org/abs/2005.06445) (2020).
-[^compressive]: Li, S. et al. Compressively sampling the optical transmission matrix of a multimode fibre. [arXiv:2007.15891](https://arxiv.org/abs/2007.15891) (2020).
+[^atm]: Li, S., Horsley, S. A. R., Tyc, T., Cizmar, T. & Phillips, D. B. Memory effect assisted imaging through multimode optical fibres. [10.1038/s41467-021-23729-1](https://www.nature.com/articles/s41467-021-23729-1) (2021).
+[^compressive]: Li, S. et al. Compressively sampling the optical transmission matrix of a multimode fibre. [10.1038/s41377-021-00514-9](https://www.nature.com/articles/s41377-021-00514-9) (2021).
 [^fista]: Beck, A. & Teboulle, M. A Fast Iterative Shrinkage-Thresholding Algorithm for Linear Inverse Problems. SIAM J. Img. Sci. 2, 183–202 (2009). [10.1137/080716542](https://doi.org/10.1137/080716542)
