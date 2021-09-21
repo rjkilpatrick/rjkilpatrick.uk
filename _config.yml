@@ -47,6 +47,7 @@ social_links:
 markdown: kramdown
 
 kramdown:
+  math_engine: katex
   parse_block_html: true
   input: GFM
   syntax_highlighter: rouge

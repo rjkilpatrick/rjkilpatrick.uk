@@ -9,6 +9,10 @@
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 <meta name="theme-color" content="hsl(359.6, 59%, 54%)" />
 
+{% if page.latex %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+{% endif %}
+
 <link rel="stylesheet" href="/assets/css/highlight.css" />
 
 {% for style in page.styles %}
@@ -24,10 +28,10 @@
 {% comment %} Make rss etc. auto-discoverable {% endcomment %}
 {% feed_meta %}
 
+<!-- Search engines -->
 {% comment %} Adds SEO properly {% endcomment %}
 {% seo title=false %}
 
-<!-- Search engines -->
 <meta
   name="keywords"
   content="john, kilpatrick, optics, computer, graphics, learning, transmission, matrix, raytracing"
