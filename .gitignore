@@ -4,6 +4,8 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 
+Gemfile.lock
+
 # Bundler generated
 .bundle/
 vendor/
