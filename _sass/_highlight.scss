@@ -1,8 +1,4 @@
----
----
-
-/* Don't import twice */
-// @import 'colours';
+@import 'colours';
 
 .highlight{
   border-radius: 5px;
