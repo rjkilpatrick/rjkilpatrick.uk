@@ -21,7 +21,7 @@ description: >- # Longer description
   learning, normally involving something computers, electronics. Based in the
   UK.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://rjkilpatrick.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://rjkilpatrick.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Delimits end of snippet of start of post
 excerpt_separator: "<!--more-->"
