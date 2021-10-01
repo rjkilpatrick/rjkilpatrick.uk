@@ -6,18 +6,6 @@ latex: yes
 
 {% include toc.md %}
 
-<!--Plan-->
-- [x] Assume knowledge of real derivatives
-- [x] Gradient descent
-- [ ] Set up (forward) computation graph
-- [ ] Reverse computation graph for calculating the gradients
-- [x] Use example
-- [ ] Link to Dlearn
-
-## Introduction
-
-When minimizing a function, a popular method is gradient descent.
-
 ## Gradient Descent
 
 ### Refresher on Gradients
@@ -87,6 +75,8 @@ Where \\(x, y\\) are some parameters that we can update.
 
 ### Computation Graph
 
+{% include figure.html src="/assets/img/autograd/forward.svg" alt="Dependency
+    graph" caption="Forward computation graph for $\mathcal{L} = \sin(x)+xy$" %}
 <!-- TODO -->
 - Explain graph terminology
 - Draw graph
@@ -106,6 +96,9 @@ $$
 $$
 
 ### Dependency Graph
+
+{% include figure.html src="/assets/img/autograd/backward.svg"
+    alt="Dependency graph" caption="Dependency graph for $\mathcal{L} = \sin(x)+xy$" %}
 
 You'll notice this is the same as the above computation graph, except the direction of the edges are reversed.
 
@@ -128,7 +121,7 @@ $$
     \end{equation}
 $$
 
-Now, for each dependency of \\(w_5\\), we need to calculate their own respective adjoint.
+Now, for each dependency of $w_5$, we need to calculate their own respective adjoint.
 
 $$
     \begin{equation}
