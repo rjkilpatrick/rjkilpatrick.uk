@@ -91,6 +91,7 @@ defaults:
       styles: ["post.css"]
       seo:
         type: BlogPosting
+      latex: yes
   
   - scope:
       path: ""
