@@ -23,7 +23,7 @@ layout: default
             ,
 Originally published:&nbsp;
           {%- endif -%}
-          {{- page.date | date_to_long_string: "ordinal" -}}.">
+          {{- page.date | date_to_long_string: "ordinal" -}}">
           
           {{- page.date | date_to_long_string: "ordinal" -}}
         </div>
@@ -38,15 +38,17 @@ Originally published:&nbsp;
         </span>
       </div>
 
-      <div class="busuanzi-count">
-        <span class="site-uv">
+      <div>
+        <span class="site-uv" title="Unique visitors">
           <div class="fa-container">
             <i class="fa fa-user"></i>
           </div>
           <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
         </span>
-
-        <span class="site-pv">
+      </div>
+      
+      <div>
+        <span class="site-pv" title="Total views">
           <div class="fa-container">
             <i class="fa fa-eye"></i>
           </div>

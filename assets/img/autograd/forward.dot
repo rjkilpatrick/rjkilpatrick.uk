@@ -1,0 +1,16 @@
+digraph graphname {
+    graph [truecolor=true bgcolor="transparent"]
+	node [style=filled fillcolor="white"]
+
+    rankdir=BT;
+
+    sin [] // Force x on the left
+    plus [ label="+" ]
+    loss [ label="&#8466;" ]
+    mul [ label="&times;" ]
+
+    plus -> loss;
+    {sin mul} -> plus;
+    {x y} -> mul;
+    x -> sin;
+}
