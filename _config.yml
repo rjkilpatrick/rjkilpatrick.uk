@@ -15,10 +15,10 @@
 # in the templates via {{ site.myvariable }}.
 title: John Kilpatrick
 author: John Kilpatrick
-tagline: John's site. A website about optics, computing and everything in between. # Shorter description
+tagline: rjkilpatrick | Optics, computing and everything in between. # Shorter description
 description: >- # Longer description
   The home of John Kilpatrick; A physics Ph.D. candidate with a passion for
-  learning, normally involving something computers, electronics. Based in the
+  learning, normally involving something computers, electronics. Based in Exeter,
   UK.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rjkilpatrick.github.io" # the base hostname & protocol for your site, e.g. http://example.com
@@ -27,7 +27,7 @@ url: "https://rjkilpatrick.github.io" # the base hostname & protocol for your si
 excerpt_separator: "<!--more-->"
 
 # permalink: pretty # /:category/:year/:month/:day/:title/
-permalink: /:year/:month/:day/:title/
+permalink: /blog/:year/:month/:day/:title/
 
 # Paginator settings
 paginate: 10
@@ -35,13 +35,10 @@ paginate_path: "/blog/:num"
 
 # Socials
 social_links:
-  # facebook: jekyll
   github: rjkilpatrick
-  # instagram: jekyll
   linkedin: rjkilpatrick
-  # twitter: rjkilpatrick1
-  # youtube: jekyll
-  docker: itsrig
+  twitter: rjkilpatrick1
+  docker: rjkilpatrick
 
 # Build settings
 markdown: kramdown
@@ -60,7 +57,6 @@ plugins:
   - jekyll-feed # RSS feed for posts
   - jekyll-sitemap # Sitemap creation for SEO
   - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-seo-tag
 
 sass:
