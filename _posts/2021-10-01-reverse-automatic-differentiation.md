@@ -15,11 +15,13 @@ This post will assume some knowledge of gradients, but if you're rusty, hopefull
 The derivative of a real function \\(f : \mathbb{R} \rightarrow \mathbb{R}\\) (this just means it takes in a real number and spits out a real number), is given by the equation:
 
 $$
-    f'(x)
-    =
-    \lim_{\epsilon \to 0}\left\{
-        \frac{f(x + \epsilon) - f(x)}{\epsilon}
-    \right\}
+    \begin{equation}
+        f'(x)
+        =
+        \lim_{\epsilon \to 0}\left\{
+            \frac{f(x + \epsilon) - f(x)}{\epsilon}
+        \right\}
+    \end{equation}
 $$
 
 You can think of this as being the change in \\(f\\) compared to the change in \\(x\\), which is the slope of the line (if \\(f(x)\\) is plotted on the y axis and \\(x\\) is plotted on the x axis) as the change in \\(x\\) approaches zero, meaning you find the slope exactly at the point \\(x\\).
@@ -27,13 +29,13 @@ You can think of this as being the change in \\(f\\) compared to the change in \
 E.g. \\(f(x) = x^2\\):
 
 $$
-    \begin{align}
+    \begin{align*}
         f'(x) &= \lim_{\epsilon \to 0}\left\{\frac{(x + \epsilon)^2 - x^2}{\epsilon}\right\}\\
         &= \lim_{\epsilon \to 0}\left\{\frac{x^2 + 2x\epsilon + \epsilon^2 - x^2}{\epsilon}\right\}\\
         &= \lim_{\epsilon \to 0}\left\{\frac{2x\epsilon + \epsilon^2}{\epsilon}\right\}\\
         &= \lim_{\epsilon \to 0}\left\{2x + \epsilon\right\}\\
         &= 2x
-    \end{align}
+    \end{align*}
 $$
 
 So the slope of an \\(f(x) = x^2\\) graph at any point is given by the equation \\(f'(x) = 2x\\).
@@ -75,13 +77,14 @@ Where \\(x, y\\) are some parameters that we can update.
 
 ### Computation Graph
 
+It turns out that we can express our loss function as a sequence of primitive operations.
+Drawing this as a graph, it looks like this:
+
 {% include figure.html src="/assets/img/autograd/forward.svg" alt="Dependency
     graph" caption="Forward computation graph for $\mathcal{L} = \sin(x)+xy$" %}
-<!-- TODO -->
-- Explain graph terminology
-- Draw graph
-- Show problem is made of fundamental operators which are in themselves simple
 
+Each node (i.e. one of the circles) consists of either an operation or a parameter which we can change.
+The edges (arrows) describe the direction that gives us this output.
 We label the nodes of each graph with \\(w_i\\), such that:
 
 $$
@@ -100,9 +103,9 @@ $$
 {% include figure.html src="/assets/img/autograd/backward.svg"
     alt="Dependency graph" caption="Dependency graph for $\mathcal{L} = \sin(x)+xy$" %}
 
-You'll notice this is the same as the above computation graph, except the direction of the edges are reversed.
+You'll notice this is the same as the above computation graph, except the direction of the edges (arrows) are reversed.
 
-We can consider the gradient of a node to be a function of only the inputs to it, which we store in the node from the forward pass, and the gradient of the parent.
+We can consider the gradient of a node to be a function of only the gradient of tha parent(s) and the inputs to it, which we store in the node from the forward pass.
 Let's use it work out what the gradients of the parameters are.
 
 We will use a shorthand for the gradient called the adjoint:
@@ -206,7 +209,7 @@ for _ in range(1000):
     new_x = x - lr * (cos(x) + y)
     new_y = y - lr * x
 
-    # Set update parameters
+    # Set updated parameters
     x = new_x
     y = new_y
 

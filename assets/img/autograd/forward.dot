@@ -4,10 +4,23 @@ digraph graphname {
 
     rankdir=BT;
 
-    sin [] // Force x on the left
+    // Labelling
+    x [ xlabel="w&#8321;" ]
+    y [ xlabel="w&#8322;" ]
+    sin [ xlabel="w&#8323;" ]
+    plus [ xlabel="w&#8325;" ]
+    mul [ xlabel="w&#8324;" ]
+    
+
+    // Names
     plus [ label="+" ]
     loss [ label="&#8466;" ]
     mul [ label="&times;" ]
+
+    //  Colours
+    loss [ fillcolor="#ecc6d3" ]
+    x [ fillcolor="#c6e7ec" ]
+    y [ fillcolor="#c6e7ec" ]
 
     plus -> loss;
     {sin mul} -> plus;

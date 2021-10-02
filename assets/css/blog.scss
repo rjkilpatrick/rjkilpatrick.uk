@@ -1,0 +1,54 @@
+---
+# This is for the blog landing page, NOT the individual posts
+---
+
+@import "highlight";
+
+.post-meta {
+  margin: 0;
+  color: var(--text-secondary);
+  // margin-top: 1em;
+  // color: hsl(210, 0%, 55%);
+  font-size: 0.8em;
+  display: flex;
+  flex-direction: row;
+
+  > div {
+    margin-right: 20px;
+  }
+}
+
+.fa-container {
+  display: inline-block;
+  width: 15px;
+  font-size: 1.25em;
+}
+
+.post-title {
+  margin: 0.8em 0 0.4em 0;
+}
+
+.excerpt {
+  margin: 1vh 0 3vh 0;
+}
+
+.post {
+  margin: 0.5em 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 4px 0;
+
+  a {
+    padding: 8px 16px;
+    &.active {
+      background-color: var(--background-secondary);
+    }
+  }
+}
+
+.inactive {
+  color: var(--text-secondary);
+}
