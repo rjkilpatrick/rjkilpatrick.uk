@@ -144,3 +144,7 @@ figure {
 pre {
   white-space: pre-wrap;
 }
+
+abbr {
+  text-decoration: var(--accent-4) wavy underline;
+}

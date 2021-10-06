@@ -57,7 +57,7 @@ Calculating this gradient can be a pain when the \\(\mathcal{L}(x)\\) becomes no
 
 ## Automatic Differentiation
 
-Automatic differentiation (autograd) is a fancy way of saying the [chain rule](https://en.wikipedia.org/wiki/Chain_rule), but the computer does the work for you.
+Automatic differentiation (autodiff) is a fancy way of saying the [chain rule](https://en.wikipedia.org/wiki/Chain_rule), but the computer does the work for you.
 
 We only consider reverse-mode differentiation here, but there is also (the conceptually easier) forward-mode differentiation[^rufflewind].
 
@@ -235,7 +235,7 @@ Hopefully, by the time you are reading this, I will have implemented it 😀.
 
 {% comment %} Definitions {% endcomment %}
 *[RAD]: Reverse-mode Automatic Differentiation
-*[autograd]: Automatic Differentiation
+*[autodiff]: Automatic Differentiation
 
 {% comment %} References {% endcomment %}
 [^stackoverflow]: <https://math.stackexchange.com/a/1720583/>
