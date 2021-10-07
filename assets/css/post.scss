@@ -148,3 +148,14 @@ pre {
 abbr {
   text-decoration: var(--accent-4) wavy underline;
 }
+
+a.footnote{
+  &:after {
+    content: "]";
+    color: inherit;
+  }
+  &:before {
+    content: "[";
+    color: inherit;
+  }
+}
