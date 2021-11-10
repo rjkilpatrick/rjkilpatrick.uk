@@ -1,0 +1,33 @@
+digraph graphname {
+    graph [truecolor=true bgcolor="transparent"]
+	node [style=filled fillcolor="white"]
+
+    rankdir=LR;
+
+    // Labelling
+    x    [ xlabel="w&#8321;" ]
+    mul1 [ xlabel="w&#8322;" ]
+    exp  [ xlabel="w&#8323;" ]
+    decrement [ xlabel="w&#8324;" ]
+    mul2 [ xlabel="w&#8325;" ]
+
+    //  Names
+    imag [ label="i" ]
+    loss [ label="&#8466;" ]
+    mul1 [ label="&times;" ]
+    mul2 [ label="&times;" ]
+    decrement [ label="-" ]
+    one [ label="1" ]
+
+    //  Colours
+    loss [ fillcolor="#ecc6d3" ]
+    x    [ fillcolor="#c6e7ec" ]
+    imag [ fillcolor="#edd9a6" ]
+    one  [ fillcolor="#edd9a6" ]
+
+    // Model
+    loss -> mul2 -> decrement -> exp -> mul1 -> x
+    decrement -> one
+    mul1 -> imag
+    mul2 -> decrement  [ xlabel="conj" ]
+}
