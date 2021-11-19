@@ -8,8 +8,10 @@ Install guide for Jekyll [here](https://jekyllrb.com/docs/installation/).
 
 With ruby and gems installed:
 
-```
+``` sh
 git clone https://github.com/rjkilpatrick/rjkilpatrick.github.io
+git submodule init
+git submodule update
 gem install jekyll bundler
 bundle install
 bundle exec jekyll serve

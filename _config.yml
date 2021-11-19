@@ -49,6 +49,18 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+# Keywords
+keywords:
+  - john
+  - kilpatrick
+  - optics
+  - phd
+  - computer
+  - graphics
+  - "deep learning"
+  - "transmission matrix"
+  - raytracing
+
 highlighter: rouge
 
 timezone: Europe/London
