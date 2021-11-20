@@ -210,7 +210,7 @@ Now we have the update equation, we can work out how to update any complex-value
 Let's say we have a function $y(x) = 1$ that we want to approximate with $\hat{y} = e^{ix}$.
 We want to know at what $x$ value produces $\hat{y}(x) = 1$.
 
-Most readers will probably be able to work out that the minima of this loss function occurs at $x = https://twitter.com/swyx/status/1449472712720601088?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1449472712720601088%7Ctwgr%5E%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Fwww.swyx.io%2Fcss-100-bytes2n\pi, n \in \mathbb{Z}$, but we will still proceed with this simple(-ish) example.
+Most readers will probably be able to work out that the minima of this loss function occurs at $x = 2n\pi, n \in \mathbb{Z}$, but we will still proceed with this simple(-ish) example.
 
 We define our loss function to be the absolute square of the difference between the estimated value $\hat{y}$ and the true value $y$.
 
