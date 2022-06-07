@@ -1,0 +1,52 @@
+---
+title: Exeter Photonics Society
+tags: ["exeter-photonics"]
+---
+
+I have been elected president of the Exeter Photonics society, a student run collective focusing on outreach, industry connections, and socializing.
+
+## Logo
+
+I designed a new logo for the society.
+
+![Exeter Photonics logo](https://user-images.githubusercontent.com/6240430/172355989-77aa853b-80e7-4499-b2eb-49b3b73ec9d2.png)
+
+We use Baron as the typeface.
+
+## Stash
+
+I designed some t-shirts for the society also.
+
+![Exeter Photonics t-shirt](https://user-images.githubusercontent.com/6240430/172356832-f66c2789-6248-4e45-853d-89f91f0e0913.png)
+
+If you would like to order one, please [feel free](https://www.yourdesign.co.uk/exeter-photonics-tshirt) to order one.
+
+## Outreach
+
+### Dartmoor Stargazing
+
+I helped organize a trip to Dartmoor national park, 25 February 2022 for around 60 people.
+I was in charge of designing the social media promotions, and ticket sales.
+![Stargazing poster](https://user-images.githubusercontent.com/6240430/172357175-a861710e-3355-4320-a3b7-3e3ad155432f.png)
+
+### IoP Festival of Physics
+
+I helped run a stall where we explained scientific demos to middle school aged children.
+We had two tables in the Exeter Forum.
+
+### Pint of Science
+
+We helped out with the local branch of the national [pint of science](https://pintofscience.co.uk/) event.
+We brought a number of demos along.
+I was using a very diluted milk solution in a glass bottle with a bright white torch at the bottom to demonstrate why the sky looks blue during the day, then red at sunrise/sunset.
+
+## Industry visits
+
+### Torbay Hi-Tech cluster
+
+I presented a poster, and organized a work trip to [Torbay Hi-Tech Cluster](https://epic-centre.co.uk/hi-tech-cluster/)'s Research and Innovation Conference.
+![John Kilpatrick in front of poster](https://user-images.githubusercontent.com/6240430/172355488-0b8f192f-fb3d-4636-acee-e502b0279daf.png)
+
+### Effect Photonics
+
+On 16th June, we will be touring [Effect Photonics](https://effectphotonics.com/), a telecoms company with a focus on photonics.
