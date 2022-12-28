@@ -37,6 +37,10 @@ body {
   width: 100%;
 }
 
+img{
+  max-width: 100%;
+}
+
 /* Don't show animations if they've asked for that */
 @media (prefers-reduced-motion: reduce) {
   body {
