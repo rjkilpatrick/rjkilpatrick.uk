@@ -9,8 +9,6 @@ sitemap: false
 - [ ] Aria labels for all areas
 - [ ] Rework common footer
   - [ ] Add back to top bottom in footer
-- [x] Consider moving to react
-- [x] Consider moving to TypeScript
 - [ ] Add site screenshot for itemprop
 - [ ] Update table of contents to work seperately
 - [ ] Code highlighting
@@ -19,6 +17,11 @@ sitemap: false
 - [ ] Make anchors for headers less intrusive / remove them
 - [ ] Add Reveal.JS back
 - [ ] `npm install @astrojs/rss`
+
+## Consider
+
+- [ ] [Prefetch](https://docs.astro.build/en/guides/integrations-guide/prefetch/)
+- [ ] [Tailwind CSS](https://tailwindcss.com/)
 
 ## Add back in
 

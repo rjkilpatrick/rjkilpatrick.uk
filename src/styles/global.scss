@@ -30,6 +30,13 @@ body {
   min-height: 100vh;
 }
 
+.content-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
 /* Don't show animations if they've asked for that */
 @media (prefers-reduced-motion: reduce) {
   body {
@@ -124,10 +131,10 @@ $tertiary3: $orange;
 //TODO: Consider moving to 2 fonts only
 
 // Main font
-@import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=Roboto+Slab&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=Inter&family=Epilogue&display=swap');
 
-$font-main: 'Roboto Slab', Ubuntu, -apple-system, Noto Sans, Helvetica, serif;
-$font-heading: Ubuntu, -apple-system, Noto Sans, Helvetica, serif;
+$font-main: 'Inter', Ubuntu, -apple-system, Noto Sans, Helvetica, serif;
+$font-heading: 'Epilogue', -apple-system, Noto Sans, Helvetica, serif;
 $font-mono: "PT Mono", Liberation Mono, Menlo, Consolas, Monospace;
 
 :root {
@@ -138,4 +145,14 @@ $font-mono: "PT Mono", Liberation Mono, Menlo, Consolas, Monospace;
 
 html {
   font-size: 1em;
+  font-family: $font-main;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
 }
