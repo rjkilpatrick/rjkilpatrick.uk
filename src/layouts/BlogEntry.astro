@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 
+import "../styles/post.scss";
+
 export interface Props {
   title: string;
 }
@@ -16,15 +18,15 @@ const { title } = Astro.props;
       </header>
       <slot />
     </article>
+    <!--Comments on post using GitHub account-->
+    <script
+      src="https://utteranc.es/client.js"
+      repo="rjkilpatrick/rjkilpatrick.github.io"
+      issue-term="pathname"
+      label="comment"
+      theme="preferred-color-scheme"
+      crossorigin="anonymous"
+      async
+    ></script>
   </main>
 </BaseLayout>
-<!--Comments on post using GitHub account-->
-<script
-  src="https://utteranc.es/client.js"
-  repo="rjkilpatrick/rjkilpatrick.github.io"
-  issue-term="pathname"
-  label="comment"
-  theme="preferred-color-scheme"
-  crossorigin="anonymous"
-  async
-></script>

@@ -5,13 +5,22 @@ tags: ["maths", "deep-learning"]
 latex: yes
 ---
 
+import Figure from "../../components/figure.astro";
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
+  crossorigin="anonymous"
+/>
+
 ## Gradient Descent
 
 ### Refresher on Gradients
 
 This post will assume some knowledge of gradients, but if you're rusty, hopefully this will be enough so that you understand the rest of the post.
 
-The derivative of a real function \\(f : \mathbb{R} \rightarrow \mathbb{R}\\) (this just means it takes in a real number and spits out a real number), is given by the equation:
+The derivative of a real function $f : \mathbb{R} \rightarrow \mathbb{R}$ (this just means it takes in a real number and spits out a real number), is given by the equation:
 
 $$
     \begin{equation}
@@ -23,9 +32,9 @@ $$
     \end{equation}
 $$
 
-You can think of this as being the change in \\(f\\) compared to the change in \\(x\\), which is the slope of the line (if \\(f(x)\\) is plotted on the y axis and \\(x\\) is plotted on the x axis) as the change in \\(x\\) approaches zero, meaning you find the slope exactly at the point \\(x\\).
+You can think of this as being the change in $f$ compared to the change in $x$, which is the slope of the line (if $f(x)$ is plotted on the y axis and $x$ is plotted on the x axis) as the change in $x$ approaches zero, meaning you find the slope exactly at the point $x$.
 
-E.g. \\(f(x) = x^2\\):
+E.g. $f(x) = x^2$:
 
 $$
     \begin{align*}
@@ -37,14 +46,14 @@ $$
     \end{align*}
 $$
 
-So the slope of an \\(f(x) = x^2\\) graph at any point is given by the equation \\(f'(x) = 2x\\).
+So the slope of an $f(x) = x^2$ graph at any point is given by the equation $f'(x) = 2x$.
 
 For a more thorough detail than we have space to here, try reading [this post](https://programmathically.com/rise-over-run-understand-the-definition-of-a-derivative/).
 
 ### Update equation
 
-Effectively, we assume that whenever some function \\(\mathcal{L}\\) is minimized, we have solved our problem.
-So we set a new value for \\(x\\) based on the old one, such that it minimizes the value of \\(\mathcal{L}\\).
+Effectively, we assume that whenever some function $\mathcal{L}$ is minimized, we have solved our problem.
+So we set a new value for $x$ based on the old one, such that it minimizes the value of $\mathcal{L}$.
 
 $$
     \begin{equation}
@@ -52,7 +61,7 @@ $$
     \end{equation}
 $$
 
-Calculating this gradient can be a pain when the \\(\mathcal{L}(x)\\) becomes non-trivial, so we adopt a method for determining gradients automatically.
+Calculating this gradient can be a pain when the $\mathcal{L}(x)$ becomes non-trivial, so we adopt a method for determining gradients automatically.
 
 ## Automatic Differentiation
 
@@ -64,7 +73,7 @@ We only consider reverse-mode differentiation here, but there is also (the conce
 
 (with thanks to [^stackoverflow]).
 
-Say for example, we want to minimize the function \\(\mathcal{L}(x)\\):
+Say for example, we want to minimize the function $\mathcal{L}(x)$:
 
 $$
     \begin{equation}
@@ -72,19 +81,16 @@ $$
     \end{equation}
 $$
 
-Where \\(x, y\\) are some parameters that we can update.
+Where $x, y$ are some parameters that we can update.
 
 ### Computation Graph
 
 It turns out that we can express our loss function as a sequence of primitive operations.
 Drawing this as a graph, it looks like this:
 
-{% include figure.html src="/assets/img/autograd/forward.svg" alt="Dependency
-    graph" caption="Forward computation graph for $\mathcal{L} = \sin(x)+xy$" %}
-
-Each node (i.e. one of the circles) consists of either an operation or a parameter which we can change.
+Each node (i.e., one of the circles) consists of either an operation or a parameter which we can change.
 The edges (arrows) describe the direction that gives us this output.
-We label the nodes of each graph with \\(w_i\\), such that:
+We label the nodes of each graph with $w_i$, such that:
 
 $$
 \begin{align}
@@ -98,9 +104,6 @@ $$
 $$
 
 ### Dependency Graph
-
-{% include figure.html src="/assets/img/autograd/backward.svg"
-    alt="Dependency graph" caption="Dependency graph for $\mathcal{L} = \sin(x)+xy$" %}
 
 You'll notice this is the same as the above computation graph, except the direction of the edges (arrows) are reversed.
 
@@ -136,11 +139,11 @@ $$
     \end{equation}
 $$
 
-Since we know already that \\(\bar{w}_5 = 1\\), using symbolic differentiation we find \\(\frac{\partial w_5}{\partial w_4} = 1\\), so \\(\bar{w}_4 = 1\\).
+Since we know already that $\bar{w}_5 = 1$, using symbolic differentiation we find $\frac{\partial w_5}{\partial w_4} = 1$, so $\bar{w}_4 = 1$.
 
-Similarly, \\(\bar{w}_3 = 1\\), seeing as it's follows the same equation, just with the index changed.
+Similarly, $\bar{w}_3 = 1$, seeing as it's follows the same equation, just with the index changed.
 
-For \\(w_2\\)
+For $w_2$
 
 $$
     \begin{equation}
@@ -153,11 +156,10 @@ $$
     \end{equation}
 $$
 
-Hence \\(\bar{w}_2 = w_2\\), which evaluated at \\(w_2\\) gives us \\(y\\), as expected.
-We can substitute our value in for \\(y = 2\\) and update \\(y\\) using the update equation to give a gradient of:
+Hence $\bar{w}_2 = w_2$, which evaluated at $w_2$ gives us $y$, as expected.
+We can substitute our value in for $y = 2$ and update $y$ using the update equation to give a gradient of:
 
-
-For \\(w_1\\):
+For $w_1$:
 
 $$
     \begin{equation}
@@ -175,11 +177,11 @@ $$
     \end{equation}
 $$
 
-From before \\(\bar{w}_3 = \bar{w}_4 = 1\\), and via symbolic differentiation \\(\frac{\partial w_3}{\partial w_1} = \cos\left(w_1\right)\\), evaluated at \\(w_1\\).
-\\(\frac{\partial w_4}{\partial w_1} = w_2\\), evaluated at \\(w_1, w_2\\) (here \\(w_1\\) is not needed, but in general, this is not the case).
-So, \\(\bar{w}_1 = \cos\left(w_1\right)\\), evaluated at \\(w_1, w_2\\) which we need to have saved from the forward pass, since they change every time.
+From before $\bar{w}_3 = \bar{w}_4 = 1$, and via symbolic differentiation $\frac{\partial w_3}{\partial w_1} = \cos\left(w_1\right)$, evaluated at $w_1$.
+$\frac{\partial w_4}{\partial w_1} = w_2$, evaluated at $w_1, w_2$ (here $w_1$ is not needed, but in general, this is not the case).
+So, $\bar{w}_1 = \cos\left(w_1\right)$, evaluated at $w_1, w_2$ which we need to have saved from the forward pass, since they change every time.
 
-We can now update \\(x, y\\) based on the update equation:
+We can now update $x, y$ based on the update equation:
 
 $$
     \begin{align}
@@ -188,9 +190,9 @@ $$
     \end{align}
 $$
 
-Where \\(\alpha\\) is the learning rate, signifying the amount for the vector to update in the gradient direction.
+Where $\alpha$ is the learning rate, signifying the amount for the vector to update in the gradient direction.
 
-If we initialized our optimizer with \\(x = 1, y = 2, \alpha = 10^{-2}\\), then we would find that we get an initial loss value of 2.8414.
+If we initialized our optimizer with $x = 1, y = 2, \alpha = 10^{-2}$, then we would find that we get an initial loss value of 2.8414.
 
 Here's a small Python implementation of this:
 
@@ -219,23 +221,14 @@ print("y:", y)                              # y: 13928.148130601208
 ```
 
 The final loss is **much** lower than the initial loss, showing that our naive optimizer has performed its job in travelling towards the minimum of the loss function.
-This particular function actually is minimized at \\(x = \pm \infty, y = \mp \infty\\), but for objective functions constrained to be above zero, such as a [norm](https://en.wikipedia.org/wiki/Norm_(mathematics)), then our method should work similarly.
+This particular function actually is minimized at $x = \pm \infty, y = \mp \infty$, but for objective functions constrained to be above zero, such as a [norm](<https://en.wikipedia.org/wiki/Norm_(mathematics)>), then our method should work similarly.
 
 You can see that in a (backwards) pass, it manages to compute **all** the gradients of a given computation graph.
 This is at the expense of having to store the intermediate results of the forward pass (or perhaps recalculate them).
 This means more memory is used, but for ease of use, we will use a dynamic graph (i.e defined each forward pass).
 
-## Dlearn
+_[RAD]: Reverse-mode Automatic Differentiation
+_[autodiff]: Automatic Differentiation
 
-[Dlearn](https://github.com/rjkilpatrick/dlearn) is a deep learning library that **should** implement this algorithm to compute gradients whilst staying out of your way to perform your computations.
-Hopefully, by the time you are reading this, I will have implemented it 😀.
-
-## References
-
-{% comment %} Definitions {% endcomment %}
-*[RAD]: Reverse-mode Automatic Differentiation
-*[autodiff]: Automatic Differentiation
-
-{% comment %} References {% endcomment %}
 [^stackoverflow]: <https://math.stackexchange.com/a/1720583/>
 [^rufflewind]: <https://rufflewind.com/2016-12-30/reverse-mode-automatic-differentiation>

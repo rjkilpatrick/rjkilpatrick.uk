@@ -3,9 +3,17 @@ title: Poor Man's AR
 layout: "../../layouts/BlogEntry.astro"
 ---
 
-**tl;dr:** Here's [the link to the demo](https://rjkilpatrick.github.io/virtual-window).
+import Figure from "../../components/Figure.astro";
 
-{% include figure.html src='https://raw.githubusercontent.com/rjkilpatrick/virtual-window/main/assets/img/Screenshot.png' alt='Screenshot of Lucy angel model' caption='Screenshot from <a href="https://rjkilpatrick.github.io/virtual-window">demo</a>.' %}
+# {frontmatter.title}
+
+<Figure
+  src="https://raw.githubusercontent.com/rjkilpatrick/virtual-window/main/assets/img/Screenshot.png"
+  alt="Screenshot of Lucy angel model"
+  caption='Screenshot of lucy angel model in faux-augemented reality.'
+/>
+
+**tl;dr:** Here's [the link to the demo](https://rjkilpatrick.github.io/virtual-window).
 
 This post is just to signpost you to a little in browser Augmented Reality demo I made a while ago, that only requires a webcam to run (see it live [here](https://rjkilpatrick.github.io/virtual-window)).
 

@@ -1,144 +1,18 @@
----
----
-
-// Colours
-@import "colours"; // Must be included for SCSS variables
-
-// Table of contents
-@import "toc";
-
-@import "highlight";
-
 blockquote {
-  border-left: 8px solid var(--background-secondary);
+  border-left: 0.5em solid var(--background-secondary);
   color: var(--text-secondary);
-  padding: 8px 0px 8px 24px;
+  padding: 0.5em 0px 0.5em 1.5em;
   margin: 0;
 }
 
-.anchor {
-  color: var(--light-text-colour);
-  border: none;
-  margin: 0 0 0 5px;
-  &:hover {
-    color: var(--primary-accent);
-    border: inherit;
-  }
-}
-
-.tags {
-  padding: 0;
-  display: inline;
-  > li {
-    display: inline;
-    > a {
-      display: inline-block;
-      margin-right: 5px;
-      margin-bottom: 8px;
-      padding: 5px 10px;
-      text-decoration: none;
-      border: 1px solid var(--text-secondary);
-      border-radius: 4px;
-      font-weight: normal;
-      color: var(--text-secondary);
-      &:hover {
-        color: var(--text-primary);
-      }
-    }
-  }
-}
-
-.post-meta {
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 0.75em;
-  display: flex;
-
-  >div {
-    margin-right: 20px;
-  }
-}
-
-.fa-container {
-  display: inline-block;
-  width: 15px;
-  font-size: 1.25em;
-}
-
-// Asides
-aside {
-  margin: 1em 0;
-  border-left: 8px solid $cyan;
-  padding: 0.5em 2em;
-  line-height: 1.4;
-  background-color: var(--background-secondary);
-
-  &.warning {
-    border-left: 8px solid $red;
-  }
-  
-  &.hint {
-    border-left: 8px solid $green;
-  }
-}
-
+// KaTeX
 *[mathvariant="bold"] {
   font-weight: bold;
 }
 
-.post-meta {
-  margin: 0;
-  color: var(--text-secondary);
-  // margin-top: 1em;
-  // color: hsl(210, 0%, 55%);
-  font-size: 0.8em;
-  display: flex;
-  flex-direction: row;
-
-  >div {
-    margin-right: 20px;
-  }
-}
-
-.fa-container {
-  display: inline-block;
-  width: 15px;
-  font-size: 1.25em;
-}
-
-.post-title {
-  margin: 0.8em 0 0.4em 0;
-}
-
-.excerpt {
-  margin: 1vh 0 3vh 0;
-}
-
-.post {
-  margin: 0.5em 0;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin: 4px 0;
-
-  a {
-    padding: 8px 16px;
-    &.active {
-      background-color: var(--background-secondary);
-    }
-  }
-}
-
-.inactive {
-  color: var(--text-secondary);
-}
-
-figure {
-  > img {
-    max-height: min(100vh, 400px);
-  }
+.astro-code{
+  padding: 1em 2em;
+  border-radius: 5px;
 }
 
 pre {
@@ -149,11 +23,13 @@ abbr {
   text-decoration: var(--accent-4) wavy underline;
 }
 
-a.footnote{
+// TODO: Get better selector, lookup remark docs for footnote
+article sup>a {
   &:after {
     content: "]";
     color: inherit;
   }
+
   &:before {
     content: "[";
     color: inherit;

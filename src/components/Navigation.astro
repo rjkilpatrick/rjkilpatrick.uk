@@ -1,12 +1,21 @@
 ---
+export const links = [
+  { title: "Home", url: "/" },
+  { title: "About", url: "/about" },
+  { title: "Blog", url: "/post" },
+];
 ---
 
 <nav class="page-navigation">
   <div class="modal">
     <ul class="modal-content">
-      <li class="nav-item">
-        <a href="#">Home</a>
-      </li>
+      {
+        links.map((link) => (
+          <li class="nav-item">
+            <a href={link.url}>{link.title}</a>
+          </li>
+        ))
+      }
     </ul>
   </div>
   <button
@@ -42,3 +51,141 @@
   toggle.addEventListener("touchstart", toggleNav);
   toggle.addEventListener("click", toggleNav);
 </script>
+<style lang="scss">
+  .page-navigation {
+    // Aesthetics
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  .toggle-container {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 64px;
+    height: 64px;
+
+    z-index: 100;
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+
+    text-align: center;
+    font-size: 3em;
+
+    background-color: var(--background-secondary);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all ease-in-out 0.2s;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .modal-content {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+
+    a {
+      display: block;
+      width: inherit;
+    }
+  }
+
+  .toggle-container {
+    border: none;
+    cursor: pointer;
+    background-color: inherit;
+    padding: 0; // Fix button depress moving the icon
+  }
+
+  .hamburger {
+    background-color: var(--text-primary);
+    &:hover {
+      background-color: var(--text-emph);
+    }
+    transition: all 0.2s ease;
+    border-radius: 50px;
+    display: block;
+    height: 8px;
+    position: absolute;
+    width: inherit;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &::before,
+    &::after {
+      content: "";
+      background-color: var(--text-primary);
+      &:hover {
+        background-color: var(--text-emph);
+      }
+      border-radius: 50px;
+      display: block;
+      height: 8px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      transition: all 0.2s ease;
+    }
+
+    &.active {
+      background-color: #00000000;
+
+      &::before {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        bottom: 0;
+        transform: rotate(45deg);
+      }
+    }
+
+    &::before {
+      top: -20px;
+    }
+
+    &::after {
+      bottom: -20px;
+    }
+  }
+
+  .hamburger.active,
+  .hamburger::before.active,
+  .hamburger::after.active {
+    background-color: var(--background-primary);
+  }
+
+  .nav-item > a:visited,
+  .nav-item > a:link {
+    color: var(--text-primary);
+    &:hover {
+      color: var(--text-emph);
+    }
+  }
+</style>

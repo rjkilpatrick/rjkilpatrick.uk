@@ -5,6 +5,8 @@ tags: ["maths"]
 latex: yes
 ---
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+
 ## Displaying Maths on the Web
 
 Maths is normally best displayed by an equation with variables of a single letter for readability and for visually understanding an equation [^notation].
@@ -128,7 +130,5 @@ The best place for supporting typeset maths is within the browser and that will 
 ### Help support MathML
 
 If you want to help MathML, and by extension maths on the web, star [this issue](https://bugs.chromium.org/p/chromium/issues/detail?id=6606) so that the Chromium team takes it seriously.
-
-## References
 
 [^notation]: [Notation as a Tool of Thought](https://www.eecg.utoronto.ca/~jzhu/csc326/readings/iverson.pdf)

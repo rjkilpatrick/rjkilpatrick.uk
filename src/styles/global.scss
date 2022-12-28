@@ -1,12 +1,12 @@
+html,
+body {
+  box-sizing: border-box;
+}
+
 *,
 *:before,
 *:after {
   box-sizing: inherit;
-}
-
-html,
-body {
-  box-sizing: border-box;
 }
 
 body {
@@ -31,9 +31,9 @@ body {
 }
 
 .content-wrapper {
-  max-width: 960px;
+  max-width: 80ch;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 1.5em;
   width: 100%;
 }
 
@@ -155,4 +155,9 @@ h4,
 h5,
 h6 {
   font-family: $font-heading;
+}
+
+pre,
+code {
+  font-family: $font-mono;
 }
