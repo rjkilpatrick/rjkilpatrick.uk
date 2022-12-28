@@ -1,20 +1,19 @@
 # John Kilpatrick
 
-[rjkilpatrick.github.io](https://rjkilpatrick.github.io) is a Jekyll website for [John Kilpatrick](https://github.com/rjkilpatrick).
+[rjkilpatrick.github.io](https://rjkilpatrick.github.io) is an astro website for [John Kilpatrick](https://github.com/rjkilpatrick).
 
 ## Installation
 
-Install guide for Jekyll [here](https://jekyllrb.com/docs/installation/).
+Install guide for astro [here](https://jekyllrb.com/docs/installation/).
 
-With ruby and gems installed:
+With `npm` installed:
 
-``` sh
+```sh
 git clone https://github.com/rjkilpatrick/rjkilpatrick.github.io
 git submodule init
 git submodule update
-gem install jekyll bundler
-bundle install
-bundle exec jekyll serve
+npm install
+npm run dev
 ```
 
 ## Licensing
