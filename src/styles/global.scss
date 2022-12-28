@@ -1,17 +1,11 @@
----
----
-
-@charset "UTF-8";
-
-@import "colours";
-@import "fonts";
-@import "headers";
-@import "nav";
-
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+html,
+body {
   box-sizing: border-box;
 }
 
@@ -91,7 +85,7 @@ body {
 
 figure.figure {
   counter-increment: figNumber;
-  
+
   figcaption::before {
     content: 'Fig. ' counter(figNumber) ': ';
   }
@@ -104,6 +98,7 @@ img:not([class]) {
 }
 
 a {
+
   &:link,
   &:visited {
     color: var(--text-hyperlink);
