@@ -1,0 +1,10 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import R3FTest from "../components/R3FTest";
+
+const title = "Blog";
+---
+
+<BaseLayout title={title}>
+  <R3FTest client:load/>
+</BaseLayout>

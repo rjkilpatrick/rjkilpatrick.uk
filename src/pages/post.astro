@@ -5,7 +5,7 @@ interface Frontmatter {
   title: string;
   summary?: string;
 }
-const posts = await Astro.glob<Frontmatter>("../pages/post/**/*.md");
+const posts = await Astro.glob<Frontmatter>("../pages/post/**/*.{md,mdx}");
 
 const title = "Blog";
 ---

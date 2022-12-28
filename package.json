@@ -12,9 +12,17 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^0.14.0",
+    "@astrojs/react": "^1.2.2",
+    "@react-three/drei": "^9.48.1",
+    "@react-three/fiber": "^8.9.1",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.10",
     "astro": "^1.8.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "rehype-katex": "^6.0.2",
-    "remark-math": "^5.1.1"
+    "remark-math": "^5.1.1",
+    "three": "^0.148.0"
   },
   "devDependencies": {
     "sass": "^1.57.1"
