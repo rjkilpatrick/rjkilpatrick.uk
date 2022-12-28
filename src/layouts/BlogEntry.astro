@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
+import PageLayout from "./PageLayout.astro";
 
 import "../styles/post.scss";
 
@@ -10,23 +10,21 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<BaseLayout title={title}>
-  <main class="content-wrapper">
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <h1>{title}</h1>
-      </header>
-      <slot />
-    </article>
-    <!--Comments on post using GitHub account-->
-    <script
-      src="https://utteranc.es/client.js"
-      repo="rjkilpatrick/rjkilpatrick.github.io"
-      issue-term="pathname"
-      label="comment"
-      theme="preferred-color-scheme"
-      crossorigin="anonymous"
-      async
-    ></script>
-  </main>
-</BaseLayout>
+<PageLayout title={title}>
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1>{title}</h1>
+    </header>
+    <slot />
+  </article>
+  <!--Comments on post using GitHub account-->
+  <script
+    src="https://utteranc.es/client.js"
+    repo="rjkilpatrick/rjkilpatrick.github.io"
+    issue-term="pathname"
+    label="comment"
+    theme="preferred-color-scheme"
+    crossorigin="anonymous"
+    async
+  ></script>
+</PageLayout>

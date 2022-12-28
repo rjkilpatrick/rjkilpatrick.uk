@@ -5,7 +5,7 @@ tags: ["maths", "deep-learning"]
 latex: yes
 ---
 
-import Figure from "../../components/figure.astro";
+# Reverse-mode Automatic Differentiation
 
 <link
   rel="stylesheet"
@@ -23,13 +23,13 @@ This post will assume some knowledge of gradients, but if you're rusty, hopefull
 The derivative of a real function $f : \mathbb{R} \rightarrow \mathbb{R}$ (this just means it takes in a real number and spits out a real number), is given by the equation:
 
 $$
-    \begin{equation}
-        f'(x)
-        =
-        \lim_{\epsilon \to 0}\left\{
-            \frac{f(x + \epsilon) - f(x)}{\epsilon}
-        \right\}
-    \end{equation}
+  \begin{equation}
+    f'(x)
+    =
+    \lim_{\epsilon \to 0}\left\{
+        \frac{f(x + \epsilon) - f(x)}{\epsilon}
+    \right\}
+  \end{equation}
 $$
 
 You can think of this as being the change in $f$ compared to the change in $x$, which is the slope of the line (if $f(x)$ is plotted on the y axis and $x$ is plotted on the x axis) as the change in $x$ approaches zero, meaning you find the slope exactly at the point $x$.
@@ -37,13 +37,13 @@ You can think of this as being the change in $f$ compared to the change in $x$, 
 E.g. $f(x) = x^2$:
 
 $$
-    \begin{align*}
-        f'(x) &= \lim_{\epsilon \to 0}\left\{\frac{(x + \epsilon)^2 - x^2}{\epsilon}\right\}\\
-        &= \lim_{\epsilon \to 0}\left\{\frac{x^2 + 2x\epsilon + \epsilon^2 - x^2}{\epsilon}\right\}\\
-        &= \lim_{\epsilon \to 0}\left\{\frac{2x\epsilon + \epsilon^2}{\epsilon}\right\}\\
-        &= \lim_{\epsilon \to 0}\left\{2x + \epsilon\right\}\\
-        &= 2x
-    \end{align*}
+  \begin{align*}
+    f'(x) &= \lim_{\epsilon \to 0}\left\{\frac{(x + \epsilon)^2 - x^2}{\epsilon}\right\}\\
+    &= \lim_{\epsilon \to 0}\left\{\frac{x^2 + 2x\epsilon + \epsilon^2 - x^2}{\epsilon}\right\}\\
+    &= \lim_{\epsilon \to 0}\left\{\frac{2x\epsilon + \epsilon^2}{\epsilon}\right\}\\
+    &= \lim_{\epsilon \to 0}\left\{2x + \epsilon\right\}\\
+    &= 2x
+  \end{align*}
 $$
 
 So the slope of an $f(x) = x^2$ graph at any point is given by the equation $f'(x) = 2x$.
@@ -56,9 +56,9 @@ Effectively, we assume that whenever some function $\mathcal{L}$ is minimized, w
 So we set a new value for $x$ based on the old one, such that it minimizes the value of $\mathcal{L}$.
 
 $$
-    \begin{equation}
-        x \rightarrow x - \alpha \frac{\partial \mathcal{L}}{\partial x}
-    \end{equation}
+  \begin{equation}
+    x \rightarrow x - \alpha \frac{\partial \mathcal{L}}{\partial x}
+  \end{equation}
 $$
 
 Calculating this gradient can be a pain when the $\mathcal{L}(x)$ becomes non-trivial, so we adopt a method for determining gradients automatically.
@@ -76,9 +76,9 @@ We only consider reverse-mode differentiation here, but there is also (the conce
 Say for example, we want to minimize the function $\mathcal{L}(x)$:
 
 $$
-    \begin{equation}
-        \mathcal{L}\left(x, y\right) = \operatorname{sin}(x) + xy
-    \end{equation}
+  \begin{equation}
+    \mathcal{L}\left(x, y\right) = \operatorname{sin}(x) + xy
+  \end{equation}
 $$
 
 Where $x, y$ are some parameters that we can update.
@@ -94,12 +94,12 @@ We label the nodes of each graph with $w_i$, such that:
 
 $$
 \begin{align}
-    w_1 &= x\\
-    w_2 &= y\\
-    w_3 &= \operatorname{sin}\left(w_1\right)\\
-    w_4 &= w_1 w_2\\
-    w_5 &= w_3 + w_4\\
-    \mathcal{L} &= w_5\\
+  w_1 &= x\\
+  w_2 &= y\\
+  w_3 &= \operatorname{sin}\left(w_1\right)\\
+  w_4 &= w_1 w_2\\
+  w_5 &= w_3 + w_4\\
+  \mathcal{L} &= w_5\\
 \end{align}
 $$
 
@@ -113,30 +113,30 @@ Let's use it work out what the gradients of the parameters are.
 We will use a shorthand for the gradient called the adjoint:
 
 $$
-    \begin{equation}
-        \bar{w}_i \equiv \frac{\partial\mathcal{L}}{\partial w_i}
-    \end{equation}
+  \begin{equation}
+    \bar{w}_i \equiv \frac{\partial\mathcal{L}}{\partial w_i}
+  \end{equation}
 $$
 
 To start us off, we need to recall that derivative of something with respect to itself is 1.
 
 $$
-    \begin{equation}
-        \frac{\partial\mathcal{L}}{\partial w_5} = 1\\
-    \end{equation}
+  \begin{equation}
+    \frac{\partial\mathcal{L}}{\partial w_5} = 1\\
+  \end{equation}
 $$
 
 Now, for each dependency of $w_5$, we need to calculate their own respective adjoint.
 
 $$
-    \begin{equation}
-        \bar{w}_4
-        =
-        \left.
-            \frac{\partial\mathcal{L}}{\partial w_5}
-            \frac{\partial w_5}{\partial w_4}
-        \right|_{w_1, w_2}
-    \end{equation}
+  \begin{equation}
+    \bar{w}_4
+    =
+    \left.
+      \frac{\partial\mathcal{L}}{\partial w_5}
+      \frac{\partial w_5}{\partial w_4}
+    \right|_{w_1, w_2}
+  \end{equation}
 $$
 
 Since we know already that $\bar{w}_5 = 1$, using symbolic differentiation we find $\frac{\partial w_5}{\partial w_4} = 1$, so $\bar{w}_4 = 1$.
@@ -146,14 +146,14 @@ Similarly, $\bar{w}_3 = 1$, seeing as it's follows the same equation, just with 
 For $w_2$
 
 $$
-    \begin{equation}
-        \bar{w}_2
-        =
-        \left.
-            \bar{w}_4
-            \frac{\partial w_4}{\partial w_2}
-        \right|_{w_2}
-    \end{equation}
+  \begin{equation}
+    \bar{w}_2
+    =
+    \left.
+      \bar{w}_4
+      \frac{\partial w_4}{\partial w_2}
+    \right|_{w_2}
+  \end{equation}
 $$
 
 Hence $\bar{w}_2 = w_2$, which evaluated at $w_2$ gives us $y$, as expected.
@@ -162,19 +162,19 @@ We can substitute our value in for $y = 2$ and update $y$ using the update equat
 For $w_1$:
 
 $$
-    \begin{equation}
-        \bar{w}_1
-        =
-        \left.
-            \bar{w}_3
-            \frac{\partial w_3}{\partial w_1}
-        \right|_{w_1}
-        +
-        \left.
-            \bar{w}_4
-            \frac{\partial w_4}{\partial w_1}
-        \right|_{w_1, w_2}
-    \end{equation}
+  \begin{equation}
+    \bar{w}_1
+    =
+    \left.
+      \bar{w}_3
+      \frac{\partial w_3}{\partial w_1}
+    \right|_{w_1}
+    +
+    \left.
+      \bar{w}_4
+      \frac{\partial w_4}{\partial w_1}
+    \right|_{w_1, w_2}
+  \end{equation}
 $$
 
 From before $\bar{w}_3 = \bar{w}_4 = 1$, and via symbolic differentiation $\frac{\partial w_3}{\partial w_1} = \cos\left(w_1\right)$, evaluated at $w_1$.
@@ -184,10 +184,10 @@ So, $\bar{w}_1 = \cos\left(w_1\right)$, evaluated at $w_1, w_2$ which we need to
 We can now update $x, y$ based on the update equation:
 
 $$
-    \begin{align}
-        x &\rightarrow x - \alpha \left(\cos\left(x\right) + y\right)\\
-        y &\rightarrow y - \alpha x
-    \end{align}
+  \begin{align}
+    x &\rightarrow x - \alpha \left(\cos\left(x\right) + y\right)\\
+    y &\rightarrow y - \alpha x
+  \end{align}
 $$
 
 Where $\alpha$ is the learning rate, signifying the amount for the vector to update in the gradient direction.
