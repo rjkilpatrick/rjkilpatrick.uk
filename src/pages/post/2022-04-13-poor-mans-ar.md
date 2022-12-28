@@ -1,5 +1,6 @@
 ---
 title: Poor Man's AR
+layout: "../../layouts/BlogEntry.astro"
 ---
 
 **tl;dr:** Here's [the link to the demo](https://rjkilpatrick.github.io/virtual-window).

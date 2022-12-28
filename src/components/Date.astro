@@ -1,0 +1,5 @@
+---
+const { date } = Astro.props;
+---
+
+<time>{new Date(date).toISOString().slice(0, 10)}</time>

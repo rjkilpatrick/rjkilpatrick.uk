@@ -1,11 +1,10 @@
 ---
 title: Towards Real-time Imaging Through Optical Fibres
+layout: "../../layouts/BlogEntry.astro"
 tags: ["mmf", "transmission matrix"]
 last_modified_at: 2021-06-02
 latex: true
 ---
-
-{% include toc.md %}
 
 ## Abstract
 
@@ -99,11 +98,10 @@ If we instead take our signal in a dense measurements and transform it into a sp
 ## References
 
 {% comment %} Definitions {% endcomment %}
-*[MMF]: Multi-Mode optical Fibre
-*[TM]: Transmission Matrix
-*[WFS]: Wavefront Shaping
-*[ATM]: Approximate Transmission Matrix
-*[FISTA]: Fast Iterative Shrinkage-Thresholding Algorithm
+_[MMF]: Multi-Mode optical Fibre
+_[TM]: Transmission Matrix
+_[WFS]: Wavefront Shaping
+_[ATM]: Approximate Transmission Matrix \*[FISTA]: Fast Iterative Shrinkage-Thresholding Algorithm
 
 {% comment %} References {% endcomment %}
 [^atm]: Li, S., Horsley, S. A. R., Tyc, T., Cizmar, T. & Phillips, D. B. Memory effect assisted imaging through multimode optical fibres. [10.1038/s41467-021-23729-1](https://www.nature.com/articles/s41467-021-23729-1) (2021).

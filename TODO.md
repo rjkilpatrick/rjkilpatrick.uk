@@ -19,3 +19,9 @@ sitemap: false
 - [ ] Make anchors for headers less intrusive / remove them
 - [ ] Add Reveal.JS back
 - [ ] `npm install @astrojs/rss`
+
+## Add back in
+
+- [ ] Read Time
+- [ ] Post statistics
+- [ ] Navigation menu

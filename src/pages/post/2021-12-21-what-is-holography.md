@@ -1,5 +1,6 @@
 ---
 title: But What is a Hologram?
+layout: "../../layouts/BlogEntry.astro"
 tags: phd
 ---
 

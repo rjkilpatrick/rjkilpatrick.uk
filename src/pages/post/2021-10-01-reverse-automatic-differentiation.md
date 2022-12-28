@@ -1,10 +1,9 @@
 ---
 title: Reverse-mode Automatic Differentiation
+layout: "../../layouts/BlogEntry.astro"
 tags: ["maths", "deep-learning"]
 latex: yes
 ---
-
-{% include toc.md %}
 
 ## Gradient Descent
 

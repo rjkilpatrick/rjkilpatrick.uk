@@ -1,5 +1,6 @@
 ---
 title: I Love MathML
+layout: "../../layouts/BlogEntry.astro"
 tags: ["maths"]
 latex: yes
 ---

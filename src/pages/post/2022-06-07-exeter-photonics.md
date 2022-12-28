@@ -1,5 +1,6 @@
 ---
 title: Exeter Photonics Society
+layout: "../../layouts/BlogEntry.astro"
 tags: ["exeter-photonics"]
 ---
 

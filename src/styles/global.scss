@@ -42,3 +42,100 @@ body {
     transition: none !important;
   }
 }
+
+// Colours
+// Accent colours
+$red: hsl(345, 46%, 44%);
+$orange: hsl(28, 75%, 42%);
+$yellow: hsl(43, 83%, 40%);
+$green: hsl(155, 48%, 44%);
+$cyan: hsl(188, 56%, 42%);
+$blue: hsl(204, 58%, 44%);
+$violet: hsl(228, 37%, 54%);
+$magenta: hsl(340, 26%, 52%);
+$white: hsl(320, 0%, 81%);
+
+// Page colours
+$dark-background-primary: hsl(320, 4%, 16%);
+$dark-background-secondary: hsl(320, 4%, 22%);
+$dark-text-primary: hsl(320, 4%, 92%);
+$dark-text-secondary: hsl(320, 4%, 84%);
+$dark-text-emph: hsl(320, 4%, 99%);
+
+$dark-text-hyperlink: $magenta; //hsl(188, 49.8%, 60%);
+
+$light-background-primary: hsl(320, 0%, 99%);
+$light-background-secondary: hsl(320, 0%, 90%);
+$light-text-primary: hsl(320, 0%, 26%); //hsl(320, 4%, 16%);
+$light-text-secondary: hsl(320, 0%, 30%);
+$light-text-emph: hsl(320, 0%, 4%);
+
+$light-text-hyperlink: $blue; //hsl(233, 57%, 47%);
+
+// Organise themings
+$primary1: $red;
+$primary2: $violet;
+$primary3: $blue;
+$secondary1: $cyan;
+$secondary2: $magenta;
+$tertiary1: $yellow;
+$tertiary2: $green;
+$tertiary3: $orange;
+
+:root {
+  // Universal colours
+  --accent-1: #{$primary1};
+  --accent-2: #{$primary2};
+  --accent-3: #{$primary3};
+  --accent-4: #{$secondary1};
+  --accent-5: #{$secondary2};
+  --accent-6: #{$tertiary1};
+  --accent-7: #{$tertiary2};
+  --accent-8: #{$tertiary3};
+
+  // Light mode:
+  --color-mode: "light"; // Not currently needed, JS export
+
+  --background-primary: #{$light-background-primary};
+  --background-secondary: #{$light-background-secondary};
+
+  --text-primary: #{$light-text-primary};
+  --text-secondary: #{$light-text-secondary};
+  --text-emph: #{$light-text-emph};
+  --text-hyperlink: #{$light-text-hyperlink};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: "dark"; // Not currently needed, JS export
+
+    --background-primary: #{$dark-background-primary};
+    --background-secondary: #{$dark-background-secondary};
+
+    --text-primary: #{$dark-text-primary};
+    --text-secondary: #{$dark-text-secondary};
+    --text-emph: #{$dark-text-emph};
+    --text-hyperlink: #{$dark-text-hyperlink};
+  }
+}
+
+// Fonts
+//TODO: Consider moving to only system fonts
+//TODO: Consider moving to 2 fonts only
+
+// Main font
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=Roboto+Slab&family=Ubuntu&display=swap');
+
+$font-main: 'Roboto Slab', Ubuntu, -apple-system, Noto Sans, Helvetica, serif;
+$font-heading: Ubuntu, -apple-system, Noto Sans, Helvetica, serif;
+$font-mono: "PT Mono", Liberation Mono, Menlo, Consolas, Monospace;
+
+:root {
+  --font-main: #{$font-main};
+  --font-heading: #{$font-heading};
+  --font-mono: #{$font-mono};
+}
+
+html {
+  font-size: 1em;
+}

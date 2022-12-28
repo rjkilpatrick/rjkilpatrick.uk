@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+interface Frontmatter {
+  title: string;
+  summary?: string;
+}
+const posts = await Astro.glob<Frontmatter>("../pages/post/**/*.md");
+
+const title = "Blog";
+---
+
+<BaseLayout title={title}>
+  <p>This is where I will post about my journey learning Astro.</p>
+  <section>
+    {
+      posts.map((post) => (
+        <article>
+          <h2>{post.frontmatter.title}</h2>
+          {post.frontmatter.summary ? <p>{post.frontmatter.summary}</p> : null}
+          <a href={post.url}>Read more</a>
+        </article>
+      ))
+    }
+  </section>
+</BaseLayout>
