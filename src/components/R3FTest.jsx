@@ -1,85 +1,40 @@
-import * as THREE from "three";
-import React, { useLayoutEffect, useRef } from "react";
-import { Canvas, applyProps } from "@react-three/fiber";
-import {
-  Center,
-  Text3D,
-  Environment,
-  OrbitControls,
-  useGLTF,
-} from "@react-three/drei";
-import { FlakesTexture } from "three-stdlib";
+import { useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 
-const Suzanne = (props) => {
-  const { scene, materials } = useGLTF(
-    "https://market-assets.fra1.cdn.digitaloceanspaces.com/market-assets/models/suzanne-high-poly/model.gltf"
-  );
-  useLayoutEffect(() => {
-    scene.traverse(
-      (obj) => obj.isMesh && (obj.receiveShadow = obj.castShadow = true)
-    );
-    applyProps(materials.default, {
-      color: "orange",
-      roughness: 0,
-      normalMap: new THREE.CanvasTexture(
-        new FlakesTexture(),
-        THREE.UVMapping,
-        THREE.RepeatWrapping,
-        THREE.RepeatWrapping
-      ),
-      "normalMap-repeat": [40, 40],
-      normalScale: [0.05, 0.05],
-    });
-  });
-  return <primitive object={scene} {...props} />;
-};
-
-const Lights = () => {
-  return (
-    <>
-      <ambientLight intensity={0.5} />{" "}
-      <hemisphereLight intensity={0.125} color="#8040df" groundColor="red" />
-    </>
-  );
-};
-
-const Scene = () => {
-  return (
-    <>
-      <axesHelper scale={2} />
-      <Center top front position={[2, 0, 0]}>
-        <Text>
-          Text <meshStandardMaterial color="black" />
-        </Text>
-      </Center>
-      <Center top position={[-2, 0, 0]}>
-        <Suzanne rotation={[-0.63, 0, 0]} scale={2} />
-      </Center>
-    </>
-  );
-};
-
-const Text = ({ children, font = "./Inter_Medium_Regular.json", ...props }) => {
+function Box(props) {
+  // This reference gives us direct access to the THREE.Mesh object
   const ref = useRef();
-
+  // Hold state for hovered and clicked events
+  const [hovered, hover] = useState(false);
+  const [clicked, click] = useState(false);
+  // Subscribe this component to the render-loop, rotate the mesh every frame
+  useFrame((state, delta) => (ref.current.rotation.x += delta));
+  // Return the view, these are regular Threejs elements expressed in JSX
   return (
-    <>
-      <Text3D castShadow font={font}>
-        {children}
-      </Text3D>
-    </>
+    <mesh
+      {...props}
+      ref={ref}
+      scale={clicked ? 1.5 : 1}
+      onClick={(event) => click(!clicked)}
+      onPointerOver={(event) => hover(true)}
+      onPointerOut={(event) => hover(false)}
+    >
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color={hovered ? "hotpink" : "orange"} />
+    </mesh>
   );
-};
+}
 
-const App = () => {
+export default function App() {
   return (
-    <Canvas style={{ height: "100vh", width: "100vw" }} shadows dpr={[1, 2]}>
-      <Lights />
-      <Scene />
+    <Canvas style={{ width: "100vw", height: "100vh" }}>
+      <ambientLight intensity={0.5} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+      <pointLight position={[-10, -10, -10]} />
+      <Box position={[-1.2, 0, 0]} />
+      <Box position={[1.2, 0, 0]} />
       <OrbitControls />
-      <Environment preset="city" />
     </Canvas>
   );
-};
-
-export default App;
+}
