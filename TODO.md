@@ -27,4 +27,4 @@ sitemap: false
 
 - [ ] Read Time
 - [ ] Post statistics
-- [ ] Navigation menu
+- [ ] SEO

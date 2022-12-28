@@ -3,7 +3,7 @@ import "../styles/global.scss";
 import Navigation from "../components/Navigation.astro";
 
 export interface Props {
-  title: string;
+  title?: string;
 }
 
 const { title } = Astro.props;
@@ -18,7 +18,7 @@ const { title } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>{title}</title>
+    {title ? <title>{title}</title> : null}
 
     <meta name="twitter:creator" content="rjkilpatrick1" />
     <meta name="yandex-verification" content="ab1e6cab6e467868" />
@@ -46,22 +46,6 @@ const { title } = Astro.props;
     </style>
   </head>
   <body>
-    <Navigation />
     <slot />
   </body>
 </html>
-<style is:global>
-  :root {
-    --accent: 124, 58, 237;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      #da62c4 30%,
-      white 60%
-    );
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    background-color: #f6f6f6;
-  }
-</style>

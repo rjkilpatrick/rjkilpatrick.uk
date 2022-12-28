@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
 
 interface Frontmatter {
   title: string;
@@ -10,7 +10,7 @@ const posts = await Astro.glob<Frontmatter>("../pages/post/**/*.{md,mdx}");
 const title = "Blog";
 ---
 
-<BaseLayout title={title}>
+<PageLayout title={title}>
   <section>
     {
       posts.map((post) => (
@@ -22,4 +22,4 @@ const title = "Blog";
       ))
     }
   </section>
-</BaseLayout>
+</PageLayout>

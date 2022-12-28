@@ -1,0 +1,17 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import "/node_modules/reveal.js/dist/reveal.css";
+import "/node_modules/reveal.js/dist/theme/white.css";
+---
+
+<BaseLayout>
+  <div class="reveal">
+    <div class="slides"><slot /></div>
+  </div>
+</BaseLayout>
+
+<script>
+  import Reveal from "reveal.js";
+
+  Reveal.initialize();
+</script>
