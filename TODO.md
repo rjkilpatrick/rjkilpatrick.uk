@@ -14,6 +14,8 @@ sitemap: false
 - [ ] Add site screenshot for itemprop
 - [ ] Update table of contents to work seperately
 - [ ] Code highlighting
-  - [ ] Add listing numbers, like 
+  - [ ] Add listing numbers, like figures
   - [ ] Add language in popup
 - [ ] Make anchors for headers less intrusive / remove them
+- [ ] Add Reveal.JS back
+- [ ] `npm install @astrojs/rss`

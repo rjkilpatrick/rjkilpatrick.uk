@@ -1,4 +1,6 @@
 ---
+import "../styles/global.scss";
+
 export interface Props {
   title: string;
 }
@@ -12,16 +14,38 @@ const { title } = Astro.props;
  --><!DOCTYPE html>
 <html lang="en-gb">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>{title}</title>
+
+    <meta name="twitter:creator" content="rjkilpatrick1" />
+    <meta name="yandex-verification" content="ab1e6cab6e467868" />
+
+    <meta name="theme-color" content="hsl(359.6, 59%, 54%)" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta name="generator" content={Astro.generator} />
+
+    <style lang="scss" is:inline>
+      /* VERY important styles go here */
+      html,
+      body {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+    </style>
   </head>
   <body>
-    <main class="content-wrapper" aria-label="Content">
-      <slot />
-    </main>
+    <slot />
   </body>
 </html>
 <style is:global>
