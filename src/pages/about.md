@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: ../layouts/BaseLayout.astro
 title: About
 styles: about.css
 ---
 
-## About me
+# About
 
 Hi! I'm John Kilpatrick, a Ph.D. student in structured light group at the [University of Exeter, UK](https://exeter.ac.uk).
 My main research focus is using wavefront shaping to image through multimode optical fibres, supervised by [Dr. Dave Phillips](https://emps.exeter.ac.uk/physics-astronomy/staff/dp413) and [Prof. Nick Stone](https://emps.exeter.ac.uk/physics-astronomy/staff/ns329).
