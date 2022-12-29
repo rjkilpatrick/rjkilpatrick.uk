@@ -2,14 +2,12 @@
 title: Reverse-mode Automatic Differentiation
 layout: "../../layouts/BlogEntry.astro"
 tags: ["maths", "deep-learning"]
-latex: yes
+preview: "Most deep learning requires calculation of a lot of gradients very quickly. Doing this by hand is tedious, so let's get a computer to it for us."
 ---
-
-# Reverse-mode Automatic Differentiation
 
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+  href=""
   integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
   crossorigin="anonymous"
 />

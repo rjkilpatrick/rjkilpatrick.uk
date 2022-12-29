@@ -2,7 +2,7 @@
 title: I Love MathML
 layout: "../../layouts/BlogEntry.astro"
 tags: ["maths"]
-latex: yes
+preview: "MathML is a language for displaying maths/equations in the Browser, but the major providers are hampering its use."
 ---
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
@@ -65,12 +65,13 @@ $$
 <maths mode="display" xmlns="http://www.w3.org/1998/maths/MathML">
   <mrow>
     <mi> x </mi>
-    <mo> &#x2061; </mo><!--Function application-->
+    <mo> &#x2061; </mo
+    ><!--Function application-->
     <mrow>
       <mo> ( </mo>
-        <mi> a </mi>
-        <mi> b </mi>
-        <mi> c </mi>
+      <mi> a </mi>
+      <mi> b </mi>
+      <mi> c </mi>
       <mo> ) </mo>
     </mrow>
     <mo> = </mo>

@@ -1,7 +1,8 @@
 ---
 title: But What is a Hologram?
 layout: "../../layouts/BlogEntry.astro"
-tags: phd
+tags: ["phd"]
+preview: "You've probably heard of a hologram, but did you know that not only are they real, but they're useful."
 ---
 
 ## Holograms

@@ -3,17 +3,13 @@ import PageLayout from "./PageLayout.astro";
 
 import "../styles/post.scss";
 
-export interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
-<PageLayout title={title}>
+<PageLayout title={frontmatter.title}>
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
-      <h1>{title}</h1>
+      <h1>{frontmatter.title}</h1>
     </header>
     <slot />
   </article>
