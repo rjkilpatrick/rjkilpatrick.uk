@@ -1,7 +1,16 @@
 ---
 import PageLayout from "./PageLayout.astro";
-
+import Tags from "../components/Tags.astro";
 import "../styles/post.scss";
+
+import type { MarkdownLayoutProps } from "astro";
+
+// type Props = MarkdownLayoutProps<{
+//   // Define frontmatter props here
+//   title: string;
+//   author: string;
+//   date: string;
+// }>;
 
 const { frontmatter } = Astro.props;
 ---
@@ -10,17 +19,19 @@ const { frontmatter } = Astro.props;
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1>{frontmatter.title}</h1>
+      <h2>{frontmatter.date}</h2>
+      <Tags tags={frontmatter.tags} />
     </header>
     <slot />
+    <!--Comments on post using GitHub account-->
+    <script
+      src="https://utteranc.es/client.js"
+      repo="rjkilpatrick/rjkilpatrick.github.io"
+      issue-term="pathname"
+      label="comment"
+      theme="preferred-color-scheme"
+      crossorigin="anonymous"
+      async
+    ></script>
   </article>
-  <!--Comments on post using GitHub account-->
-  <script
-    src="https://utteranc.es/client.js"
-    repo="rjkilpatrick/rjkilpatrick.github.io"
-    issue-term="pathname"
-    label="comment"
-    theme="preferred-color-scheme"
-    crossorigin="anonymous"
-    async
-  ></script>
 </PageLayout>

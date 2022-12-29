@@ -1,0 +1,13 @@
+---
+const { tags } = Astro.props;
+---
+
+<ul class="post-tags">
+  {
+    tags.map((tag) => (
+      <li class="post-tag">
+        <a href={`/tags/${tag}`}>{tag}</a>
+      </li>
+    ))
+  }
+</ul>

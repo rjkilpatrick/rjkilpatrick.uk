@@ -1,20 +1,11 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
 
+import Tags from "../components/Tags.astro";
+
 const posts = await Astro.glob("../pages/post/**/*.{md,mdx}");
 
 const title = "Blog";
-
-// const Tags = (tags) =>
-//   tags ? (
-//     <ul class="post-tags">
-//       {tags.map((tag) => (
-//         <li class="post-tag">
-//           <a href={`/tags/${tag}`}>{tag}</a>
-//         </li>
-//       ))}
-//     </ul>
-//   ) : null;
 ---
 
 <PageLayout title={title}>
@@ -22,10 +13,11 @@ const title = "Blog";
   <section>
     {
       posts.map((post) => {
-        const { title, preview } = post.frontmatter;
+        const { title, preview, tags } = post.frontmatter;
         return (
           <div class="post">
             <h2 class="post-title">{title}</h2>
+            <Tags tags={tags} />
             {preview ? <p class="post-preview">{preview}</p> : null}
             <a href={post.url}>Read more</a>
           </div>
