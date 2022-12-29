@@ -11,11 +11,11 @@ sitemap: false
   - [ ] Add back to top bottom in footer
 - [ ] Add site screenshot for itemprop
 - [ ] Update table of contents to work seperately
-- [ ] Code highlighting
+- [x] Code highlighting
   - [ ] Add listing numbers, like figures
   - [ ] Add language in popup
 - [ ] Make anchors for headers less intrusive / remove them
-- [ ] Add Reveal.JS back
+- [x] Add Reveal.JS back
 - [ ] `npm install @astrojs/rss`
 
 ## Consider
