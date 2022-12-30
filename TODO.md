@@ -11,12 +11,14 @@ sitemap: false
   - [ ] Add back to top bottom in footer
 - [ ] Add site screenshot for itemprop
 - [ ] Update table of contents to work seperately
-- [x] Code highlighting
+- [ ] Code highlighting
+  - [x] Basic functionality
   - [ ] Add listing numbers, like figures
   - [ ] Add language in popup
 - [ ] Make anchors for headers less intrusive / remove them
-- [x] Add Reveal.JS back
 - [ ] `npm install @astrojs/rss`
+- [ ] Typescript
+  - [ ] Move blog to [astro collections](https://docs.astro.build/en/guides/content-collections/)
 
 ## Consider
 

@@ -10,9 +10,24 @@ blockquote {
   font-weight: bold;
 }
 
-.astro-code{
+.astro-code {
   padding: 1em 2em;
   border-radius: 5px;
+
+  counter-reset: linenumber;
+
+  .line {
+    position: relative;
+    padding-left: 1em;
+    &::before {
+      content: counter(linenumber);
+      counter-increment: linenumber;
+      color: rgba(255, 255, 255, 0.322);
+      // display: block;
+      position: absolute;
+      left: -10px;
+    }
+  }
 }
 
 pre {
