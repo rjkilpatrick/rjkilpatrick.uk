@@ -33,8 +33,11 @@ export default defineConfig({
     extendDefaultPlugins: true,
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex],
+    remarkRehype: {
+      footnoteLabel: "References",
+    },
     shikiConfig: {
-      theme: "dracula"
+      theme: "dracula",
     },
   },
 });

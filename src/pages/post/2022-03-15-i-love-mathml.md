@@ -21,22 +21,22 @@ For equations, however, it's mostly the best way of writing them.
 Here's some equations, written in LaTeX and the accompanying source below.
 
 $$
-\begin{align}
+\begin{aligned}
 \nabla \cdot \mathbf{E} &= \frac{\rho}{\epsilon_0}\\
 \nabla \cdot \mathbf{B} &= \mathbf{0}\\
 \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t}\\
 \nabla \times \mathbf{B} &= \mu_0 \left(\mathbf{J} + \epsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)\\
-\end{align}
+\end{aligned}
 $$
 
 ```latex
 $$
-\begin{align}
+\begin{aligned}
     \nabla \cdot \mathbf{E} &= \frac{\rho}{\epsilon_0}\\
     \nabla \cdot \mathbf{B} &= \mathbf{0}\\
     \nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t}\\
     \nabla \times \mathbf{B} &= \mu_0 \left(\mathbf{J} + \epsilon_0 \frac{\partial \mathbf{E}}{\partial t}\right)\\
-\end{align}
+\end{aligned}
 $$
 ```
 

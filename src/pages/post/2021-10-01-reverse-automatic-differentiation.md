@@ -87,14 +87,14 @@ The edges (arrows) describe the direction that gives us this output.
 We label the nodes of each graph with $w_i$, such that:
 
 $$
-\begin{align}
+\begin{aligned}
   w_1 &= x\\
   w_2 &= y\\
   w_3 &= \operatorname{sin}\left(w_1\right)\\
   w_4 &= w_1 w_2\\
   w_5 &= w_3 + w_4\\
   \mathcal{L} &= w_5\\
-\end{align}
+\end{aligned}
 $$
 
 ### Dependency Graph
@@ -178,10 +178,10 @@ So, $\bar{w}_1 = \cos\left(w_1\right)$, evaluated at $w_1, w_2$ which we need to
 We can now update $x, y$ based on the update equation:
 
 $$
-  \begin{align}
+  \begin{aligned}
     x &\rightarrow x - \alpha \left(\cos\left(x\right) + y\right)\\
     y &\rightarrow y - \alpha x
-  \end{align}
+  \end{aligned}
 $$
 
 Where $\alpha$ is the learning rate, signifying the amount for the vector to update in the gradient direction.

@@ -7,6 +7,7 @@ datePublished: 2021-12-21
 ---
 
 import Figure from "../../components/Figure.astro";
+import Todo from "../../components/Todo.astro";
 
 ## Holograms
 
@@ -23,7 +24,7 @@ Holograms in the media are mystic sci-fi devices, such as in Star Wars.
 
 Holograms are real things that we can create and use, but there's a bit of a misconception about what they actually are.
 
-A hologram is a recording of an entire light field.
+A hologram is a recording of an _entire_ light field.
 This definition doesn't make a huge amount of sens by itself, but let's think about this in terms of looking through a window.
 
 {
@@ -35,10 +36,13 @@ This definition doesn't make a huge amount of sens by itself, but let's think ab
 />
 }
 
-When you see a scene through a window, you see it in '3D' because each of your eyes see a slightly different picture and that's how we perceive depth.
+When you see a scene through a window, you see it in '3D' because each of your eyes see a slightly different version of the same picture, and this is one of the main ways we perceive depth.**CITE**
 Try holding at your index finger near your face and look at it with one eye closed and then the other, what you see with each eye is different because they're at different spatial positions.
 Also, if you move your head around relative to the window, what you see changes.
-This is why things on a computer display look 'flat' because they are missing this angular change of position.
+
+<Todo>emphasize angles more here</Todo>
+This is why things on a computer display look 'flat' because they are missing this
+angular change of position.
 
 The only way we perceive the light from the other side of the window is the light that travels through it.
 If we assume that our scene is stationary, what if instead of having the scene behind the window, we capture a snapshot of the light in time and remove the scene, but reproduce the original light?
@@ -51,18 +55,48 @@ Taking a picture, does take a representation of the light field on the camera ce
 This misses out on some information, however.
 If you look at a picture on a computer screen or printed out, you'll see that if you move your head, so you're looking at a picture, the picture still stays from the same camera perspective, and looks almost 'flat'.
 
-A Hologram is a recording of the entire light field with this missing _angular_ information about the light in question.
+A Hologram is a recording of the entire light field with this _angular_ information captured too.
 Since light moves very quickly, we can't actually measure this directly (okay, you can for microwaves, but you can't see those), like we can for sound waves (you can imagine an array of microphones if that helps).
 We can only measure its average field over time, so we have to use a special trick.
 
 ## Measuring a Hologram
 
-The first step in creating a hologram is to measure the light that is scattered by the object that we want to capture in the hologram. This is typically done using a laser, which is a highly coherent light source. The laser light is split into two beams: a reference beam and an object beam. The reference beam is directed onto a recording medium, such as a holographic film or a digital detector, while the object beam is directed onto the object. The light that is scattered by the object then interferes with the reference beam on the recording medium, creating a pattern known as a hologram.
+The first step in creating a hologram is to measure the light that is scattered by the object that we want to capture in the hologram.
+This is typically done using a laser, which is a highly coherent light source.
+The laser light is split into two beams: a reference beam and an object beam.
+The reference beam is directed onto a recording medium, such as a holographic film or a digital detector, while the object beam is directed onto the object.
+The light that is scattered by the object then interferes with the reference beam on the recording medium, creating a pattern known as a hologram.
 
-## Reproducing a Hologram
+<Todo>Explain this a bit better</Todo>
 
-Once the hologram has been recorded, it can be reconstructed to produce a three-dimensional image of the original object. This is done by shining a laser beam onto the hologram and observing the light that is diffracted by the hologram. The diffracted light forms a pattern that is identical to the original light scattered by the object, allowing us to see a three-dimensional image of the object.
+## Computer Generated Holograms
 
-## Limitations
+So you can re-create things that you see in real-life with a laser.
+This is nice, but what about things that don't exist? **OR MORE PRACTICAL EXAMPLE**
 
-While holography is a powerful tool for creating and recording three-dimensional images, it does have some limitations. One of the main limitations is that the original object must be illuminated by a laser in order for the hologram to be reconstructed. This means that holograms cannot be used to capture objects that are not illuminated by a laser, such as objects in a natural environment. Additionally, holography is not yet able to capture high-resolution images of small objects, as the size of the hologram is determined by the wavelength of the laser used to create it.
+## Making a Holograms
+
+Once you have a hologram, this isn't particularly interesting by itself, you want to create this again.
+
+The diffracted light forms a pattern that is identical to the original light scattered by the object, allowing us to see a three-dimensional image of the object.
+
+### Print your own Holograms
+
+After the idea of holography was invented by Gabor[^gabor], then Lee[^lee] came up with a nice way that just involves using a
+There are some fancy equations for those below that you can use, but here's an interactive demo.
+
+![](https://via.placeholder.com/150/FF00FF/808080?Text=Digital.com)
+
+So now you've got your hologram, all you need to do is print it on some transparent paper, then shine a laser though it.
+Remember that the hologram is specific to the wavelength (colour) of the laser.
+
+{
+
+<Figure
+  src="https://via.placeholder.com/150/FF00FF/808080?Text=Own%20Hologram"
+  alt="Custom hologram"
+  caption="Custom hologram"
+/>
+}
+
+[^lee]: Wai-Hon Lee, "[Binary computer-generated holograms](https://opg.optica.org/ao/abstract.cfm?uri=ao-18-21-3661)", Appl. Opt. 18, 3661-3669 (1979)
