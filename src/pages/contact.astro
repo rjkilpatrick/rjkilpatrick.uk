@@ -1,0 +1,28 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+import ContactForm from "../components/ContactForm.astro";
+
+const title = "Contact";
+---
+
+<PageLayout title={title}>
+  <h1>Get in touch with me</h1>
+  <div class="half-pane">
+    <ContactForm form-id="xqkokzdd" />
+    <div>
+      <p>
+        If you have a project or position that you think I'd be a good fit for,
+        or even if you want to chat, just fill out the contact form or message
+        me on socials and I'll email you back when I can.
+      </p>
+    </div>
+  </div>
+</PageLayout>
+<style lang="scss">
+  .half-pane {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+  }
+</style>

@@ -11,21 +11,22 @@ blockquote {
 }
 
 .astro-code {
-  padding: 1em 2em;
+  padding: 1em 2em 1em 0.5em;
   border-radius: 5px;
 
   counter-reset: linenumber;
+  counter-increment: linenumber calc(var(--line-start, 1) - 1);
 
   .line {
-    position: relative;
-    padding-left: 1em;
+    counter-increment: linenumber;
+
     &::before {
       content: counter(linenumber);
-      counter-increment: linenumber;
       color: rgba(255, 255, 255, 0.322);
-      // display: block;
-      position: absolute;
-      left: -10px;
+      width: 2rem;
+      margin-right: 1.5rem;
+      display: inline-block;
+      text-align: right;
     }
   }
 }

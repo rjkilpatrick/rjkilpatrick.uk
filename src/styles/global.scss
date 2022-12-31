@@ -39,6 +39,19 @@ body {
   margin: 0 auto;
   padding: 0 1.5em;
   width: 100%;
+  flex-grow: 1;
+}
+
+// Taken from https://webaim.org/techniques/css/invisiblecontent
+.screen-reader {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
 }
 
 img {

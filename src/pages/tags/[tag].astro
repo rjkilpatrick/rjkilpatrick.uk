@@ -1,0 +1,37 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+import PostPreview from "../../components/PostPreview.astro";
+
+export async function getStaticPaths() {
+  const posts = await Astro.glob("../post/**/*.{md,mdx}");
+
+  // Remove duplicates
+  const makeUnique = (list) => [...new Set(list)];
+
+  const uniqueTags = makeUnique(
+    // Get flattened list of all tags in the posts
+    posts.map((post) => post.frontmatter.tags).flat()
+  );
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = posts.filter((post) =>
+      post.frontmatter.tags.includes(tag)
+    );
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { posts } = Astro.props; // Note these are filtered posts
+const { tag } = Astro.params;
+---
+
+<PageLayout title={tag}>
+  <h1>#{tag}</h1>
+  <section>
+    {posts.map((post) => <PostPreview post={post} />)}
+  </section>
+</PageLayout>

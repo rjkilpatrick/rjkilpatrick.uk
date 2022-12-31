@@ -1,0 +1,29 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+import PostPreview from "../../components/PostPreview.astro";
+
+const posts = await Astro.glob("./**/*.{md,mdx}");
+
+const title = "Blog";
+---
+
+<PageLayout title={title}>
+  <h1>Blog</h1>
+  <section>
+    {
+      posts ? (
+        posts
+          // Reverse chronological order
+          .sort(
+            (a, b) =>
+              new Date(b.frontmatter.datePublished).getTime() -
+              new Date(a.frontmatter.datePublished).getTime()
+          )
+          .map((post) => <PostPreview post={post} />)
+      ) : (
+        <p>No posts here, come back later!</p>
+      )
+    }
+  </section>
+</PageLayout>

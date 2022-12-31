@@ -16,11 +16,25 @@ import rehypeKatex from "rehype-katex";
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
+import prefetch from "@astrojs/prefetch";
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), react(), sitemap()],
+  site: "https://rjkilpatrick.github.io",
+  integrations: [
+    mdx(),
+    react(),
+    sitemap({
+      customPages: ["https://rjkilpatrick.github.io/virtual-window/"],
+    }),
+    prefetch(),
+  ],
   markdown: {
     extendDefaultPlugins: true,
     remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex]
-  }
+    rehypePlugins: [rehypeKatex],
+    shikiConfig: {
+      theme: "dracula"
+    },
+  },
 });

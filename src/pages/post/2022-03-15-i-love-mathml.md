@@ -3,6 +3,7 @@ title: I Love MathML
 layout: "../../layouts/BlogEntry.astro"
 tags: ["maths"]
 preview: "MathML is a language for displaying maths/equations in the Browser, but the major providers are hampering its use."
+datePublished: 2022-03-15
 ---
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">

@@ -1,47 +1,84 @@
 ---
+const currentYear = new Date().getFullYear();
+
+import Icon from "astro-icon";
 ---
 
-<footer class="page-footer">
-  <ul>
-    <li>
-      Tweet: <a href="https://twitter.com/rjkilpatrick1">@rjkilpatrick1</a>
-      <li>
-        Github: <a href="https://github.com/rjkilpatrick">rjkilpatrick</a>
-        <li><a href="/">Home</a></li>
-        <li>
-          Content is licensed under <a
-            href="https://creativecommons.org/licenses/by/4.0/"
-            rel="license">CC BY-4.0</a
-          >.
-        </li>
-      </li>
-    </li>
-  </ul>
+<footer class="footer">
+  <h2 class="screen-reader">Footer</h2>
+  <div class="footer__content">
+    <div>
+      <p>
+        (c) John Kilpatrick {currentYear}
+        <a
+          href="//github.com/rjkilpatrick/rjkilpatrick.github.io"
+          rel="external">View source</a
+        >
+      </p>
+    </div>
+    <div>
+      <nav>
+        <ul class="social-icons">
+          <li>
+            <a rel="external" href="//github.com/rjkilpatrick">
+              <Icon name="mdi:github" class="icon" />
+            </a>
+          </li>
+          <li>
+            <a rel="external" href="//twitter.com/rjkilpatrick1">
+              <Icon name="mdi:twitter" class="icon" />
+            </a>
+          </li>
+          <li>
+            <a rel="external" href="//linkedin.com/in/rjkilpatrick">
+              <Icon name="mdi:linkedin" class="icon" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </footer>
+
 <style lang="scss">
-  .page-footer {
-    margin-top: 1em;
+  .footer {
+    margin-top: 32px;
+    padding: 0 2.5em;
     background: var(--background-secondary);
+  }
+
+  .footer__content {
     color: var(--text-primary);
-    padding: 20px;
+    padding: 32px 0;
     font-size: 88%;
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 
-    ul {
-      display: flex;
-      flex-flow: column wrap;
-      padding: 0;
-      margin: 0;
-      justify-items: center;
-      list-style-type: none;
-    }
+    // > :first-child {
+    //   text-align: left;
+    // }
+    // > :last-child {
+    //   text-align: right;
+    // }
+  }
 
-    li {
-      text-align: center;
-      padding: 5px;
+  .social-icons {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+
+    a,
+    a:visited {
+      color: inherit;
     }
+  }
+
+  .icon {
+    height: 2em;
+    width: auto;
+    display: block;
   }
 </style>

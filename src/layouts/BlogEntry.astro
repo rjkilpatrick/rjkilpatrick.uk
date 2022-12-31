@@ -20,7 +20,7 @@ const { frontmatter } = Astro.props;
     <header>
       <h1>{frontmatter.title}</h1>
       <h2>{frontmatter.date}</h2>
-      <Tags tags={frontmatter.tags} />
+      {frontmatter.tags ? <Tags tags={frontmatter.tags} /> : null}
     </header>
     <slot />
     <!--Comments on post using GitHub account-->

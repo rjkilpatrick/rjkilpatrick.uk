@@ -3,6 +3,7 @@ title: Reverse-mode Automatic Differentiation
 layout: "../../layouts/BlogEntry.astro"
 tags: ["maths", "deep-learning"]
 preview: "Most deep learning requires calculation of a lot of gradients very quickly. Doing this by hand is tedious, so let's get a computer to it for us."
+datePublished: 2021-10-01
 ---
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
@@ -64,7 +65,7 @@ We only consider reverse-mode differentiation here, but there is also (the conce
 
 ### Worked example
 
-(with thanks to [^stackoverflow]).
+(with thanks to stackoverflow[^stackoverflow]).
 
 Say for example, we want to minimize the function $\mathcal{L}(x)$:
 
