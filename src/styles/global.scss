@@ -37,7 +37,7 @@ body {
 .content-wrapper {
   max-width: 80ch;
   margin: 0 auto;
-  padding: 0 1.5em;
+  padding: 0 1.5rem;
   width: 100%;
   flex-grow: 1;
 }
@@ -152,12 +152,9 @@ $tertiary3: $orange;
 //TODO: Consider moving to only system fonts
 //TODO: Consider moving to 2 fonts only
 
-// Main font
-@import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=Inter&family=Epilogue&display=swap');
-
 $font-main: 'Inter', Ubuntu, -apple-system, Noto Sans, Helvetica, serif;
 $font-heading: 'Epilogue', -apple-system, Noto Sans, Helvetica, serif;
-$font-mono: "PT Mono", Liberation Mono, Menlo, Consolas, Monospace;
+$font-mono: "Space Mono", Liberation Mono, Menlo, Consolas, Monospace;
 
 :root {
   --font-main: #{$font-main};
@@ -166,7 +163,7 @@ $font-mono: "PT Mono", Liberation Mono, Menlo, Consolas, Monospace;
 }
 
 html {
-  font-size: 1em;
+  font-size: 1rem;
   font-family: $font-main;
 }
 

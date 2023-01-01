@@ -1,6 +1,5 @@
 ---
-const { post } = Astro.props;
-const { url, frontmatter } = post;
+const { url, frontmatter } = Astro.props.post;
 const { title, preview, tags, datePublished } = frontmatter;
 
 import Tags from "./Tags.astro";
@@ -9,29 +8,38 @@ import Tags from "./Tags.astro";
 <div class="post">
   <h2 class="post-title">{title}</h2>
   <Tags tags={tags} />
-  {<p>{datePublished}</p>}
+  <p>
+    {
+      new Date(datePublished).toLocaleDateString("en-gb", {
+        weekday: "long",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      })
+    }
+  </p>
   {preview ? <p class="post-preview">{preview}</p> : null}
   <a href={url}>Read more</a>
 </div>
 
 <style lang="scss">
   .post {
-    margin: 1.5em 0;
+    margin: 1.5rem 0;
     display: flex;
     flex-direction: column;
   }
 
   .post-title {
     display: block;
-    font-size: 1.5em;
-    margin-block-start: 0.8em;
-    margin-block-end: 0.2em;
+    font-size: 1.5rem;
+    margin-block-start: 0.8rem;
+    margin-block-end: 0.2rem;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
   }
   .post-preview {
-    margin: 0.2em 0;
-    font-size: 1em;
+    margin: 0.2rem 0;
+    font-size: 1rem;
   }
 </style>
