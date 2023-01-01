@@ -1,6 +1,6 @@
 ---
 title: Shiny new site
-layout: "../../layouts/BlogEntry.astro"
+layout: "../../layouts/BlogLayout.astro"
 preview: "Why use an existing website template when you can design your own in 10X the time? The story of how I re-made my (functional, but not much more) website"
 datePublished: 2022-12-30
 tags: ["react"]

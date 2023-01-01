@@ -3,24 +3,30 @@ import PageLayout from "./PageLayout.astro";
 import Tags from "../components/Tags.astro";
 import "../styles/post.scss";
 
-import type { MarkdownLayoutProps } from "astro";
+import "@fontsource/space-mono";
 
-// type Props = MarkdownLayoutProps<{
-//   // Define frontmatter props here
-//   title: string;
-//   author: string;
-//   date: string;
-// }>;
-
-const { frontmatter } = Astro.props;
+const { title, datePublished, tags } = Astro.props.frontmatter;
 ---
 
-<PageLayout title={frontmatter.title}>
+<PageLayout title={title}>
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
-      <h1>{frontmatter.title}</h1>
-      <h2>{frontmatter.date}</h2>
-      {frontmatter.tags ? <Tags tags={frontmatter.tags} /> : null}
+      <h1>{title}</h1>
+      <p>
+        <date datetime={datePublished}>
+          {
+            new Date(datePublished).toLocaleDateString("en-gb", {
+              weekday: "long",
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })
+          }
+        </date>
+        ⦁
+        {"3 minute read."}
+      </p>
+      {tags ? <Tags tags={tags} /> : null}
     </header>
     <slot />
     <!--Comments on post using GitHub account-->

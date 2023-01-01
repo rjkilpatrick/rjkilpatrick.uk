@@ -1,6 +1,6 @@
 ---
 title: Reverse-mode Automatic Differentiation
-layout: "../../layouts/BlogEntry.astro"
+layout: "../../layouts/BlogLayout.astro"
 tags: ["maths", "deep-learning"]
 preview: "Most deep learning requires calculation of a lot of gradients very quickly. Doing this by hand is tedious, so let's get a computer to it for us."
 datePublished: 2021-10-01

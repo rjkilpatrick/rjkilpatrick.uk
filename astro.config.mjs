@@ -13,6 +13,12 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
 // https://astro.build/config
+import rehypeSlug from "rehype-slug";
+
+// https://astro.build/config
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+
+// https://astro.build/config
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
@@ -32,7 +38,7 @@ export default defineConfig({
   markdown: {
     extendDefaultPlugins: true,
     remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex],
+    rehypePlugins: [rehypeKatex, rehypeSlug, rehypeAutolinkHeadings],
     remarkRehype: {
       footnoteLabel: "References",
     },
