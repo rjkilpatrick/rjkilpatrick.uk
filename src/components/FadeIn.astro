@@ -1,0 +1,21 @@
+<div class="fade-in">
+  <slot />
+</div>
+<style lang="scss">
+  .fade-in {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: 500ms ease-out backwards fadein;
+    }
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
