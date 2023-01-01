@@ -38,7 +38,6 @@ export const links = [
     event.preventDefault();
 
     modal.classList.toggle("active");
-    modal.style.display = modal.style.display === "flex" ? "none" : "flex";
 
     // Expand
     toggle.setAttribute(
@@ -76,6 +75,10 @@ export const links = [
   }
 
   .modal {
+    text-align: center;
+    font-size: 3rem;
+    background-color: var(--background-secondary);
+
     position: fixed;
     top: 0;
     bottom: 0;
@@ -83,19 +86,11 @@ export const links = [
     right: 0;
     z-index: 99;
 
-    text-align: center;
-    font-size: 3rem;
-
-    background-color: var(--background-secondary);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition: all ease-in-out 0.2s;
+    transform: translateY(-100vh);
+    transition: transform ease-in-out 750ms;
 
     &.active {
-      opacity: 1;
-      visibility: visible;
+      transform: translate(0);
     }
   }
 
@@ -104,10 +99,11 @@ export const links = [
     align-items: stretch;
     justify-content: center;
     flex-direction: column;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
+    list-style: none;
 
     a {
       display: block;
@@ -184,7 +180,7 @@ export const links = [
 
   .nav-item > a:visited,
   .nav-item > a:link {
-    color: var(--text-primary);
+    color: var(--text-secondary);
     &:hover {
       color: var(--text-emph);
     }
