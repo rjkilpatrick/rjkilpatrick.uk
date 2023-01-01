@@ -20,17 +20,32 @@ import Icon from "astro-icon";
       <nav>
         <ul class="social-icons">
           <li>
-            <a rel="external" aria-label="Github" href="//github.com/rjkilpatrick">
+            <a
+              rel="external"
+              aria-label="Github"
+              href="//github.com/rjkilpatrick"
+              class="github"
+            >
               <Icon name="mdi:github" class="icon" />
             </a>
           </li>
           <li>
-            <a rel="external" aria-label="Twitter" href="//twitter.com/rjkilpatrick1">
+            <a
+              rel="external"
+              aria-label="Twitter"
+              href="//twitter.com/rjkilpatrick1"
+              class="twitter"
+            >
               <Icon name="mdi:twitter" class="icon" />
             </a>
           </li>
           <li>
-            <a rel="external" aria-label="Linkedin" href="//linkedin.com/in/rjkilpatrick">
+            <a
+              rel="external"
+              aria-label="Linkedin"
+              href="//linkedin.com/in/rjkilpatrick"
+              class="linkedin"
+            >
               <Icon name="mdi:linkedin" class="icon" />
             </a>
           </li>
@@ -48,7 +63,7 @@ import Icon from "astro-icon";
   }
 
   .footer__content {
-    color: var(--text-primary);
+    color: var(--text-secondary);
     padding: 32px 0;
     font-size: 88%;
 
@@ -56,23 +71,29 @@ import Icon from "astro-icon";
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
-    // > :first-child {
-    //   text-align: left;
-    // }
-    // > :last-child {
-    //   text-align: right;
-    // }
   }
 
   .social-icons {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
 
     a,
     a:visited {
       color: inherit;
+      display: block;
+      // https://brandcolors.net/
+      &:hover {
+        &.github {
+          color: #333333;
+        }
+        &.linkedin {
+          color: #0077b5;
+        }
+        &.twitter {
+          color: #1da1f2;
+        }
+      }
     }
   }
 
