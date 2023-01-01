@@ -1,0 +1,106 @@
+---
+const waveItems = 24;
+---
+
+<div id="loading-overlay">
+  <div class="loading-wrapper">
+    {Array(waveItems).fill(<div class="wave" />)}
+  </div>
+  <p>Just loading, one second!</p>
+</div>
+
+<style lang="scss">
+  #loading-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999999;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &.active {
+      @media (prefers-reduced-motion: no-preference) {
+        animation: 500ms ease-in forwards fadeout;
+      }
+    }
+  }
+
+  .loading-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    height: 120px;
+    margin: 3rem;
+  }
+
+  @keyframes fadeout {
+    from {
+      height: 100%;
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  .wave {
+    width: 4px;
+    height: 120px;
+    background: black;
+    margin: 0 4px;
+    animation: wave 2000ms cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+    border-radius: 20px;
+    position: relative;
+
+    @for $i from 1 through 24 {
+      &:nth-child(#{$i}) {
+        animation-delay: 0.5 * (-24 + ($i - 1)) * 2000ms / 24;
+      }
+    }
+  }
+
+  .display_none {
+    display: none;
+  }
+
+  :root {
+    --min-height: 10px;
+    --max-height: 60px;
+  }
+
+  @keyframes wave {
+    0% {
+      height: var(--min-height);
+    }
+    25% {
+      height: var(--max-height);
+    }
+    50% {
+      height: var(--min-height);
+    }
+    75% {
+      height: var(--max-height);
+    }
+    100% {
+      height: var(--min-height);
+    }
+  }
+</style>
+<script>
+  window.onload = async () => {
+    console.log("RUN");
+    const overlay = document.querySelector("#loading-overlay");
+    //   // Delay 1000ms
+    //   console.log("Wait over");
+
+    overlay.classList.add("active");
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    // overlay.classList.add("display_none");
+    overlay.remove();
+  };
+</script>

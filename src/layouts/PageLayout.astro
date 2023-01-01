@@ -1,9 +1,11 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 
-import "../styles/post.scss";
+import Loading from "../components/Loading.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+
+import "../styles/post.scss";
 
 export interface Props {
   title?: string;
@@ -13,6 +15,7 @@ const { title } = Astro.props;
 ---
 
 <BaseLayout title={title}>
+  <Loading />
   <Navigation />
   <main class="content-wrapper">
     <slot />
