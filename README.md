@@ -1,6 +1,6 @@
 # John Kilpatrick
 
-[`rjkilpatrick.github.io`](https://rjkilpatrick.github.io) is an [astro](//astro.build/) website for [John Kilpatrick](https://github.com/rjkilpatrick).
+[`rjkilpatrick.uk`](https://rjkilpatrick.uk) is an [astro](//astro.build/) website for [John Kilpatrick](https://github.com/rjkilpatrick).
 
 ## Installation
 
@@ -9,7 +9,7 @@ Install guide for astro [here](https://jekyllrb.com/docs/installation/).
 With `npm` installed:
 
 ```sh
-git clone https://github.com/rjkilpatrick/rjkilpatrick.github.io
+git clone https://github.com/rjkilpatrick/rjkilpatrick.uk
 git submodule init
 git submodule update
 npm install
