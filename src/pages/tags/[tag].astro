@@ -4,7 +4,9 @@ import PageLayout from "../../layouts/PageLayout.astro";
 import PostPreview from "../../components/PostPreview.astro";
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob("../post/**/*.{md,mdx}");
+  const posts = (await Astro.glob("../post/**/*.{md,mdx}")).filter(
+    (post) => !post.frontmatter?.draft
+  );
 
   // Remove duplicates
   const makeUnique = (list) => [...new Set(list)];
