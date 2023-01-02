@@ -27,6 +27,8 @@ body {
   padding: 0;
   margin: 0;
 
+  align-items: center;
+
   // Sticky footer
   display: flex;
   flex-direction: column;
@@ -36,7 +38,6 @@ body {
 
 .content-wrapper {
   max-width: 80ch;
-  margin: 0 auto;
   padding: 0 1.5rem;
   width: 100%;
   flex-grow: 1;
@@ -175,9 +176,22 @@ h5,
 h6 {
   font-family: $font-heading;
   color: var(--text-emph);
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
 }
 
 pre,
 code {
   font-family: $font-mono;
+}
+
+a {
+  color: var(--text-hyperlink);
 }

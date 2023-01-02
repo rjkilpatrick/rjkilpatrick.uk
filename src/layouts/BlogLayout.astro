@@ -13,7 +13,7 @@ const { title, datePublished, tags } = Astro.props.frontmatter;
     <header>
       <h1>{title}</h1>
       <p>
-        <date datetime={datePublished}>
+        <date datetime={datePublished} itemprop="datePublished">
           {
             new Date(datePublished).toLocaleDateString("en-gb", {
               weekday: "long",
