@@ -3,24 +3,140 @@ title: Poor Man's AR
 layout: "../../layouts/BlogLayout.astro"
 preview: "Augmented Reality equipment is hard to come by, why not try a version that only requires a webcam that tracks your head?"
 datePublished: 2022-04-13
-tags: []
+tags: ["ar"]
 ---
 
 import Figure from "../../components/Figure.astro";
 
+**tl;dr:** Give it a go [here](//rjkilpatrick.uk/virtual-window).
+
+## Introduction
+
+A little while ago, I saw a [blog post](https://charliegerard.dev/blog/interactive-frame-head-tracking/) that really piqued my interest.
+It's a version of augemented reality, that only requires a (front-facing) webcam and a web browser.
+I decided that I wanted to make my own version of it, as I was learning Three.js at the time.
+
 <Figure
-  src="https://raw.githubusercontent.com/rjkilpatrick/virtual-window/main/assets/img/Screenshot.png"
-  alt="Screenshot of Lucy angel model"
+  src="https://d33wubrfki0l68.cloudfront.net/9127cef6d79358d4b5ffd0d57b73830fb5a04f8c/fdaf9/head-coupled-perspective.gif"
+  alt="Animated picture of cartoon plant with the perspective coupled to head movement"
 >
-  Screenshot of lucy angel model in faux-augemented reality.
+  The GIF that started it all, 'Head-coupled perspective'. From this [blog
+  post](https://charliegerard.dev/blog/interactive-frame-head-tracking/).
 </Figure>
 
-**tl;dr:** Here's [the link to the demo](https://rjkilpatrick.github.io/virtual-window).
+This inspired me greatly
 
-This post is just to signpost you to a little in browser Augmented Reality demo I made a while ago, that only requires a webcam to run (see it live [here](https://rjkilpatrick.github.io/virtual-window)).
+<Figure
+  src="//raw.githubusercontent.com/rjkilpatrick/virtual-window/main/assets/img/Screenshot.png"
+  alt="Screenshot of Lucy angel model"
+>
+  Screenshot of Lucy angel model in faux-augemented reality. Try it
+  [here](//rjkilpatrick.uk/virtual-window).
+</Figure>
 
-Using a pre-trained model (PoseNet) using [ml5js](https://ml5js.org/) we estimate eye-position to move a virtual camera (in a plane) around a scene, and then use ThreeJS to render the screen from this eye position, as if you were physically moving your head around.
+Using a pre-trained model (PoseNet) using [ml5js](//ml5js.org/) we estimate eye-position to move a virtual camera (in a plane) around a scene, and then use ThreeJS to render the screen from this eye position, as if you were really moving around the virtual scene.
 
-In future, I would like to estimate head depth, but this would involve using a more complicated model.
+## Getting webcam frames
 
-My scene is really simple, just using the [standard 'Lucy' model](https://graphics.stanford.edu/data/3Dscanrep/) inside a box, but the idea can be adapted to fit any kind of scene.
+We need to ask the user for access to their webcam 📸.
+We take the webcam stream and add that to a video elememt.
+Since we want the pose-estimation to be done in (as close to) real-time as possible, we take the webcam live video, and send it to a video tag.
+
+```js
+// Hold webcam capture in a video tag, but don't add to DOM
+const video = document.createElement("video");
+
+// Request webcam from the user
+window.navigator.mediaDevices
+  .getUserMedia({ video: true })
+  .then((stream) => {
+    // Send the webcam stream to the video element
+    video.srcObject = stream;
+    video.onloadedmetadata = () => {
+      // 'Play' the video, i.e., continuously acquire frames
+      video.play();
+    };
+  })
+  .catch(() => {
+    alert("This site won't work without webcam access");
+  });
+```
+
+## Detecting the eye-postions
+
+`ml5js`'s PoseNet model, accepts a `HTMLVideoElement` as input, which we can listen to the `pose` event from.
+
+```js
+// Create a new poseNet model
+const poseNet = ml5.poseNet(video, modelLoaded);
+
+// Listen to 'pose' events
+poseNet.on("pose", (result) => {
+  poses = result;
+});
+```
+
+This `result` Object has the following structure (only relevant parts shown).
+
+```json
+[
+  {
+    pose: {
+      leftEye: { x, y, confidence },
+      rightEye: { x, y, confidence },
+    },
+  },
+];
+```
+
+Which means that our updated pose structure becomes:
+
+{/* TODO: Add --line-start: 7 */}
+
+```js
+poseNet.on("pose", (result) => {
+  const { leftEye, rightEye } = result[0].pose;
+});
+```
+
+## Rendering from the new position
+
+[`three.js`](//threejs.org/) allows us to define a scene and use some WebGL magic 🔮 to render it very quickly.
+My favourite computer graphics test model is 'Lucy'[^stanford], which I used a slimmed down version of from [here](//gfx.cs.princeton.edu/proj/sugcon/models/).
+We consider the camera position at the mean position of the eyes.
+
+I did try moving the camera in 3D, by using an estimate for the [distance between the eyes](//en.wikipedia.org/wiki/Pupillary_distance#Databases), an estimate of pixels into real-space, then using that to work out the depth using similar triangles, but the uncertainty was massive and the screen moved in Z massively.
+
+## Limitations
+
+- Loading takes forever, at least it should have a proper progress animation shown to the user
+- I'm not sure the camera canvas is doing anything lol
+- This project needs a **major** overhaul
+- I want the box size to be linked to the viewport size
+- Aspect ratio of camera shouldn't be divided out, as it corresponds to real-space
+- The `multiplier` property should be set based on device capability
+
+## Next steps
+
+In future, I would like to estimate head depth, but this would involve using a more complicated pose-esimation model.
+
+The scene isn't particularly impressive, the post that inspired me looks far nicer.
+I think a scene selection would be nice.
+
+When I have time, I'll remake this in [React Three Fiber](//github.com/pmndrs/react-three-fiber) because I love declaritive functional programming.
+It also makes sense, now I am using astro for [this site](./2022-12-30-rjkilpatrick.uk), so that I can use the JS packages so that I'm not hotlinking to [CDNs](https://www.cloudflare.com/en-gb/learning/cdn/what-is-a-cdn/) for my dependencies.
+
+I think removing the dependency on ml5js would be good, it doesn't add that much abstraction over the original [tensorflow js implementation](https://www.npmjs.com/package/@tensorflow-models/posenet), so I think it might be worth moving to that.
+
+The code isn't particularly elegant, or even good, so I'd like to refactor it so that it looks sensible, and more importantly is easily readable.
+
+How I'd like it to work:
+
+1. Init
+1. Render
+   1. On pose update
+   1. Convert eye-position to camera position
+   1. Re-render scene from current camera positions
+
+{/* References */}
+[^stanford]: https://graphics.stanford.edu/data/3Dscanrep/
