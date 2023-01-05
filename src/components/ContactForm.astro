@@ -1,36 +1,34 @@
 ---
-const { form_id } = Astro.props;
+const { formId } = Astro.props;
 ---
 
-<form
-  id="fs-frm"
-  name="contact-form"
-  accept-charset="utf-8"
-  action={`https://formspree.io/f/${form_id}`}
-  method="post"
->
-  <fieldset id="fs-frm-inputs">
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" placeholder="Johnny" />
-    <label for="email-address" class="form-text-required">Email Address</label>
-    <input
-      type="email"
-      name="email"
-      id="email-address"
-      placeholder="hello@example.com"
-      required=""
-      class="form-input-required"
-    />
-    <label for="message" class="form-text-required">Message</label>
-    <textarea
-      rows="5"
-      name="message"
-      id="message"
-      placeholder="Hi John\n\nHere's what you want\n\nJohn"
-      required=""></textarea>
-  </fieldset>
-  <button form="fs-frm" type="submit" role="button">Submit</button>
-</form>
+<div>
+  <form id="fs-frm" name="contact-form" accept-charset="utf-8" method="post">
+    <fieldset form="fs-frm" id="fs-frm-inputs">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" placeholder="Johnny" />
+      <label for="email-address" class="form-text-required">Email Address</label
+      >
+      <input
+        type="email"
+        name="email"
+        id="email-address"
+        placeholder="hello@example.com"
+        required=""
+        class="form-input-required"
+      />
+      <label for="message" class="form-text-required">Message</label>
+      <textarea
+        rows="5"
+        name="message"
+        id="message"
+        placeholder="Hi John\n\nI have an idea about..."
+        required=""></textarea>
+    </fieldset>
+    <button form="fs-frm" type="submit" role="button">Submit</button>
+  </form>
+  <div id="form-snackbar"></div>
+</div>
 <style lang="scss">
   /* CSS reset */
   input,
@@ -117,4 +115,94 @@ const { form_id } = Astro.props;
       color: rgb(171, 0, 0);
     }
   }
+  // snackbar
+  #form-snackbar {
+    visibility: hidden;
+    left: 50%;
+    position: fixed;
+    bottom: 32px;
+    transform: translate(-50%, 0);
+
+    min-width: 10rem;
+
+    z-index: 1;
+    border-radius: 2px;
+    padding: 16px;
+
+    background-color: var(--text-primary);
+    color: var(--background-primary);
+    text-align: center;
+    .show {
+      visibility: visible;
+      @media (prefers-reduced-motion: no-preference) {
+        animation: ease-out fadein 0.5s, ease-in fadeout 0.5s 2.5s;
+      }
+    }
+  }
+
+  @keyframes fadein {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+    to {
+      bottom: 30px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeout {
+    from {
+      bottom: 30px;
+      opacity: 1;
+    }
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
 </style>
+
+<script>
+  const form = document.getElementById("fs-frm");
+  const snackbar = document.getElementById("form-snackbar");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    snackbar.textContent = "Attempting to send form";
+    let data = new FormData(event.target);
+    form.reset();
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          snackbar.textContent = "Thanks for your submission!";
+          form.reset();
+        } else {
+          response.json().then((data) => {
+            if (Object.hasOwn(data, "errors")) {
+              snackbar.textContent = data["errors"]
+                .map((error) => error["message"])
+                .join(", ");
+            } else {
+              snackbar.textContent = "Oops! There was a problem submitting your form";
+            }
+          });
+        }
+      })
+      .catch((error) => {
+        snackbar.textContent = "Oops! There was a problem submitting your form";
+        console.error(error);
+      });
+    snackbar.classList.add("show");
+    setTimeout(() => {
+      snackbar.classList.remove("show");
+    }, 3000);
+  }
+  form.addEventListener("submit", handleSubmit);
+</script>
