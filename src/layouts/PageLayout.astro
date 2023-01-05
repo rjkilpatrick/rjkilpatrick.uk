@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 
+import Analytics from "../components/Analytics.astro";
 import Loading from "../components/Loading.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
@@ -21,4 +22,5 @@ const { title } = Astro.props;
     <slot />
   </main>
   <Footer />
+  <Analytics/>
 </BaseLayout>
