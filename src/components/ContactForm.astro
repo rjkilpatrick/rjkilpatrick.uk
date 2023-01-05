@@ -3,7 +3,13 @@ const { formId } = Astro.props;
 ---
 
 <div>
-  <form id="fs-frm" name="contact-form" accept-charset="utf-8" method="post">
+  <form
+    action={`https://formspree.io/f/${formId}`}
+    id="fs-frm"
+    name="contact-form"
+    accept-charset="utf-8"
+    method="post"
+  >
     <fieldset form="fs-frm" id="fs-frm-inputs">
       <label for="name">Name</label>
       <input type="text" name="name" id="name" placeholder="Johnny" />
@@ -190,7 +196,8 @@ const { formId } = Astro.props;
                 .map((error) => error["message"])
                 .join(", ");
             } else {
-              snackbar.textContent = "Oops! There was a problem submitting your form";
+              snackbar.textContent =
+                "Oops! There was a problem submitting your form";
             }
           });
         }
