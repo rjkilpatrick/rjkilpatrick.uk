@@ -26,8 +26,12 @@ const { title } = Astro.props;
     <meta name="yandex-verification" content="ab1e6cab6e467868" />
 
     <meta name="theme-color" content="hsl(359.6, 59%, 54%)" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    {/* https://twitter.com/subzey/status/1417099064949235712 */}
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="apple-touch-icon" href="/images/touch/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <meta name="generator" content={Astro.generator} />
 

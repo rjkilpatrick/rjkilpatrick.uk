@@ -68,7 +68,7 @@ const waveItems = 24;
     // TODO: This is **awful** code, change this
     @for $i from 1 through 24 {
       &:nth-child(#{$i}) {
-        animation-delay: 1.5 * (-24 + ($i - 1)) * 2000ms / 24;
+        animation-delay: calc(1.5 * (-24 + ($i - 1)) * 2000ms / 24);
       }
     }
   }
