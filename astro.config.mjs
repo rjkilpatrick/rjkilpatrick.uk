@@ -27,6 +27,7 @@ import prefetch from "@astrojs/prefetch";
 // https://astro.build/config
 export default defineConfig({
   site: "https://rjkilpatrick.uk",
+  base: "",
   integrations: [
     mdx(),
     react(),
