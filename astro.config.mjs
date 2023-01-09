@@ -25,6 +25,9 @@ import sitemap from "@astrojs/sitemap";
 import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
+import compress from "astro-compress";
+
+// https://astro.build/config
 export default defineConfig({
   site: "https://rjkilpatrick.uk",
   base: "",
@@ -35,6 +38,7 @@ export default defineConfig({
       customPages: ["https://rjkilpatrick.uk/virtual-window/"],
     }),
     prefetch(),
+    compress(),
   ],
   markdown: {
     extendDefaultPlugins: true,
