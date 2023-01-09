@@ -124,18 +124,63 @@ figure {
 
 // Sort out link for permalinking
 article h2 {
-  position: relative;
-
   &>a {
-    border: 2.5px solid #c917a2;
-    width: 1rem;
-    height: 1rem;
-    position: absolute;
-    left: calc(-1rem - 8px);
-    top: calc(50% - 0.5rem);
+    position: relative;
+    margin-left: -1em;
+    width: 1em;
+    display: inline-block;
+
+    opacity: 0.4;
+    height: 1em;
+
+    vertical-align: middle;
+
+    &::after {
+      content: "#";
+      position: absolute;
+
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      font-size: 0.66666666em;
+      text-align: center;
+    }
 
     &:hover {
-      display: block;
+      opacity: 1.0;
+    }
+  }
+}
+
+article h3 {
+  &>a {
+    position: relative;
+    margin-left: -2em;
+    width: 2em;
+    display: inline-block;
+
+    opacity: 0.4;
+    height: 1em;
+
+    vertical-align: middle;
+
+    &::after {
+      content: "##";
+      position: absolute;
+
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      font-size: 0.66666666em;
+      text-align: center;
+    }
+
+    &:hover {
+      opacity: 1.0;
     }
   }
 }
