@@ -212,3 +212,15 @@ code {
 a {
   color: var(--text-hyperlink);
 }
+
+mark {
+  --highlight-colour: hsl(42, 100%, 67%);
+  background-color: unset;
+  box-shadow: inset 0 -0.5em 0 var(--highlight-colour); // TODO: Change colour on dark mode
+
+  @media (prefers-color-scheme: dark) {
+    --highlight-colour: var(--accent-8);
+  }
+
+  color: inherit;
+}
