@@ -32,12 +32,11 @@ export default defineConfig({
     mdx(),
     react(),
     sitemap({
-      customPages: ["https://rjkilpatrick.uk/virtual-window/"],
+      customPages: ["https://rjkilpatrick.uk/virtual-window"],
     }),
     prefetch(),
   ],
   markdown: {
-    extendDefaultPlugins: true,
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex, rehypeSlug, rehypeAutolinkHeadings],
     remarkRehype: {
