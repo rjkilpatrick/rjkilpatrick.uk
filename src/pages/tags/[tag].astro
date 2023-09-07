@@ -13,12 +13,15 @@ export async function getStaticPaths() {
 
   const uniqueTags = makeUnique(
     // Get flattened list of all tags in the posts
-    posts.map((post) => post.frontmatter.tags).flat()
+    posts
+      .map((post) => post.frontmatter.tags)
+      .flat()
+      .filter((tag) => tag) // Remove undefined values
   );
 
   return uniqueTags.map((tag) => {
     const filteredPosts = posts.filter((post) =>
-      post.frontmatter.tags.includes(tag)
+      post.frontmatter.tags?.includes(tag)
     );
     return {
       params: { tag },
