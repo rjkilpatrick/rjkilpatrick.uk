@@ -1,8 +1,7 @@
 ---
-const { src, alt } = Astro.props;
 ---
 
 <figure class="figure">
-  <img src={src} alt={alt} />
+  <img {...Astro.props} />
   <figcaption><slot /></figcaption>
 </figure>
