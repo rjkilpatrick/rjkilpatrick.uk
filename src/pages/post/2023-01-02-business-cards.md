@@ -1,5 +1,6 @@
 ---
 title: Business Cards
+layout: "../../layouts/BlogLayout.astro"
 preview: "How I made my AR-infused business cards"
 datePublished: 2023-01-02
 tags: ["ar"]
