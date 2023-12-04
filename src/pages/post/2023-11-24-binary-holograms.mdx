@@ -7,8 +7,8 @@ datePublished: 2023-11-24
 
 import Figure from "../../components/Figure.astro";
 
-Holograms are mystical things right?
-Well actually holograms are just representations of a light-field.
+Holograms are mystical things, right?
+Well, actually holograms are just representations of a light field.
 
 Rather confusingly, we sometimes use the word to also represent the recreation of them too.
 
@@ -19,7 +19,7 @@ So you know what you're getting yourself in for, here's what we'll be making tod
   alt="Resultant image from hologram generated"
   id="result"
 >
-  Resultant image from hologram generated using the code in the article below.
+  The resultant image from the hologram was generated using the code in the article below.
 </Figure>
 
 Yeah, not _particularly_ impressive by itself, but when you look where it comes from, you'll probably start asking a few questions.
@@ -48,7 +48,7 @@ We load in an image, which we binarize (because anything else probably won't sho
 path_to_hologram = "/path/to/hologram.png"
 img = io.imread(path_to_hologram)
 img = transform.resize(img, (128, 128))   # Don't change this, this is important
-img = color.rgb2gray(img)  # The hologram only works with one colour at a time
+img = color.rgb2gray( img)  # The hologram only works with one colour at a time
 img = img > 0.5 * np.maximum(img)  # Binarize it
 
 plt.figure()
@@ -85,7 +85,7 @@ plt.show()
   It's same image as before, but this time with some extra padding.
 </Figure>
 
-So now we have our image that we want to display, let's create a hologram to display it with.
+So now we have the image that we want to display, let's create a hologram to display it with.
 
 ```py
 # Initialize our hologram randomly
@@ -104,12 +104,12 @@ plt.show()
 So now we have our hologram, but this doesn't give us anything like what we need to have to create our desired imaging target.
 We have _patterned_ our incoming light, but randomly.
 
-Light travelling in free-space (after a long enough distance) performs something called a Fourier transform.
+Light travelling in free space (after a long enough distance) performs something called a Fourier transform.
 If I made more time for this blog, I would talk about it at length.
 
-Basically the way our algorithm works, is propagate the hologram to really far away (we call this, the far field), and then apply the constraint that it must look like the image.
-Then we propagate that new field back to our hologram, and apply the constraint that it must be binary.
-A more sophisticated approach would have some early stopping, and 50 iterations is probably enough, but CPU cycles are cheap.
+Basically, the way our algorithm works is to propagate the hologram to far away (we call this, the far field), and then apply the constraint that it must look like the image.
+Then we propagate that new field back to our hologram and apply the constraint that it must be binary.
+A more sophisticated approach would have some early stopping, and 50 iterations are probably enough, but CPU cycles are cheap.
 
 ```py
 def fft2_shifted(x):
@@ -123,13 +123,13 @@ def ifft2_shifted(k):
 # Iterative Fourier Transform Algorithm (IFTA)
 for _ in range(1000):
     # Propagate to Fourier plane using FFT
-    fft_hologram = np.fft.fft2(hologram)
+    fft_hologram = fft2_shifted(hologram)
 
     # Apply target intensity constraint at the Fourier plane
     fft_hologram = np.sqrt(padded_img) * np.exp(1j * np.angle(fft_hologram))
 
     # Propagate back to the object plane using IFFT
-    hologram = np.fft.ifft2(fft_hologram)
+    hologram = ifft2_shifted(fft_hologram)
 
     # Apply binary amplitude constraint at the object plane
     hologram = hologram > 0
@@ -153,7 +153,7 @@ Now, this is all well and good, but what's the result of this?
 io.imsave("final_hologram.png", hologram)
 
 # Display Fourier Transform of the hologram
-fft_H = np.fft.fft2(hologram - hologram.mean())
+fft_H = fft2_shifted(hologram - hologram.mean())
 plt.figure()
 plt.imshow(np.abs(fft_H)**2, cmap="gray")
 plt.title("Fourier Transform of Hologram")
